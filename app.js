@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initCountdown();
   initCopyButton();
   initCalendarReminder();
+  initCampaignSlider();
 });
 
 /* ==========================================================================
@@ -130,4 +131,69 @@ function initCalendarReminder() {
     link.click();
     document.body.removeChild(link);
   });
+}
+
+/* ==========================================================================
+   4. CAMPAIGN SLIDER & LIGHTBOX MODAL
+   ========================================================================== */
+function initCampaignSlider() {
+  const slides = document.querySelectorAll('.slide-item');
+  const modal = document.getElementById('lightbox-modal');
+  const modalImg = document.getElementById('lightbox-img');
+  const modalCaption = document.getElementById('lightbox-caption');
+  const closeBtn = document.getElementById('lightbox-close');
+  const backdrop = document.querySelector('.lightbox-backdrop');
+
+  const prevBtn = document.getElementById('slide-prev');
+  const nextBtn = document.getElementById('slide-next');
+  const slider = document.getElementById('campaign-slider');
+
+  let activeIndex = 0;
+  const total = slides.length;
+
+  slides.forEach((slide, idx) => {
+    slide.addEventListener('click', () => {
+      openLightbox(idx);
+    });
+  });
+
+  function openLightbox(index) {
+    if (!modal || !modalImg) return;
+    const slide = slides[index];
+    if (!slide) return;
+
+    activeIndex = index;
+    const src = slide.dataset.src;
+    const caption = slide.querySelector('.slide-overlay')?.textContent || `Slide ${index + 1} of ${total}`;
+
+    modalImg.src = src;
+    if (modalCaption) modalCaption.textContent = caption;
+    modal.classList.add('active');
+    modal.setAttribute('aria-hidden', 'false');
+  }
+
+  function closeLightbox() {
+    if (!modal) return;
+    modal.classList.remove('active');
+    modal.setAttribute('aria-hidden', 'true');
+  }
+
+  if (closeBtn) closeBtn.addEventListener('click', closeLightbox);
+  if (backdrop) backdrop.addEventListener('click', closeLightbox);
+
+  document.addEventListener('keydown', (e) => {
+    if (!modal || !modal.classList.contains('active')) return;
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowRight') openLightbox((activeIndex + 1) % total);
+    if (e.key === 'ArrowLeft') openLightbox((activeIndex - 1 + total) % total);
+  });
+
+  if (slider && nextBtn && prevBtn) {
+    nextBtn.addEventListener('click', () => {
+      slider.scrollBy({ left: 200, behavior: 'smooth' });
+    });
+    prevBtn.addEventListener('click', () => {
+      slider.scrollBy({ left: -200, behavior: 'smooth' });
+    });
+  }
 }

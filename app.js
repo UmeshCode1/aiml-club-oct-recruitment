@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initCountdown();
   initCopyButtons();
   initCalendarReminders();
+  initSocialShareAndCalendar();
   initStickyTopButton();
   initScrollEffects();
   initRevealObserver();
@@ -42,7 +43,7 @@ function initCountdown() {
       if (hoursEl) hoursEl.textContent = '00';
       if (minsEl) minsEl.textContent = '00';
       if (secsEl) secsEl.textContent = '00';
-      const title = document.querySelector('.countdown-title span');
+      const title = document.querySelector('.countdown-title .cd-label-main');
       if (title) title.textContent = 'Registration Is Now OPEN!';
       if (intervalId) clearInterval(intervalId);
       return;
@@ -134,55 +135,209 @@ function initCopyButtons() {
 }
 
 /* ==========================================================================
-   3. CALENDAR REMINDER (.ICS DOWNLOAD - HERO + STICKY BAR)
+   3. CALENDAR REMINDER (.ICS DOWNLOAD - RFC 5545 COMPLIANT)
    ========================================================================== */
+function generateIcsBlob() {
+  const icsData = [
+    'BEGIN:VCALENDAR',
+    'VERSION:2.0',
+    'PRODID:-//AIML Club OCT//Recruitment 2026-27//EN',
+    'CALSCALE:GREGORIAN',
+    'METHOD:PUBLISH',
+    'BEGIN:VEVENT',
+    'UID:aiml-club-oct-recruitment-2026@aimlcluboct.in',
+    'DTSTAMP:20261014T060000Z',
+    'DTSTART:20261020T183000Z', // 21 Oct 2026 00:00 IST
+    'DTEND:20261025T182900Z',   // 25 Oct 2026 23:59 IST
+    'SUMMARY:AIML Club OCT Recruitment 2026-27 Opens',
+    'DESCRIPTION:Registration opens for AI & Machine Learning Club Recruitment at Oriental College of Technology, Bhopal. Visit https://info.aimlcluboct.in to apply. Unique QR in email confirmation.',
+    'LOCATION:Oriental College of Technology, Bhopal',
+    'URL:https://info.aimlcluboct.in',
+    'STATUS:CONFIRMED',
+    'BEGIN:VALARM',
+    'TRIGGER:-PT15M',
+    'ACTION:DISPLAY',
+    'DESCRIPTION:AIML Club OCT Recruitment Reminder',
+    'END:VALARM',
+    'END:VEVENT',
+    'END:VCALENDAR'
+  ].join('\r\n');
+
+  return new Blob([icsData], { type: 'text/calendar;charset=utf-8' });
+}
+
+function downloadIcsFile() {
+  const blob = generateIcsBlob();
+  const link = document.createElement('a');
+  link.href = window.URL.createObjectURL(blob);
+  link.setAttribute('download', 'AIML_Club_OCT_Recruitment_2026.ics');
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+  window.URL.revokeObjectURL(link.href);
+}
+
 function initCalendarReminders() {
   const reminderBtns = [
     document.getElementById('btn-set-reminder'),
-    document.getElementById('sticky-reminder-btn')
+    document.getElementById('sticky-reminder-btn'),
+    document.getElementById('btn-download-ics')
   ];
 
-  function triggerDownload() {
-    const icsData = [
-      'BEGIN:VCALENDAR',
-      'VERSION:2.0',
-      'PRODID:-//AIML Club OCT//Recruitment 2026-27//EN',
-      'BEGIN:VEVENT',
-      'UID:aiml-club-oct-recruitment-2026@aimlcluboct.in',
-      'DTSTAMP:20261014T054500Z',
-      'DTSTART:20261020T183000Z', // 21 Oct 2026 00:00 IST
-      'DTEND:20261025T182900Z',   // 25 Oct 2026 23:59 IST
-      'SUMMARY:AIML Club OCT Recruitment 2026-27 Opens',
-      'DESCRIPTION:AI & Machine Learning Club Recruitment Opens at Oriental College of Technology Bhopal. Visit https://info.aimlcluboct.in to apply.',
-      'LOCATION:Oriental College of Technology, Bhopal',
-      'URL:https://info.aimlcluboct.in',
-      'STATUS:CONFIRMED',
-      'BEGIN:VALARM',
-      'TRIGGER:-PT15M',
-      'ACTION:DISPLAY',
-      'DESCRIPTION:AIML Club OCT Recruitment Reminder',
-      'END:VALARM',
-      'END:VEVENT',
-      'END:VCALENDAR'
-    ].join('\r\n');
-
-    const blob = new Blob([icsData], { type: 'text/calendar;charset=utf-8' });
-    const link = document.createElement('a');
-    link.href = window.URL.createObjectURL(blob);
-    link.setAttribute('download', 'AIML_Club_OCT_Recruitment_2026.ics');
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-    window.URL.revokeObjectURL(link.href);
-  }
-
   reminderBtns.forEach(btn => {
-    if (btn) btn.addEventListener('click', triggerDownload);
+    if (btn) btn.addEventListener('click', downloadIcsFile);
   });
 }
 
 /* ==========================================================================
-   4. STICKY TOP BUTTON (ONE-TAP SMOOTH SCROLL BACK TO TOP)
+   4. SOCIAL HANDLES SHARE & ALARM SUITE
+   ========================================================================== */
+function initSocialShareAndCalendar() {
+  const officialUrl = 'https://info.aimlcluboct.in';
+
+  const fullBroadcastText = [
+    '📢 *AI & MACHINE LEARNING CLUB RECRUITMENT 2026–27* 🤖🚀',
+    '*Oriental College of Technology, Bhopal*',
+    '',
+    'Hello Everyone! 👋',
+    '',
+    'Get ready to be a part of the AI & Machine Learning Club! Showcase your skills, take on responsibilities, and grow as a leader. 💡',
+    '',
+    '🎓 *Open to students from all branches!*',
+    '',
+    '🌐 *Official Portal & Registration Link:*',
+    '🔗 https://info.aimlcluboct.in',
+    '',
+    '📅 *Registration Opens:* 21st October 2026',
+    '⏳ *Last Date:* 25th October 2026, 11:59 PM IST',
+    '',
+    '🔐 *Candidate Security:* Unique QR in confirmation email + verified PDF record.',
+    '🎯 *Mission:* Build the next generation of AIML Club OCT — genuine opportunities for juniors & sub-juniors.',
+    '',
+    '⏰ Limited roles available! Set your alarm and register early.',
+    '✨ Stay tuned and don\'t miss this opportunity to lead, innovate, and grow! 🚀'
+  ].join('\n');
+
+  // 1. WhatsApp Direct Share Link
+  const waBtn = document.getElementById('btn-share-wa');
+  if (waBtn) {
+    waBtn.href = `https://api.whatsapp.com/send?text=${encodeURIComponent(fullBroadcastText)}`;
+  }
+
+  // 2. LinkedIn Post Share Link
+  const liBtn = document.getElementById('btn-share-li');
+  if (liBtn) {
+    liBtn.href = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(officialUrl)}`;
+  }
+
+  // 3. Twitter / X Share Link
+  const xBtn = document.getElementById('btn-share-x');
+  if (xBtn) {
+    const xText = 'AI & Machine Learning Club Recruitment 2026–27 at Oriental College of Technology, Bhopal is opening soon! Check details & recruitment flows:';
+    xBtn.href = `https://twitter.com/intent/tweet?text=${encodeURIComponent(xText)}&url=${encodeURIComponent(officialUrl)}&hashtags=AIMLClubOCT,Recruitment2026`;
+  }
+
+  // 4. Telegram Share Link
+  const tgBtn = document.getElementById('btn-share-tg');
+  if (tgBtn) {
+    tgBtn.href = `https://t.me/share/url?url=${encodeURIComponent(officialUrl)}&text=${encodeURIComponent('AIML Club OCT Recruitment 2026–27 Official Announcement')}`;
+  }
+
+  // 5. Google Calendar 1-Click Link
+  const gcalBtn = document.getElementById('btn-gcal');
+  if (gcalBtn) {
+    const gTitle = encodeURIComponent('AIML Club OCT Recruitment 2026–27 Opens');
+    const gDetails = encodeURIComponent('Official registration opens for AI & Machine Learning Club at Oriental College of Technology, Bhopal. Visit https://info.aimlcluboct.in to apply.');
+    const gLoc = encodeURIComponent('Oriental College of Technology, Bhopal');
+    const gDates = '20261020T183000Z/20261025T182900Z'; // 21 Oct 00:00 to 25 Oct 23:59 IST in UTC
+    gcalBtn.href = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${gTitle}&dates=${gDates}&details=${gDetails}&location=${gLoc}`;
+  }
+
+  // 6. Native Device Share (Triggers iOS/Android native share sheet)
+  const deviceShareBtn = document.getElementById('btn-device-share');
+  const stickyShareBtn = document.getElementById('sticky-share-btn');
+
+  async function triggerNativeShare() {
+    if (navigator.share) {
+      try {
+        await navigator.share({
+          title: 'AIML Club OCT Recruitment 2026–27',
+          text: 'AI & Machine Learning Club Recruitment 2026–27 at Oriental College of Technology, Bhopal! Open to students from all branches.',
+          url: officialUrl
+        });
+      } catch (err) {
+        // User cancelled or aborted
+      }
+    } else {
+      // Fallback: smooth scroll to social share suite
+      const shareSec = document.getElementById('sec-share');
+      if (shareSec) {
+        shareSec.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  }
+
+  if (deviceShareBtn) deviceShareBtn.addEventListener('click', triggerNativeShare);
+  if (stickyShareBtn) stickyShareBtn.addEventListener('click', triggerNativeShare);
+
+  // 7. Copy Formatted Broadcast Notice
+  const copyBroadcastBtn = document.getElementById('btn-copy-broadcast-text');
+  const copyBroadcastLbl = document.getElementById('copy-broadcast-label');
+  if (copyBroadcastBtn) {
+    copyBroadcastBtn.addEventListener('click', async () => {
+      try {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          await navigator.clipboard.writeText(fullBroadcastText);
+        } else {
+          const temp = document.createElement('textarea');
+          temp.value = fullBroadcastText;
+          document.body.appendChild(temp);
+          temp.select();
+          document.execCommand('copy');
+          document.body.removeChild(temp);
+        }
+
+        if (copyBroadcastLbl) copyBroadcastLbl.textContent = 'Copied to Clipboard!';
+        copyBroadcastBtn.style.background = 'var(--brand-cyan)';
+        copyBroadcastBtn.style.color = '#070a0f';
+
+        setTimeout(() => {
+          if (copyBroadcastLbl) copyBroadcastLbl.textContent = 'Copy Notice';
+          copyBroadcastBtn.style.background = '';
+          copyBroadcastBtn.style.color = '';
+        }, 2200);
+      } catch (err) {
+        console.warn('Copy broadcast failed:', err);
+      }
+    });
+  }
+
+  // 8. Alarm Helper Button
+  const alarmHelperBtn = document.getElementById('btn-alarm-helper');
+  const alarmHelperLbl = document.getElementById('alarm-helper-label');
+  if (alarmHelperBtn) {
+    alarmHelperBtn.addEventListener('click', () => {
+      // Download .ics which automatically includes RFC VALARM (15 min prior alarm)
+      downloadIcsFile();
+
+      if (alarmHelperLbl) {
+        const orig = alarmHelperLbl.textContent;
+        alarmHelperLbl.textContent = 'Alarm & Calendar Downloaded!';
+        alarmHelperBtn.style.background = 'var(--brand-lime)';
+        alarmHelperBtn.style.color = '#070a0f';
+
+        setTimeout(() => {
+          alarmHelperLbl.textContent = orig;
+          alarmHelperBtn.style.background = '';
+          alarmHelperBtn.style.color = '';
+        }, 2500);
+      }
+    });
+  }
+}
+
+/* ==========================================================================
+   5. STICKY TOP BUTTON (ONE-TAP SMOOTH SCROLL BACK TO TOP)
    ========================================================================== */
 function initStickyTopButton() {
   const topBtn = document.getElementById('sticky-top-btn');
@@ -195,7 +350,7 @@ function initStickyTopButton() {
 }
 
 /* ==========================================================================
-   5. HARDWARE-ACCELERATED SCROLL EFFECTS (THROTTLED WITH RAF & PASSIVE)
+   6. HARDWARE-ACCELERATED SCROLL EFFECTS (THROTTLED WITH RAF & PASSIVE)
    ========================================================================== */
 function initScrollEffects() {
   const progressBar = document.getElementById('scroll-progress');
@@ -235,7 +390,7 @@ function initScrollEffects() {
 }
 
 /* ==========================================================================
-   6. REVEAL-ON-SCROLL OBSERVER (AUTO-UNOBSERVE FOR 0% CPU RESIDUAL LOAD)
+   7. REVEAL-ON-SCROLL OBSERVER (AUTO-UNOBSERVE FOR 0% CPU RESIDUAL LOAD)
    ========================================================================== */
 function initRevealObserver() {
   const revealElements = document.querySelectorAll('.reveal-item');
@@ -263,10 +418,10 @@ function initRevealObserver() {
 }
 
 /* ==========================================================================
-   7. STICKY SECTION SPY (UPDATES NAV PILLS & MOBILE STATUS VIA OBSERVER)
+   8. STICKY SECTION SPY (UPDATES NAV PILLS & MOBILE STATUS VIA OBSERVER)
    ========================================================================== */
 function initSectionSpy() {
-  const sectionIds = ['sec-overview', 'sec-flows', 'sec-slides', 'sec-instructions', 'sec-portal'];
+  const sectionIds = ['sec-overview', 'sec-flows', 'sec-slides', 'sec-instructions', 'sec-share', 'sec-portal'];
   const sections = sectionIds.map(id => document.getElementById(id)).filter(Boolean);
   const navItems = document.querySelectorAll('.sticky-nav-item');
   const mobileLabel = document.getElementById('mobile-section-name');
@@ -278,6 +433,7 @@ function initSectionSpy() {
     'sec-flows': 'Selection Flows',
     'sec-slides': 'Storyboard',
     'sec-instructions': 'Notice Rules',
+    'sec-share': 'Share & Alarm',
     'sec-portal': 'Portal Link'
   };
 
@@ -310,7 +466,7 @@ function initSectionSpy() {
 }
 
 /* ==========================================================================
-   8. CAMPAIGN SLIDER & LIGHTBOX MODAL
+   9. CAMPAIGN SLIDER & LIGHTBOX MODAL
    ========================================================================== */
 function initCampaignSlider() {
   const slides = document.querySelectorAll('.slide-item');
@@ -323,6 +479,7 @@ function initCampaignSlider() {
   const prevBtn = document.getElementById('slide-prev');
   const nextBtn = document.getElementById('slide-next');
   const slider = document.getElementById('campaign-slider');
+  const indicator = document.getElementById('slide-indicator');
 
   let activeIndex = 0;
   const total = slides.length;
@@ -330,6 +487,21 @@ function initCampaignSlider() {
   slides.forEach((slide, idx) => {
     slide.addEventListener('click', () => openLightbox(idx));
   });
+
+  function updateSlideIndicator(idx) {
+    if (!indicator) return;
+    const titles = [
+      'The System Behind It',
+      'Fair & Transparent Flow',
+      'Multi-Dimension Form',
+      'Application Record PDF',
+      'Email Confirmation + QR',
+      'Core Team Workspace',
+      'Secure QR Screening',
+      'Ready to Build'
+    ];
+    indicator.textContent = `Slide ${idx + 1} of ${total}: ${titles[idx] || ''} • Click to open`;
+  }
 
   function openLightbox(index) {
     if (!modal || !modalImg) return;
@@ -344,6 +516,7 @@ function initCampaignSlider() {
     if (modalCaption) modalCaption.textContent = caption;
     modal.classList.add('active');
     modal.setAttribute('aria-hidden', 'false');
+    updateSlideIndicator(index);
   }
 
   function closeLightbox() {
@@ -365,23 +538,53 @@ function initCampaignSlider() {
   if (slider && nextBtn && prevBtn) {
     nextBtn.addEventListener('click', () => {
       slider.scrollBy({ left: 240, behavior: 'smooth' });
+      activeIndex = (activeIndex + 1) % total;
+      updateSlideIndicator(activeIndex);
     });
     prevBtn.addEventListener('click', () => {
       slider.scrollBy({ left: -240, behavior: 'smooth' });
+      activeIndex = (activeIndex - 1 + total) % total;
+      updateSlideIndicator(activeIndex);
     });
   }
 }
 
 /* ==========================================================================
-   9. INTERACTIVE FLOW STEP SELECTION
+   10. INTERACTIVE FLOW STEP SELECTION & DYNAMIC INSPECTOR
    ========================================================================== */
 function initInteractiveSteps() {
   const steps = document.querySelectorAll('.step-node');
+  const inspBadge = document.getElementById('insp-badge');
+  const inspTitle = document.getElementById('insp-title');
+  const inspDesc = document.getElementById('insp-desc');
+
   steps.forEach(step => {
-    step.addEventListener('click', () => {
-      // Toggle active glow on click
+    function handleSelect() {
       steps.forEach(s => s.classList.remove('active-step'));
       step.classList.add('active-step');
+
+      const track = step.dataset.track || 'Recruitment Pipeline';
+      const stepNum = step.dataset.step || '';
+      const name = step.dataset.name || step.querySelector('.node-name')?.textContent || '';
+      const desc = step.dataset.desc || step.querySelector('.node-detail')?.textContent || '';
+
+      if (inspBadge) {
+        inspBadge.textContent = `${track.toUpperCase()} • STEP ${stepNum.toUpperCase()}`;
+      }
+      if (inspTitle) {
+        inspTitle.textContent = `${name}`;
+      }
+      if (inspDesc) {
+        inspDesc.textContent = desc;
+      }
+    }
+
+    step.addEventListener('click', handleSelect);
+    step.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        handleSelect();
+      }
     });
   });
 }

@@ -5,11 +5,11 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
+  initSiteHeader();
   initCountdown();
   initCopyButtons();
   initCalendarReminders();
   initSocialShareAndCalendar();
-  initStickyTopButton();
   initScrollEffects();
   initRevealObserver();
   initSectionSpy();
@@ -18,11 +18,51 @@ document.addEventListener('DOMContentLoaded', () => {
   initSpotlightCards();
   initMagneticButtons();
   initFlowTrackTabs();
-  initCyberScramble();
 });
 
 /* ==========================================================================
-   1. COUNTDOWN TIMER (THERMALLY TUNED WITH PAGE VISIBILITY API)
+   1. UNIFIED SITE HEADER & MOBILE DRAWER NAVIGATION
+   ========================================================================== */
+function initSiteHeader() {
+  const toggleBtn = document.getElementById('mobile-menu-toggle');
+  const drawer = document.getElementById('mobile-nav-drawer');
+  const mobileLinks = document.querySelectorAll('.mobile-nav-link, .mobile-apply-btn');
+
+  if (toggleBtn && drawer) {
+    toggleBtn.addEventListener('click', () => {
+      const isOpen = drawer.classList.contains('open');
+      if (isOpen) {
+        drawer.classList.remove('open');
+        drawer.setAttribute('aria-hidden', 'true');
+        toggleBtn.setAttribute('aria-expanded', 'false');
+      } else {
+        drawer.classList.add('open');
+        drawer.setAttribute('aria-hidden', 'false');
+        toggleBtn.setAttribute('aria-expanded', 'true');
+      }
+    });
+
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        drawer.classList.remove('open');
+        drawer.setAttribute('aria-hidden', 'true');
+        toggleBtn.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    // Close mobile drawer on escape
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && drawer.classList.contains('open')) {
+        drawer.classList.remove('open');
+        drawer.setAttribute('aria-hidden', 'true');
+        toggleBtn.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
+}
+
+/* ==========================================================================
+   2. LIVE COUNTDOWN TIMER (HERO SECTION, THERMALLY CALIBRATED)
    ========================================================================== */
 function initCountdown() {
   const timerEl = document.getElementById('countdown-timer');
@@ -47,8 +87,8 @@ function initCountdown() {
       if (hoursEl) hoursEl.textContent = '00';
       if (minsEl) minsEl.textContent = '00';
       if (secsEl) secsEl.textContent = '00';
-      const title = document.querySelector('.countdown-title .cd-label-main');
-      if (title) title.textContent = 'Registration Is Now OPEN!';
+      const statusLbl = document.querySelector('.timer-headline-label');
+      if (statusLbl) statusLbl.textContent = 'Registration Is Now OPEN!';
       if (intervalId) clearInterval(intervalId);
       return;
     }
@@ -80,7 +120,7 @@ function initCountdown() {
 
   startTimer();
 
-  // Thermal/Battery Guard: Stop interval when page is in background or device is locked
+  // Battery / Thermal guard: pause ticker if tab is hidden
   document.addEventListener('visibilitychange', () => {
     if (document.hidden) {
       stopTimer();
@@ -91,18 +131,16 @@ function initCountdown() {
 }
 
 /* ==========================================================================
-   2. COPY LINK TO CLIPBOARD (HERO + STICKY BAR)
+   3. COPY LINK TO CLIPBOARD
    ========================================================================== */
 function initCopyButtons() {
-  const buttons = [
-    { btn: document.getElementById('btn-copy-link'), text: document.getElementById('copy-btn-text') },
-    { btn: document.getElementById('sticky-copy-btn'), text: document.querySelector('#sticky-copy-btn .btn-text') }
-  ];
-
+  const btn = document.getElementById('btn-copy-link');
+  const textEl = document.getElementById('copy-btn-text');
   const officialUrl = 'https://info.aimlcluboct.in';
 
-  async function handleCopy(btnObj) {
-    if (!btnObj.btn) return;
+  if (!btn) return;
+
+  btn.addEventListener('click', async () => {
     try {
       if (navigator.clipboard && navigator.clipboard.writeText) {
         await navigator.clipboard.writeText(officialUrl);
@@ -115,31 +153,23 @@ function initCopyButtons() {
         document.body.removeChild(temp);
       }
 
-      buttons.forEach(b => {
-        if (b.btn && b.text) {
-          const originalText = b.text.textContent;
-          b.text.textContent = 'Copied!';
-          b.btn.classList.add('copied');
-          setTimeout(() => {
-            b.text.textContent = originalText;
-            b.btn.classList.remove('copied');
-          }, 2000);
-        }
-      });
+      if (textEl) {
+        const originalText = textEl.textContent;
+        textEl.textContent = 'Copied!';
+        btn.classList.add('copied');
+        setTimeout(() => {
+          textEl.textContent = originalText;
+          btn.classList.remove('copied');
+        }, 2000);
+      }
     } catch (err) {
       console.warn('Copy failed:', err);
-    }
-  }
-
-  buttons.forEach(b => {
-    if (b.btn) {
-      b.btn.addEventListener('click', () => handleCopy(b));
     }
   });
 }
 
 /* ==========================================================================
-   3. CALENDAR REMINDER (.ICS DOWNLOAD - RFC 5545 COMPLIANT)
+   4. CALENDAR REMINDER (.ICS DOWNLOAD - RFC 5545 COMPLIANT)
    ========================================================================== */
 function generateIcsBlob() {
   const icsData = [
@@ -154,7 +184,7 @@ function generateIcsBlob() {
     'DTSTART:20261020T183000Z', // 21 Oct 2026 00:00 IST
     'DTEND:20261025T182900Z',   // 25 Oct 2026 23:59 IST
     'SUMMARY:AIML Club OCT Recruitment 2026-27 Opens',
-    'DESCRIPTION:Registration opens for AI & Machine Learning Club Recruitment at Oriental College of Technology, Bhopal. Visit https://info.aimlcluboct.in to apply. Unique QR in email confirmation.',
+    'DESCRIPTION:Registration opens for AI & Machine Learning Club Recruitment at Oriental College of Technology, Bhopal. Visit https://info.aimlcluboct.in to apply. Unique QR delivered in confirmation email.',
     'LOCATION:Oriental College of Technology, Bhopal',
     'URL:https://info.aimlcluboct.in',
     'STATUS:CONFIRMED',
@@ -184,7 +214,7 @@ function downloadIcsFile() {
 function initCalendarReminders() {
   const reminderBtns = [
     document.getElementById('btn-set-reminder'),
-    document.getElementById('sticky-reminder-btn'),
+    document.getElementById('btn-hero-calendar'),
     document.getElementById('btn-download-ics')
   ];
 
@@ -194,86 +224,86 @@ function initCalendarReminders() {
 }
 
 /* ==========================================================================
-   4. SOCIAL HANDLES SHARE & ALARM SUITE
+   5. SOCIAL HANDLES SHARE & ALARM SUITE
    ========================================================================== */
 function initSocialShareAndCalendar() {
   const officialUrl = 'https://info.aimlcluboct.in';
 
   const fullBroadcastText = [
-    '📢 *AI & MACHINE LEARNING CLUB RECRUITMENT 2026–27* 🤖🚀',
+    '*AI & MACHINE LEARNING CLUB RECRUITMENT 2026–27*',
     '*Oriental College of Technology, Bhopal*',
     '',
-    'Hello Everyone! 👋',
+    'Dear Students & Aspirants,',
     '',
-    'Get ready to be a part of the AI & Machine Learning Club! Showcase your skills, take on responsibilities, and grow as a leader. 💡',
+    'Official recruitment for the AI & Machine Learning Club (Session 2026–27) opens on 21 October 2026.',
     '',
-    '🎓 *Open to students from all branches!*',
+    '• Eligibility: 1st, 2nd, and 3rd year engineering students across ALL branches.',
+    '• Domains: AI/ML Research, Full-Stack Development, UI/UX Design, Event Management, and PR/Outreach.',
+    '• Dual Selection Architecture: Candidate Flow & Core Team Flow.',
+    '• Secure Screening: Unique QR code issued via official confirmation email + PDF record.',
     '',
-    '🌐 *Official Portal & Registration Link:*',
-    '🔗 https://info.aimlcluboct.in',
+    'Official Portal & Details:',
+    'https://info.aimlcluboct.in',
     '',
-    '📅 *Registration Opens:* 21st October 2026',
-    '⏳ *Last Date:* 25th October 2026, 11:59 PM IST',
+    'Important Dates:',
+    '• Registration Opens: 21 October 2026 (00:00 IST)',
+    '• Registration Closes: 25 October 2026 (11:59 PM IST)',
     '',
-    '🔐 *Candidate Security:* Unique QR in confirmation email + verified PDF record.',
-    '🎯 *Mission:* Build the next generation of AIML Club OCT — genuine opportunities for juniors & sub-juniors.',
-    '',
-    '⏰ Limited roles available! Set your alarm and register early.',
-    '✨ Stay tuned and don\'t miss this opportunity to lead, innovate, and grow! 🚀'
+    'Visit the portal to inspect selection stages and set your calendar reminder.'
   ].join('\n');
 
-  // 1. WhatsApp Direct Share Link
+  // 1. WhatsApp Direct
   const waBtn = document.getElementById('btn-share-wa');
   if (waBtn) {
     waBtn.href = `https://api.whatsapp.com/send?text=${encodeURIComponent(fullBroadcastText)}`;
   }
 
-  // 2. LinkedIn Post Share Link
+  // 2. LinkedIn Post
   const liBtn = document.getElementById('btn-share-li');
   if (liBtn) {
     liBtn.href = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(officialUrl)}`;
   }
 
-  // 3. Twitter / X Share Link
+  // 3. Twitter / X
   const xBtn = document.getElementById('btn-share-x');
   if (xBtn) {
     const xText = 'AI & Machine Learning Club Recruitment 2026–27 at Oriental College of Technology, Bhopal is opening soon! Check details & recruitment flows:';
     xBtn.href = `https://twitter.com/intent/tweet?text=${encodeURIComponent(xText)}&url=${encodeURIComponent(officialUrl)}&hashtags=AIMLClubOCT,Recruitment2026`;
   }
 
-  // 4. Telegram Share Link
+  // 4. Telegram
   const tgBtn = document.getElementById('btn-share-tg');
   if (tgBtn) {
     tgBtn.href = `https://t.me/share/url?url=${encodeURIComponent(officialUrl)}&text=${encodeURIComponent('AIML Club OCT Recruitment 2026–27 Official Announcement')}`;
   }
 
-  // 5. Google Calendar 1-Click Link
+  // 5. Google Calendar 1-Click
   const gcalBtn = document.getElementById('btn-gcal');
   if (gcalBtn) {
     const gTitle = encodeURIComponent('AIML Club OCT Recruitment 2026–27 Opens');
     const gDetails = encodeURIComponent('Official registration opens for AI & Machine Learning Club at Oriental College of Technology, Bhopal. Visit https://info.aimlcluboct.in to apply.');
     const gLoc = encodeURIComponent('Oriental College of Technology, Bhopal');
-    const gDates = '20261020T183000Z/20261025T182900Z'; // 21 Oct 00:00 to 25 Oct 23:59 IST in UTC
+    const gDates = '20261020T183000Z/20261025T182900Z';
     gcalBtn.href = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${gTitle}&dates=${gDates}&details=${gDetails}&location=${gLoc}`;
   }
 
-  // 6. Native Device Share (Triggers iOS/Android native share sheet)
+  // 6. Native Device Share
   const deviceShareBtn = document.getElementById('btn-device-share');
-  const stickyShareBtn = document.getElementById('sticky-share-btn');
+  const headerShareBtn = document.getElementById('header-share-btn');
+  const heroShareBtn = document.getElementById('btn-hero-share');
 
   async function triggerNativeShare() {
     if (navigator.share) {
       try {
         await navigator.share({
           title: 'AIML Club OCT Recruitment 2026–27',
-          text: 'AI & Machine Learning Club Recruitment 2026–27 at Oriental College of Technology, Bhopal! Open to students from all branches.',
+          text: 'AI & Machine Learning Club Recruitment 2026–27 at Oriental College of Technology, Bhopal. Open to students from all branches.',
           url: officialUrl
         });
       } catch (err) {
-        // User cancelled or aborted
+        // Dismissed by user
       }
     } else {
-      // Fallback: smooth scroll to social share suite
       const shareSec = document.getElementById('sec-share');
       if (shareSec) {
         shareSec.scrollIntoView({ behavior: 'smooth' });
@@ -282,7 +312,8 @@ function initSocialShareAndCalendar() {
   }
 
   if (deviceShareBtn) deviceShareBtn.addEventListener('click', triggerNativeShare);
-  if (stickyShareBtn) stickyShareBtn.addEventListener('click', triggerNativeShare);
+  if (headerShareBtn) headerShareBtn.addEventListener('click', triggerNativeShare);
+  if (heroShareBtn) heroShareBtn.addEventListener('click', triggerNativeShare);
 
   // 7. Copy Formatted Broadcast Notice
   const copyBroadcastBtn = document.getElementById('btn-copy-broadcast-text');
@@ -321,7 +352,6 @@ function initSocialShareAndCalendar() {
   const alarmHelperLbl = document.getElementById('alarm-helper-label');
   if (alarmHelperBtn) {
     alarmHelperBtn.addEventListener('click', () => {
-      // Download .ics which automatically includes RFC VALARM (15 min prior alarm)
       downloadIcsFile();
 
       if (alarmHelperLbl) {
@@ -341,25 +371,10 @@ function initSocialShareAndCalendar() {
 }
 
 /* ==========================================================================
-   5. STICKY TOP BUTTON (ONE-TAP SMOOTH SCROLL BACK TO TOP)
-   ========================================================================== */
-function initStickyTopButton() {
-  const topBtn = document.getElementById('sticky-top-btn');
-  if (!topBtn) return;
-
-  topBtn.addEventListener('click', (e) => {
-    e.preventDefault();
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
-}
-
-/* ==========================================================================
-   6. HARDWARE-ACCELERATED SCROLL EFFECTS (THROTTLED WITH RAF & PASSIVE)
+   6. HARDWARE-ACCELERATED SCROLL EFFECTS
    ========================================================================== */
 function initScrollEffects() {
   const progressBar = document.getElementById('scroll-progress');
-  const stickyBar = document.getElementById('sticky-bar');
-
   let ticking = false;
 
   function onScroll() {
@@ -368,19 +383,9 @@ function initScrollEffects() {
         const scrollTop = window.scrollY || document.documentElement.scrollTop;
         const docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
 
-        // 1. Update Scroll Progress Bar (0% to 100%)
         if (progressBar && docHeight > 0) {
           const progress = Math.min(100, Math.max(0, (scrollTop / docHeight) * 100));
           progressBar.style.width = `${progress}%`;
-        }
-
-        // 2. Toggle Floating Sticky Action Bar visibility
-        if (stickyBar) {
-          if (scrollTop > 220) {
-            stickyBar.classList.add('visible');
-          } else {
-            stickyBar.classList.remove('visible');
-          }
         }
 
         ticking = false;
@@ -390,11 +395,11 @@ function initScrollEffects() {
   }
 
   window.addEventListener('scroll', onScroll, { passive: true });
-  onScroll(); // Initial run
+  onScroll();
 }
 
 /* ==========================================================================
-   7. REVEAL-ON-SCROLL OBSERVER (AUTO-UNOBSERVE FOR 0% CPU RESIDUAL LOAD)
+   7. REVEAL-ON-SCROLL OBSERVER
    ========================================================================== */
 function initRevealObserver() {
   const revealElements = document.querySelectorAll('.reveal-item');
@@ -409,7 +414,6 @@ function initRevealObserver() {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('is-revealed');
-        // Once revealed, unobserve to free browser memory & stop CPU calculation
         observer.unobserve(entry.target);
       }
     });
@@ -422,98 +426,139 @@ function initRevealObserver() {
 }
 
 /* ==========================================================================
-   8. STICKY SECTION SPY (UPDATES NAV PILLS & MOBILE STATUS VIA OBSERVER)
+   8. SECTION SCROLLSPY (DESKTOP & MOBILE ACTIVE NAV LINK SYNCHRONIZATION)
    ========================================================================== */
 function initSectionSpy() {
-  const sectionIds = ['sec-overview', 'sec-flows', 'sec-slides', 'sec-instructions', 'sec-share', 'sec-portal'];
+  const sectionIds = ['sec-overview', 'sec-dates', 'sec-flows', 'sec-slides', 'sec-instructions', 'sec-share', 'sec-portal'];
   const sections = sectionIds.map(id => document.getElementById(id)).filter(Boolean);
-  const navItems = document.querySelectorAll('.sticky-nav-item');
-  const mobileLabel = document.getElementById('mobile-section-name');
+  const desktopLinks = document.querySelectorAll('.header-nav-link');
+  const mobileLinks = document.querySelectorAll('.mobile-nav-link');
 
   if (!sections.length || !('IntersectionObserver' in window)) return;
-
-  const sectionNames = {
-    'sec-overview': 'Overview',
-    'sec-flows': 'Selection Flows',
-    'sec-slides': 'Storyboard',
-    'sec-instructions': 'Notice Rules',
-    'sec-share': 'Share & Alarm',
-    'sec-portal': 'Portal Link'
-  };
 
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         const id = entry.target.id;
 
-        // Update Desktop sticky navigation active pill
-        navItems.forEach(item => {
-          if (item.dataset.target === id) {
-            item.classList.add('active');
+        desktopLinks.forEach(link => {
+          if (link.dataset.target === id) {
+            link.classList.add('active');
           } else {
-            item.classList.remove('active');
+            link.classList.remove('active');
           }
         });
 
-        // Update Mobile status breadcrumb
-        if (mobileLabel && sectionNames[id]) {
-          mobileLabel.textContent = sectionNames[id];
-        }
+        mobileLinks.forEach(link => {
+          if (link.dataset.target === id) {
+            link.classList.add('active');
+          } else {
+            link.classList.remove('active');
+          }
+        });
       }
     });
   }, {
-    threshold: 0.15,
-    rootMargin: '-20% 0px -50% 0px'
+    threshold: 0.2,
+    rootMargin: '-15% 0px -40% 0px'
   });
 
   sections.forEach(sec => observer.observe(sec));
 }
 
 /* ==========================================================================
-   9. CAMPAIGN SLIDER & LIGHTBOX MODAL
+   9. STORYBOARD SLIDER & HIGH-FIDELITY INTERACTIVE LIGHTBOX MODAL
    ========================================================================== */
 function initCampaignSlider() {
   const slides = document.querySelectorAll('.slide-item');
   const modal = document.getElementById('lightbox-modal');
   const modalImg = document.getElementById('lightbox-img');
+  const modalTitle = document.getElementById('lightbox-title');
+  const modalCounter = document.getElementById('lightbox-counter');
   const modalCaption = document.getElementById('lightbox-caption');
+  const downloadBtn = document.getElementById('lightbox-download-btn');
   const closeBtn = document.getElementById('lightbox-close');
-  const backdrop = document.querySelector('.lightbox-backdrop');
+  const backdrop = document.getElementById('lightbox-backdrop');
 
+  const btnPrev = document.getElementById('lightbox-btn-prev');
+  const btnNext = document.getElementById('lightbox-btn-next');
+  const dotsContainer = document.getElementById('lightbox-dots');
+
+  const slider = document.getElementById('campaign-slider');
   const prevBtn = document.getElementById('slide-prev');
   const nextBtn = document.getElementById('slide-next');
-  const slider = document.getElementById('campaign-slider');
   const indicator = document.getElementById('slide-indicator');
+  const slideDots = document.querySelectorAll('.slide-dot');
 
   let activeIndex = 0;
   const total = slides.length;
 
-  slides.forEach((slide, idx) => {
-    slide.addEventListener('click', () => openLightbox(idx));
-  });
+  const slideData = [
+    {
+      src: 'assets/campaign/01-HOOK.png',
+      title: 'The System Behind It',
+      caption: 'Recruitment shouldn’t be "Fill a form. Wait. Hope." We engineered a transparent, merit-driven evaluation framework from the ground up.'
+    },
+    {
+      src: 'assets/campaign/02-PROBLEM-SOLUTION.png',
+      title: 'Fair & Transparent Flow',
+      caption: 'A dual-track architecture connecting aspiring student candidates with an experienced evaluation council through verified milestones.'
+    },
+    {
+      src: 'assets/campaign/03-CANDIDATE-FLOW.png',
+      title: 'Multi-Dimension Form',
+      caption: 'Comprehensive profile capture assessing technical foundations, creative portfolios, and collaborative mindset with zero application fee.'
+    },
+    {
+      src: 'assets/campaign/04-APPLICATION-RECORD.png',
+      title: 'Application Record PDF',
+      caption: 'Automated generation of verified candidate dossiers with anti-tamper timestamps and domain preference categorization.'
+    },
+    {
+      src: 'assets/campaign/05-CONFIRMATION.png',
+      title: 'Email Confirmation + Unique QR',
+      caption: 'Every candidate receives an official email confirmation containing their verified application docket and personalized screening QR code.'
+    },
+    {
+      src: 'assets/campaign/06-CORE-TEAM-REVIEW.png',
+      title: 'Dedicated Core Team Workspace',
+      caption: 'Executive council members evaluate, shortlist, and coordinate domain interactions without scheduling collisions.'
+    },
+    {
+      src: 'assets/campaign/07-SECURE-QR.png',
+      title: 'Secure QR Screening',
+      caption: '1-second candidate lookup at live interactions by scanning the candidate\'s verified QR ticket directly from their email or PDF.'
+    },
+    {
+      src: 'assets/campaign/08-CTA.png',
+      title: 'Ready to Build With Us',
+      caption: 'Welcoming appointed candidates into the AIML Club OCT family for real-world artificial intelligence projects, leadership, and mentorship.'
+    }
+  ];
 
-  const dots = document.querySelectorAll('.slide-dot');
+  // Initialize Lightbox Dots
+  if (dotsContainer) {
+    dotsContainer.innerHTML = '';
+    slideData.forEach((_, idx) => {
+      const dot = document.createElement('button');
+      dot.className = `lightbox-dot ${idx === 0 ? 'active' : ''}`;
+      dot.setAttribute('aria-label', `Go to Slide ${idx + 1}`);
+      dot.addEventListener('click', () => openLightbox(idx));
+      dotsContainer.appendChild(dot);
+    });
+  }
 
   function updateSlideIndicator(idx) {
-    if (indicator) {
-      const titles = [
-        'The System Behind It',
-        'Fair & Transparent Flow',
-        'Multi-Dimension Form',
-        'Application Record PDF',
-        'Email Confirmation + QR',
-        'Core Team Workspace',
-        'Secure QR Screening',
-        'Ready to Build'
-      ];
-      indicator.textContent = `Slide ${idx + 1} of ${total}: ${titles[idx] || ''} • Click to open`;
+    if (indicator && slideData[idx]) {
+      indicator.textContent = `Slide ${idx + 1} of ${total}: ${slideData[idx].title} • Click to open preview`;
     }
-    dots.forEach((dot, i) => {
+    slideDots.forEach((dot, i) => {
       dot.classList.toggle('active', i === idx);
     });
   }
 
-  dots.forEach((dot, i) => {
+  // Storyboard Dots Click
+  slideDots.forEach((dot, i) => {
     dot.addEventListener('click', () => {
       const slide = slides[i];
       if (slide && slider) {
@@ -524,19 +569,49 @@ function initCampaignSlider() {
     });
   });
 
+  // Storyboard Item Click opens Lightbox
+  slides.forEach((slide, idx) => {
+    slide.addEventListener('click', () => openLightbox(idx));
+  });
+
   function openLightbox(index) {
     if (!modal || !modalImg) return;
-    const slide = slides[index];
-    if (!slide) return;
+    const item = slideData[index];
+    if (!item) return;
 
     activeIndex = index;
-    const src = slide.dataset.src;
-    const caption = slide.querySelector('.slide-overlay')?.textContent || `Slide ${index + 1} of ${total}`;
 
-    modalImg.src = src;
-    if (modalCaption) modalCaption.textContent = caption;
+    // Smooth image transition
+    modalImg.style.opacity = '0';
+    modalImg.style.transform = 'scale(0.97)';
+    
+    setTimeout(() => {
+      modalImg.src = item.src;
+      modalImg.alt = item.title;
+      modalImg.style.opacity = '1';
+      modalImg.style.transform = 'scale(1)';
+    }, 80);
+
+    if (modalTitle) modalTitle.textContent = item.title;
+    if (modalCounter) modalCounter.textContent = `Slide ${index + 1} of ${total}`;
+    if (modalCaption) modalCaption.textContent = item.caption;
+    if (downloadBtn) downloadBtn.href = item.src;
+
+    // Update dots inside lightbox
+    const lightboxDots = dotsContainer ? dotsContainer.querySelectorAll('.lightbox-dot') : [];
+    lightboxDots.forEach((d, i) => {
+      d.classList.toggle('active', i === index);
+    });
+
     modal.classList.add('active');
     modal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+
+    // Synchronize underlying slider
+    const currentSlide = slides[index];
+    if (currentSlide && slider) {
+      slider.scrollTo({ left: currentSlide.offsetLeft - 16, behavior: 'smooth' });
+    }
     updateSlideIndicator(index);
   }
 
@@ -544,11 +619,25 @@ function initCampaignSlider() {
     if (!modal) return;
     modal.classList.remove('active');
     modal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
   }
 
   if (closeBtn) closeBtn.addEventListener('click', closeLightbox);
   if (backdrop) backdrop.addEventListener('click', closeLightbox);
 
+  if (btnNext) {
+    btnNext.addEventListener('click', () => {
+      openLightbox((activeIndex + 1) % total);
+    });
+  }
+
+  if (btnPrev) {
+    btnPrev.addEventListener('click', () => {
+      openLightbox((activeIndex - 1 + total) % total);
+    });
+  }
+
+  // Keyboard navigation
   document.addEventListener('keydown', (e) => {
     if (!modal || !modal.classList.contains('active')) return;
     if (e.key === 'Escape') closeLightbox();
@@ -556,6 +645,34 @@ function initCampaignSlider() {
     if (e.key === 'ArrowLeft') openLightbox((activeIndex - 1 + total) % total);
   });
 
+  // Touch Swipe on Lightbox
+  let touchStartX = 0;
+  let touchEndX = 0;
+
+  if (modal) {
+    modal.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    modal.addEventListener('touchend', (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      handleSwipe();
+    }, { passive: true });
+  }
+
+  function handleSwipe() {
+    const threshold = 45;
+    if (touchEndX < touchStartX - threshold) {
+      // Swiped Left -> Next
+      openLightbox((activeIndex + 1) % total);
+    }
+    if (touchEndX > touchStartX + threshold) {
+      // Swiped Right -> Prev
+      openLightbox((activeIndex - 1 + total) % total);
+    }
+  }
+
+  // Storyboard Slider Prev/Next Controls
   if (slider && nextBtn && prevBtn) {
     nextBtn.addEventListener('click', () => {
       slider.scrollBy({ left: 240, behavior: 'smooth' });
@@ -611,7 +728,7 @@ function initInteractiveSteps() {
 }
 
 /* ==========================================================================
-   11. UI-LAYOUTS SPOTLIGHT CARDS (CURSOR PROXIMITY ILLUMINATION)
+   11. SPOTLIGHT CARDS (CURSOR PROXIMITY ILLUMINATION)
    Zero CPU/Battery overhead on mobile/touch screens
    ========================================================================== */
 function initSpotlightCards() {
@@ -651,7 +768,7 @@ function initSpotlightCards() {
 }
 
 /* ==========================================================================
-   12. UI-LAYOUTS MAGNETIC BUTTONS (TACTILE MICRO-ATTRACTION)
+   12. MAGNETIC BUTTONS (TACTILE MICRO-ATTRACTION)
    Subtly pulls buttons toward cursor with spring physics on desktop
    ========================================================================== */
 function initMagneticButtons() {
@@ -689,8 +806,7 @@ function initMagneticButtons() {
 }
 
 /* ==========================================================================
-   13. UI-LAYOUTS ANIMATED TRACK SWITCHER TABS (SPRING SLIDING PILL)
-   Smooth track filtering between All Tracks, Candidate Flow, and Core Team Flow
+   13. ANIMATED TRACK SWITCHER TABS (SPRING SLIDING PILL)
    ========================================================================== */
 function initFlowTrackTabs() {
   const tabsWrapper = document.querySelector('.flow-track-tabs-wrapper');
@@ -710,7 +826,6 @@ function initFlowTrackTabs() {
     slider.style.transform = `translate3d(${leftOffset}px, 0, 0)`;
   }
 
-  // Initialize position for the active tab
   const initialActive = tabsWrapper.querySelector('.flow-tab-btn.active') || tabBtns[0];
   setTimeout(() => updateSliderPosition(initialActive), 80);
 
@@ -742,65 +857,4 @@ function initFlowTrackTabs() {
     const active = tabsWrapper.querySelector('.flow-tab-btn.active');
     if (active) updateSliderPosition(active);
   }, { passive: true });
-}
-
-/* ==========================================================================
-   14. UI-LAYOUTS CYBER SCRAMBLE DECODER EFFECT
-   High-tech text decryption on reveal and hover
-   ========================================================================== */
-function initCyberScramble() {
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-
-  const scrambleElements = document.querySelectorAll('.scramble-text');
-  const chars = '01XY_/#&%✦!@$*><';
-
-  function scramble(el) {
-    const finalText = el.dataset.text || el.textContent;
-    const length = finalText.length;
-    let iteration = 0;
-    const maxIterations = 14;
-
-    if (el._scrambleInterval) clearInterval(el._scrambleInterval);
-
-    el._scrambleInterval = setInterval(() => {
-      el.textContent = finalText
-        .split('')
-        .map((char, index) => {
-          if (char === ' ') return ' ';
-          if (index < (iteration / maxIterations) * length) {
-            return finalText[index];
-          }
-          return chars[Math.floor(Math.random() * chars.length)];
-        })
-        .join('');
-
-      iteration++;
-      if (iteration > maxIterations) {
-        clearInterval(el._scrambleInterval);
-        el.textContent = finalText;
-        el._scrambleInterval = null;
-      }
-    }, 32);
-  }
-
-  // Trigger on initial viewport reveal
-  if ('IntersectionObserver' in window) {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          scramble(entry.target);
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.2 });
-
-    scrambleElements.forEach(el => observer.observe(el));
-  }
-
-  // Also trigger on hover for fine pointers
-  if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
-    scrambleElements.forEach(el => {
-      el.addEventListener('mouseenter', () => scramble(el), { passive: true });
-    });
-  }
 }

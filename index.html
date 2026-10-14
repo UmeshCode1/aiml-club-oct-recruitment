@@ -7,8 +7,8 @@
   
   <!-- SEO & Social Meta -->
   <meta name="title" content="Official Announcement: AI & ML Club Recruitment 2026–27 | Oriental College of Technology, Bhopal">
-  <meta name="description" content="AI & Machine Learning Club OCT Recruitment 2026–27. Explore the Candidate Flow and Core Team Flow. Open to all engineering branches. Registration opens 21 Oct 2026.">
-  <meta name="keywords" content="AIML Club OCT, Oriental College of Technology Bhopal, Recruitment Flow 2026-27, Candidate Flow, Core Team Flow">
+  <meta name="description" content="Official recruitment portal for AI & Machine Learning Club, Oriental College of Technology, Bhopal. Explore Candidate Flow, Core Team Flow, and secure QR screening. Registration opens 21 Oct 2026.">
+  <meta name="keywords" content="AIML Club OCT, Oriental College of Technology Bhopal, Recruitment Flow 2026-27, Candidate Flow, Core Team Flow, AI ML Club">
   <meta name="author" content="AIML Club, Oriental College of Technology">
   <meta name="theme-color" content="#070a0f">
 
@@ -33,22 +33,78 @@
 </head>
 <body>
 
-  <!-- Tech Grid Overlay -->
+  <!-- Scroll Progress Indicator Bar -->
+  <div class="scroll-progress-bar" id="scroll-progress" aria-hidden="true"></div>
+
+  <!-- Ambient Glowing Tech Orbs -->
+  <div class="ambient-glow glow-top" aria-hidden="true"></div>
+  <div class="ambient-glow glow-bottom" aria-hidden="true"></div>
   <div class="bg-grid-overlay" aria-hidden="true"></div>
+
+  <!-- Floating Sticky Bar (Device-Aware, Thermally Optimized) -->
+  <aside class="sticky-action-bar" id="sticky-bar" aria-label="Quick Actions and Section Navigation">
+    <div class="sticky-bar-inner">
+      <div class="sticky-left">
+        <a href="#top-header" class="sticky-brand" aria-label="Back to Top">
+          <img 
+            src="assets/logo.png" 
+            alt="AI & Machine Learning Club, Oriental College of Technology" 
+            class="official-logo sticky-mini-logo" 
+            width="26" 
+            height="26"
+            loading="lazy"
+          />
+          <span class="sticky-title">AIML CLUB OCT</span>
+        </a>
+        <span class="sticky-badge"><span class="pulse-dot"></span> OPENS 21 OCT</span>
+      </div>
+
+      <!-- Desktop & Tablet Sticky Section Navigation Track -->
+      <nav class="sticky-nav" id="sticky-nav" aria-label="Page Sections">
+        <a href="#sec-overview" class="sticky-nav-item active" data-target="sec-overview">Overview</a>
+        <a href="#sec-flows" class="sticky-nav-item" data-target="sec-flows">Selection Flows</a>
+        <a href="#sec-slides" class="sticky-nav-item" data-target="sec-slides">Storyboard</a>
+        <a href="#sec-instructions" class="sticky-nav-item" data-target="sec-instructions">Notice</a>
+        <a href="#sec-portal" class="sticky-nav-item" data-target="sec-portal">Link</a>
+      </nav>
+
+      <!-- Active Section Status Indicator (Mobile) -->
+      <div class="sticky-mobile-status" id="mobile-section-indicator">
+        <span class="mobile-status-dot"></span>
+        <span class="mobile-status-text" id="mobile-section-name">Overview</span>
+      </div>
+
+      <div class="sticky-right">
+        <button class="btn btn-sm btn-copy" id="sticky-copy-btn" title="Copy registration link to clipboard">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+          <span class="btn-text">Copy</span>
+        </button>
+        <button class="btn btn-sm btn-reminder" id="sticky-reminder-btn" title="Download Calendar invite (.ics)">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/></svg>
+          <span class="btn-text">Remind</span>
+        </button>
+        <button class="btn btn-sm btn-icon-only btn-scroll-top" id="sticky-top-btn" title="Scroll back to top" aria-label="Scroll back to top">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 15l-6-6-6 6"/></svg>
+        </button>
+      </div>
+    </div>
+  </aside>
 
   <div class="announcement-wrapper">
     
     <!-- Top Header Bar with Preserved Official Logo -->
-    <header class="announcement-header">
+    <header class="announcement-header reveal-item" id="top-header">
       <div class="header-logo-group">
-        <img 
-          src="assets/logo.png" 
-          alt="AI & Machine Learning Club, Oriental College of Technology" 
-          class="official-logo site-logo" 
-          width="56" 
-          height="56"
-          loading="eager"
-        />
+        <div class="logo-box">
+          <img 
+            src="assets/logo.png" 
+            alt="AI & Machine Learning Club, Oriental College of Technology" 
+            class="official-logo site-logo" 
+            width="56" 
+            height="56"
+            loading="eager"
+          />
+        </div>
         <div class="header-titles">
           <span class="college-sub">ORIENTAL COLLEGE OF TECHNOLOGY, BHOPAL</span>
           <h1 class="club-title">AI &amp; MACHINE LEARNING CLUB</h1>
@@ -61,12 +117,13 @@
       </div>
     </header>
 
-    <!-- Campus Visual Strip -->
-    <div class="campus-preview-strip">
+    <!-- Campus Visual Strip with Parallax-like Depth -->
+    <div class="campus-preview-strip reveal-item">
       <img 
         src="assets/campus.png" 
         alt="Oriental College of Technology, Bhopal Campus Building" 
         class="campus-photo"
+        id="campus-img"
         loading="eager"
       />
       <div class="campus-strip-overlay">
@@ -75,10 +132,10 @@
     </div>
 
     <!-- Main Official Announcement Card -->
-    <main class="notice-card">
+    <main class="notice-card reveal-item">
 
       <!-- Badge & Title -->
-      <div class="notice-top">
+      <div class="notice-top" id="sec-overview">
         <div class="announcement-pill">
           <span class="pill-icon">📢</span>
           <span>OFFICIAL ANNOUNCEMENT</span>
@@ -103,8 +160,8 @@
           We are pleased to announce that the <strong>AI &amp; Machine Learning Club Recruitment Process for 2026–27</strong> will begin soon! Get ready to be a part of the AI &amp; Machine Learning Club—showcase your skills, demonstrate leadership, take on new responsibilities, and become a part of the club. 💡
         </p>
 
-        <!-- Eligibility Banner -->
-        <div class="eligibility-banner">
+        <!-- Eligibility Banner with Shimmer Border -->
+        <div class="eligibility-banner reveal-item">
           <div class="banner-icon">🎓</div>
           <div class="banner-text">
             <strong>Open to students from all branches!</strong>
@@ -112,10 +169,10 @@
           </div>
         </div>
 
-        <!-- Key Dates Grid -->
+        <!-- Key Dates Grid with Hover Lift -->
         <div class="dates-grid">
           
-          <div class="date-card opening-card">
+          <div class="date-card opening-card reveal-item">
             <div class="date-header">
               <span class="date-icon">📅</span>
               <span class="date-badge open-badge">REGISTRATION OPENS</span>
@@ -124,7 +181,7 @@
             <div class="date-sub">Online application portal goes live</div>
           </div>
 
-          <div class="date-card closing-card">
+          <div class="date-card closing-card reveal-item">
             <div class="date-header">
               <span class="date-icon">⏳</span>
               <span class="date-badge deadline-badge">REGISTRATION CLOSES</span>
@@ -135,8 +192,8 @@
 
         </div>
 
-        <!-- Live Countdown Timer -->
-        <div class="countdown-container">
+        <!-- Live Countdown Timer Card -->
+        <div class="countdown-container reveal-item">
           <div class="countdown-title">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
             <span>Registration Opens In:</span>
@@ -165,7 +222,7 @@
         </div>
 
         <!-- Institutional Mission Banner -->
-        <div class="goal-highlight-card">
+        <div class="goal-highlight-card reveal-item">
           <div class="goal-header">
             <span class="goal-tag">🎯 CENTRAL MISSION</span>
             <h3 class="goal-title">Build the Next Generation of AIML Club OCT</h3>
@@ -176,57 +233,57 @@
         </div>
 
         <!-- System Architecture: Candidate Flow vs Core Team Flow -->
-        <section class="recruitment-flows-section">
-          <div class="flows-header">
+        <section class="recruitment-flows-section" id="sec-flows">
+          <div class="flows-header reveal-item">
             <span class="flows-pill">STRUCTURED SELECTION ARCHITECTURE</span>
             <h3 class="flows-title">How the Recruitment Process Works</h3>
             <p class="flows-desc">A transparent, dual-track workflow connecting student candidates with our executive evaluation panel.</p>
           </div>
 
           <!-- Flow 1: Candidate Flow -->
-          <div class="flow-track candidate-track">
+          <div class="flow-track candidate-track reveal-item">
             <div class="track-badge">
               <span class="track-icon">👤</span>
               <h4>Candidate Flow</h4>
             </div>
-            <div class="track-steps-sequence">
-              <div class="step-node">
+            <div class="track-steps-sequence" role="list">
+              <div class="step-node" role="listitem">
                 <span class="node-num">1</span>
                 <span class="node-name">Application</span>
                 <span class="node-detail">Multi-dimensional profile</span>
               </div>
               <div class="node-arrow">&rarr;</div>
-              <div class="step-node">
+              <div class="step-node" role="listitem">
                 <span class="node-num">2</span>
                 <span class="node-name">Application Record</span>
                 <span class="node-detail">Structured profile data</span>
               </div>
               <div class="node-arrow">&rarr;</div>
-              <div class="step-node">
+              <div class="step-node" role="listitem">
                 <span class="node-num">3</span>
                 <span class="node-name">Confirmation on Email</span>
                 <span class="node-detail">Instant reference &amp; PDF</span>
               </div>
               <div class="node-arrow">&rarr;</div>
-              <div class="step-node">
+              <div class="step-node" role="listitem">
                 <span class="node-num">4</span>
                 <span class="node-name">Review</span>
                 <span class="node-detail">Dossier evaluation</span>
               </div>
               <div class="node-arrow">&rarr;</div>
-              <div class="step-node">
+              <div class="step-node" role="listitem">
                 <span class="node-num">5</span>
                 <span class="node-name">Screening</span>
                 <span class="node-detail">Domain interview</span>
               </div>
               <div class="node-arrow">&rarr;</div>
-              <div class="step-node">
+              <div class="step-node" role="listitem">
                 <span class="node-num">6</span>
                 <span class="node-name">Selection</span>
                 <span class="node-detail">Merit appointment</span>
               </div>
               <div class="node-arrow">&rarr;</div>
-              <div class="step-node highlight-node">
+              <div class="step-node highlight-node" role="listitem">
                 <span class="node-num">7</span>
                 <span class="node-name">Onboarding</span>
                 <span class="node-detail">Council badge conferral</span>
@@ -235,43 +292,43 @@
           </div>
 
           <!-- Flow 2: Core Team Flow -->
-          <div class="flow-track core-track">
+          <div class="flow-track core-track reveal-item">
             <div class="track-badge">
               <span class="track-icon">🧑‍💼</span>
               <h4>Core Team Flow</h4>
             </div>
-            <div class="track-steps-sequence">
-              <div class="step-node">
+            <div class="track-steps-sequence" role="list">
+              <div class="step-node" role="listitem">
                 <span class="node-num">1</span>
                 <span class="node-name">Review</span>
                 <span class="node-detail">Centralized workspace</span>
               </div>
               <div class="node-arrow">&rarr;</div>
-              <div class="step-node">
+              <div class="step-node" role="listitem">
                 <span class="node-num">2</span>
                 <span class="node-name">Shortlist</span>
                 <span class="node-detail">Domain track grouping</span>
               </div>
               <div class="node-arrow">&rarr;</div>
-              <div class="step-node">
+              <div class="step-node" role="listitem">
                 <span class="node-num">3</span>
                 <span class="node-name">Coordinate</span>
                 <span class="node-detail">Interview dispatch</span>
               </div>
               <div class="node-arrow">&rarr;</div>
-              <div class="step-node">
+              <div class="step-node" role="listitem">
                 <span class="node-num">4</span>
                 <span class="node-name">Screen</span>
                 <span class="node-detail">Live technical assessment</span>
               </div>
               <div class="node-arrow">&rarr;</div>
-              <div class="step-node">
+              <div class="step-node" role="listitem">
                 <span class="node-num">5</span>
                 <span class="node-name">Select</span>
                 <span class="node-detail">Panel consensus</span>
               </div>
               <div class="node-arrow">&rarr;</div>
-              <div class="step-node highlight-node">
+              <div class="step-node highlight-node" role="listitem">
                 <span class="node-num">6</span>
                 <span class="node-name">Build</span>
                 <span class="node-detail">Ship real AI products</span>
@@ -280,7 +337,7 @@
           </div>
 
           <!-- Feature Spotlight: Secure QR & Application PDF -->
-          <div class="security-spotlight-card">
+          <div class="security-spotlight-card reveal-item">
             <div class="spotlight-badge">
               <span class="sec-icon">🔐</span>
               <span>SECURE VERIFICATION STANDARD</span>
@@ -298,8 +355,8 @@
           </div>
         </section>
 
-        <!-- Official Campaign Gallery (The 8 Slides) -->
-        <section class="campaign-section">
+        <!-- Official Campaign Storyboard (The 8 Slides) -->
+        <section class="campaign-section reveal-item" id="sec-slides">
           <div class="campaign-header">
             <span class="campaign-pill">OFFICIAL RECRUITMENT STORYBOARD</span>
             <h3 class="campaign-title">Explore the Recruitment System Slides</h3>
@@ -345,7 +402,7 @@
 
           <div class="campaign-nav-row">
             <button id="slide-prev" class="btn btn-outline btn-sm" aria-label="Previous Slide">&larr; Previous</button>
-            <span class="slide-counter-text">Click any slide to view in full resolution</span>
+            <span class="slide-counter-text">Click any slide to view full-resolution preview</span>
             <button id="slide-next" class="btn btn-outline btn-sm" aria-label="Next Slide">Next &rarr;</button>
           </div>
         </section>
@@ -361,7 +418,7 @@
         </div>
 
         <!-- Important Instructions Box -->
-        <div class="instructions-card">
+        <div class="instructions-card reveal-item" id="sec-instructions">
           <h3 class="instructions-title">
             <span>📌</span> Important Instructions:
           </h3>
@@ -385,8 +442,8 @@
           </ul>
         </div>
 
-        <!-- Warning Callout -->
-        <div class="warning-callout">
+        <!-- Warning Callout with Pulse Effect -->
+        <div class="warning-callout reveal-item">
           <div class="warning-icon">⚠️</div>
           <div class="warning-text">
             <strong>Please do not wait until the last moment.</strong> Complete your registration early to avoid missing this opportunity.
@@ -394,7 +451,7 @@
         </div>
 
         <!-- Official Portal & Quick Copy Link -->
-        <div class="link-action-card">
+        <div class="link-action-card reveal-item" id="sec-portal">
           <div class="link-info">
             <span class="link-label">🌐 OFFICIAL INFORMATION &amp; REGISTRATION LINK:</span>
             <a href="https://info.aimlcluboct.in" class="official-url" id="portal-url">https://info.aimlcluboct.in</a>
@@ -412,7 +469,7 @@
         </div>
 
         <!-- Motivational Closing -->
-        <div class="closing-motivational">
+        <div class="closing-motivational reveal-item">
           <p class="stay-tuned">✨ Stay tuned and don't miss this opportunity to lead, innovate, and grow! 🚀</p>
           <div class="punchline">
             🚀 Your opportunity to lead, innovate, collaborate, and grow starts here! 💡🤖
@@ -423,7 +480,7 @@
     </main>
 
     <!-- Institutional Footer with Preserved Official Logo -->
-    <footer class="announcement-footer">
+    <footer class="announcement-footer reveal-item">
       <div class="footer-inner">
         <div class="footer-logo-box">
           <img 

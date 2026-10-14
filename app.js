@@ -372,9 +372,37 @@ function initSocialShareAndCalendar() {
 
 /* ==========================================================================
    6. HARDWARE-ACCELERATED SCROLL EFFECTS
+   - Header scroll elevation & compact glassmorphism state
+   - Top linear reading progress bar
+   - Floating circular progress ring + scroll-to-top button
+   - Parallax spatial depth on ambient glow orbs (desktop fine pointer)
    ========================================================================== */
 function initScrollEffects() {
+  const header = document.getElementById('site-header');
   const progressBar = document.getElementById('scroll-progress');
+  const scrollTopFloat = document.getElementById('scroll-top-float');
+  const progressRingCircle = document.getElementById('progress-ring-circle');
+  const glowTop = document.querySelector('.glow-top');
+  const glowBottom = document.querySelector('.glow-bottom');
+  const isFinePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+
+  // Progress ring circumference: 2 * Math.PI * 18 ≈ 113.1
+  const ringCircumference = 113.1;
+  if (progressRingCircle) {
+    progressRingCircle.style.strokeDasharray = `${ringCircumference}`;
+    progressRingCircle.style.strokeDashoffset = `${ringCircumference}`;
+  }
+
+  // Smooth scroll to top on click
+  if (scrollTopFloat) {
+    scrollTopFloat.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  }
+
   let ticking = false;
 
   function onScroll() {
@@ -382,10 +410,45 @@ function initScrollEffects() {
       window.requestAnimationFrame(() => {
         const scrollTop = window.scrollY || document.documentElement.scrollTop;
         const docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const progressFraction = docHeight > 0 ? Math.min(1, Math.max(0, scrollTop / docHeight)) : 0;
+        const progressPercent = progressFraction * 100;
 
-        if (progressBar && docHeight > 0) {
-          const progress = Math.min(100, Math.max(0, (scrollTop / docHeight) * 100));
-          progressBar.style.width = `${progress}%`;
+        // 1. Header Elevation State
+        if (header) {
+          if (scrollTop > 35) {
+            header.classList.add('scrolled');
+          } else {
+            header.classList.remove('scrolled');
+          }
+        }
+
+        // 2. Top Linear Reading Progress Bar
+        if (progressBar) {
+          progressBar.style.width = `${progressPercent}%`;
+        }
+
+        // 3. Floating Scroll-To-Top Button & Circular Progress Ring
+        if (scrollTopFloat) {
+          if (scrollTop > 320) {
+            scrollTopFloat.classList.add('visible');
+          } else {
+            scrollTopFloat.classList.remove('visible');
+          }
+        }
+
+        if (progressRingCircle) {
+          const offset = ringCircumference - (progressFraction * ringCircumference);
+          progressRingCircle.style.strokeDashoffset = `${offset}`;
+        }
+
+        // 4. Subtle Parallax Depth Shift for Ambient Glows (desktop only)
+        if (isFinePointer) {
+          if (glowTop) {
+            glowTop.style.transform = `translate3d(0, ${scrollTop * 0.12}px, 0)`;
+          }
+          if (glowBottom) {
+            glowBottom.style.transform = `translate3d(0, ${-scrollTop * 0.08}px, 0)`;
+          }
         }
 
         ticking = false;

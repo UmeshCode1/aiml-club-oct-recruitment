@@ -598,7 +598,7 @@
           </div>
           
           <div class="instructions-grid">
-            <div class="instruction-box spotlight-card">
+            <div class="instruction-box reveal-item spotlight-card">
               <div class="inst-icon-circle">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
               </div>
@@ -606,7 +606,7 @@
               <p>Explore available roles and department details exclusively at <a href="https://info.aimlcluboct.in" class="inline-link">https://info.aimlcluboct.in</a>.</p>
             </div>
 
-            <div class="instruction-box spotlight-card">
+            <div class="instruction-box reveal-item spotlight-card">
               <div class="inst-icon-circle">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
               </div>
@@ -614,7 +614,7 @@
               <p>The form goes live on <strong>21 October 2026</strong>. Review all guidelines and details on this portal beforehand.</p>
             </div>
 
-            <div class="instruction-box spotlight-card">
+            <div class="instruction-box reveal-item spotlight-card">
               <div class="inst-icon-circle">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2 2"/><path d="M5 3L2 6"/><path d="M22 6l-3-3"/></svg>
               </div>
@@ -622,7 +622,7 @@
               <p>Positions across technical and non-technical teams are capped. Register as soon as the form opens to secure your evaluation slot.</p>
             </div>
 
-            <div class="instruction-box highlight-instruction-box spotlight-card">
+            <div class="instruction-box highlight-instruction-box reveal-item spotlight-card">
               <div class="inst-icon-circle alert-icon">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
               </div>
@@ -643,7 +643,7 @@
           <div class="share-suite-grid">
             
             <!-- Left Card: Social Handles Sharing -->
-            <div class="suite-card social-share-card spotlight-card">
+            <div class="suite-card social-share-card reveal-item spotlight-card">
               <div class="suite-card-top">
                 <span class="suite-icon">
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
@@ -693,7 +693,7 @@
             </div>
 
             <!-- Right Card: Alarm & Calendar Suite -->
-            <div class="suite-card calendar-alarm-card spotlight-card">
+            <div class="suite-card calendar-alarm-card reveal-item spotlight-card">
               <div class="suite-card-top">
                 <span class="suite-icon">
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2 2"/><path d="M5 3L2 6"/><path d="M22 6l-3-3"/></svg>
@@ -794,6 +794,17 @@
     </footer>
 
   </div>
+
+  <!-- Floating Scroll-to-Top Button with Circular Reading Progress -->
+  <button class="scroll-top-float magnetic-btn" id="scroll-top-float" aria-label="Scroll back to top" title="Back to Top">
+    <svg class="progress-ring" width="44" height="44" viewBox="0 0 44 44">
+      <circle class="progress-ring-bg" cx="22" cy="22" r="18" fill="none" stroke-width="2.5" />
+      <circle class="progress-ring-circle" id="progress-ring-circle" cx="22" cy="22" r="18" fill="none" stroke-width="2.5" />
+    </svg>
+    <svg class="arrow-up-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+      <polyline points="18 15 12 9 6 15" />
+    </svg>
+  </button>
 
   <!-- High-Fidelity Interactive Lightbox Modal -->
   <div id="lightbox-modal" class="lightbox-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Recruitment Storyboard Preview">

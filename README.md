@@ -73,12 +73,11 @@ Visit `http://localhost:3000` in your browser.
 
 ---
 
-## 🚢 Deployment
+## 🚢 Live Deployments
 
-Configured for seamless deployment on:
-- **Vercel** (`vercel.json` included)
-- **GitHub Pages**
-- **Cloudflare Pages**
+- **Official Custom Domain:** [https://info.aimlcluboct.in](https://info.aimlcluboct.in)
+- **Vercel Production:** [https://aiml-club-oct-recruitment.vercel.app](https://aiml-club-oct-recruitment.vercel.app)
+- **GitHub Pages:** [https://umeshcode1.github.io/aiml-club-oct-recruitment/](https://umeshcode1.github.io/aiml-club-oct-recruitment/)
 
 ---
 

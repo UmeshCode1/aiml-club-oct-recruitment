@@ -1,31 +1,28 @@
 /**
- * AIML CLUB OCT - EXECUTIVE COUNCIL RECRUITMENT 2026
- * Official Client Script & Interactivity
- * Institutional Information Portal for Oriental College of Technology, Bhopal
+ * OFFICIAL ANNOUNCEMENT CLIENT SCRIPT
+ * AI & Machine Learning Club, Oriental College of Technology, Bhopal
  */
 
 document.addEventListener('DOMContentLoaded', () => {
   initCountdown();
-  initMobileNav();
-  initDivisionFilter();
-  initCampaignSlider();
-  initFaqAccordion();
+  initCopyButton();
+  initCalendarReminder();
 });
 
 /* ==========================================================================
-   1. COUNTDOWN TIMER
+   1. COUNTDOWN TIMER TO REGISTRATION OPENING (21 OCT 2026)
    ========================================================================== */
 function initCountdown() {
   const timerEl = document.getElementById('countdown-timer');
   if (!timerEl) return;
 
-  const targetDateStr = timerEl.dataset.target || '2026-11-05T23:59:59+05:30';
+  const targetDateStr = timerEl.dataset.target || '2026-10-21T00:00:00+05:30';
   const targetTime = new Date(targetDateStr).getTime();
 
-  const daysEl = document.getElementById('days');
-  const hoursEl = document.getElementById('hours');
-  const minutesEl = document.getElementById('minutes');
-  const secondsEl = document.getElementById('seconds');
+  const daysEl = document.getElementById('cd-days');
+  const hoursEl = document.getElementById('cd-hours');
+  const minsEl = document.getElementById('cd-mins');
+  const secsEl = document.getElementById('cd-secs');
 
   function update() {
     const now = new Date().getTime();
@@ -34,8 +31,10 @@ function initCountdown() {
     if (distance <= 0) {
       if (daysEl) daysEl.textContent = '00';
       if (hoursEl) hoursEl.textContent = '00';
-      if (minutesEl) minutesEl.textContent = '00';
-      if (secondsEl) secondsEl.textContent = '00';
+      if (minsEl) minsEl.textContent = '00';
+      if (secsEl) secsEl.textContent = '00';
+      const title = document.querySelector('.countdown-title span');
+      if (title) title.textContent = 'Registration Is Now OPEN!';
       return;
     }
 
@@ -46,8 +45,8 @@ function initCountdown() {
 
     if (daysEl) daysEl.textContent = String(d).padStart(2, '0');
     if (hoursEl) hoursEl.textContent = String(h).padStart(2, '0');
-    if (minutesEl) minutesEl.textContent = String(m).padStart(2, '0');
-    if (secondsEl) secondsEl.textContent = String(s).padStart(2, '0');
+    if (minsEl) minsEl.textContent = String(m).padStart(2, '0');
+    if (secsEl) secsEl.textContent = String(s).padStart(2, '0');
   }
 
   update();
@@ -55,151 +54,80 @@ function initCountdown() {
 }
 
 /* ==========================================================================
-   2. MOBILE NAVIGATION DRAWER
+   2. COPY LINK TO CLIPBOARD
    ========================================================================== */
-function initMobileNav() {
-  const toggleBtn = document.getElementById('mobile-toggle');
-  const mobileNav = document.getElementById('mobile-nav');
+function initCopyButton() {
+  const copyBtn = document.getElementById('btn-copy-link');
+  const copyText = document.getElementById('copy-btn-text');
 
-  if (!toggleBtn || !mobileNav) return;
+  if (!copyBtn) return;
 
-  toggleBtn.addEventListener('click', () => {
-    const isOpen = mobileNav.classList.toggle('open');
-    toggleBtn.setAttribute('aria-expanded', String(isOpen));
-    mobileNav.setAttribute('aria-hidden', String(!isOpen));
-  });
-
-  // Close when clicking any link
-  const links = mobileNav.querySelectorAll('a');
-  links.forEach(link => {
-    link.addEventListener('click', () => {
-      mobileNav.classList.remove('open');
-      toggleBtn.setAttribute('aria-expanded', 'false');
-      mobileNav.setAttribute('aria-hidden', 'true');
-    });
-  });
-}
-
-/* ==========================================================================
-   3. DIVISION TABS FILTER
-   ========================================================================== */
-function initDivisionFilter() {
-  const tabs = document.querySelectorAll('.dept-tab');
-  const cards = document.querySelectorAll('.role-card');
-
-  tabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-      tabs.forEach(t => {
-        t.classList.remove('active');
-        t.setAttribute('aria-selected', 'false');
-      });
-      tab.classList.add('active');
-      tab.setAttribute('aria-selected', 'true');
-
-      const filter = tab.dataset.filter;
-
-      cards.forEach(card => {
-        if (filter === 'all' || card.dataset.category === filter) {
-          card.style.display = 'flex';
-        } else {
-          card.style.display = 'none';
-        }
-      });
-    });
-  });
-}
-
-/* ==========================================================================
-   4. CAMPAIGN SLIDER & LIGHTBOX MODAL
-   ========================================================================== */
-function initCampaignSlider() {
-  const slides = document.querySelectorAll('.slide-item');
-  const modal = document.getElementById('lightbox-modal');
-  const modalImg = document.getElementById('lightbox-img');
-  const modalCaption = document.getElementById('lightbox-caption');
-  const closeBtn = document.getElementById('lightbox-close');
-  const backdrop = document.querySelector('.lightbox-backdrop');
-
-  const prevBtn = document.getElementById('slide-prev');
-  const nextBtn = document.getElementById('slide-next');
-  const slider = document.getElementById('campaign-slider');
-
-  let activeIndex = 0;
-  const total = slides.length;
-
-  slides.forEach((slide, idx) => {
-    slide.addEventListener('click', () => {
-      openLightbox(idx);
-    });
-  });
-
-  function openLightbox(index) {
-    if (!modal || !modalImg) return;
-    const slide = slides[index];
-    if (!slide) return;
-
-    activeIndex = index;
-    const src = slide.dataset.src;
-    const caption = slide.querySelector('.slide-overlay')?.textContent || `Slide ${index + 1} of ${total}`;
-
-    modalImg.src = src;
-    if (modalCaption) modalCaption.textContent = caption;
-    modal.classList.add('active');
-    modal.setAttribute('aria-hidden', 'false');
-  }
-
-  function closeLightbox() {
-    if (!modal) return;
-    modal.classList.remove('active');
-    modal.setAttribute('aria-hidden', 'true');
-  }
-
-  if (closeBtn) closeBtn.addEventListener('click', closeLightbox);
-  if (backdrop) backdrop.addEventListener('click', closeLightbox);
-
-  document.addEventListener('keydown', (e) => {
-    if (!modal || !modal.classList.contains('active')) return;
-    if (e.key === 'Escape') closeLightbox();
-    if (e.key === 'ArrowRight') openLightbox((activeIndex + 1) % total);
-    if (e.key === 'ArrowLeft') openLightbox((activeIndex - 1 + total) % total);
-  });
-
-  // Slider buttons
-  if (slider && nextBtn && prevBtn) {
-    nextBtn.addEventListener('click', () => {
-      slider.scrollBy({ left: 240, behavior: 'smooth' });
-    });
-    prevBtn.addEventListener('click', () => {
-      slider.scrollBy({ left: -240, behavior: 'smooth' });
-    });
-  }
-}
-
-/* ==========================================================================
-   5. FAQS ACCORDION
-   ========================================================================== */
-function initFaqAccordion() {
-  const faqItems = document.querySelectorAll('.faq-item');
-
-  faqItems.forEach(item => {
-    const btn = item.querySelector('.faq-question');
-    if (!btn) return;
-
-    btn.addEventListener('click', () => {
-      const isOpen = item.classList.contains('open');
-
-      // Close all other items
-      faqItems.forEach(i => {
-        i.classList.remove('open');
-        const b = i.querySelector('.faq-question');
-        if (b) b.setAttribute('aria-expanded', 'false');
-      });
-
-      // Toggle current
-      if (!isOpen) {
-        item.classList.add('open');
-        btn.setAttribute('aria-expanded', 'true');
+  copyBtn.addEventListener('click', async () => {
+    const url = 'https://info.aimlcluboct.in';
+    try {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        await navigator.clipboard.writeText(url);
+      } else {
+        const temp = document.createElement('textarea');
+        temp.value = url;
+        document.body.appendChild(temp);
+        temp.select();
+        document.execCommand('copy');
+        document.body.removeChild(temp);
       }
-    });
+
+      if (copyText) copyText.textContent = 'Copied!';
+      copyBtn.style.background = '#00f0ff';
+      copyBtn.style.color = '#000';
+
+      setTimeout(() => {
+        if (copyText) copyText.textContent = 'Copy Link';
+        copyBtn.style.background = '';
+        copyBtn.style.color = '';
+      }, 2000);
+    } catch (err) {
+      console.warn('Copy failed:', err);
+    }
+  });
+}
+
+/* ==========================================================================
+   3. CALENDAR REMINDER (.ICS DOWNLOAD)
+   ========================================================================== */
+function initCalendarReminder() {
+  const reminderBtn = document.getElementById('btn-set-reminder');
+  if (!reminderBtn) return;
+
+  reminderBtn.addEventListener('click', () => {
+    const icsData = [
+      'BEGIN:VCALENDAR',
+      'VERSION:2.0',
+      'PRODID:-//AIML Club OCT//Recruitment 2026-27//EN',
+      'BEGIN:VEVENT',
+      'UID:aiml-club-oct-recruitment-2026@aimlcluboct.in',
+      'DTSTAMP:20261014T054500Z',
+      'DTSTART:20261020T183000Z', // 21 Oct 2026 00:00 IST
+      'DTEND:20261025T182900Z',   // 25 Oct 2026 23:59 IST
+      'SUMMARY:AIML Club OCT Recruitment 2026-27 Opens',
+      'DESCRIPTION:AI & Machine Learning Club Recruitment Opens at Oriental College of Technology Bhopal. Visit https://info.aimlcluboct.in to apply.',
+      'LOCATION:Oriental College of Technology, Bhopal',
+      'URL:https://info.aimlcluboct.in',
+      'STATUS:CONFIRMED',
+      'BEGIN:VALARM',
+      'TRIGGER:-PT15M',
+      'ACTION:DISPLAY',
+      'DESCRIPTION:AIML Club OCT Recruitment Reminder',
+      'END:VALARM',
+      'END:VEVENT',
+      'END:VCALENDAR'
+    ].join('\r\n');
+
+    const blob = new Blob([icsData], { type: 'text/calendar;charset=utf-8' });
+    const link = document.createElement('a');
+    link.href = window.URL.createObjectURL(blob);
+    link.setAttribute('download', 'AIML_Club_OCT_Recruitment_2026.ics');
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   });
 }

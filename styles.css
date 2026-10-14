@@ -372,45 +372,17 @@ body {
 .header-titles {
   display: flex;
   flex-direction: column;
-  gap: 2px;
-}
-
-.header-pre-badge {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  flex-wrap: wrap;
-}
-
-.college-sub {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.6875rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  color: var(--brand-lime);
-}
-
-.dept-sub {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.625rem;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  color: var(--brand-cyan);
+  justify-content: center;
 }
 
 .club-title {
   font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 1.35rem;
-  font-weight: 900;
-  letter-spacing: -0.01em;
+  font-size: clamp(1.125rem, 2.2vw, 1.45rem);
+  font-weight: 800;
+  letter-spacing: -0.015em;
   color: var(--text-primary);
-  line-height: 1.15;
-}
-
-.header-location-line {
-  font-size: 0.6875rem;
-  color: var(--text-muted);
-  font-family: 'Inter', sans-serif;
+  line-height: 1.25;
+  margin: 0;
 }
 
 .header-badges-stack {

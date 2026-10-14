@@ -15,6 +15,10 @@ document.addEventListener('DOMContentLoaded', () => {
   initSectionSpy();
   initCampaignSlider();
   initInteractiveSteps();
+  initSpotlightCards();
+  initMagneticButtons();
+  initFlowTrackTabs();
+  initCyberScramble();
 });
 
 /* ==========================================================================
@@ -488,20 +492,37 @@ function initCampaignSlider() {
     slide.addEventListener('click', () => openLightbox(idx));
   });
 
+  const dots = document.querySelectorAll('.slide-dot');
+
   function updateSlideIndicator(idx) {
-    if (!indicator) return;
-    const titles = [
-      'The System Behind It',
-      'Fair & Transparent Flow',
-      'Multi-Dimension Form',
-      'Application Record PDF',
-      'Email Confirmation + QR',
-      'Core Team Workspace',
-      'Secure QR Screening',
-      'Ready to Build'
-    ];
-    indicator.textContent = `Slide ${idx + 1} of ${total}: ${titles[idx] || ''} • Click to open`;
+    if (indicator) {
+      const titles = [
+        'The System Behind It',
+        'Fair & Transparent Flow',
+        'Multi-Dimension Form',
+        'Application Record PDF',
+        'Email Confirmation + QR',
+        'Core Team Workspace',
+        'Secure QR Screening',
+        'Ready to Build'
+      ];
+      indicator.textContent = `Slide ${idx + 1} of ${total}: ${titles[idx] || ''} • Click to open`;
+    }
+    dots.forEach((dot, i) => {
+      dot.classList.toggle('active', i === idx);
+    });
   }
+
+  dots.forEach((dot, i) => {
+    dot.addEventListener('click', () => {
+      const slide = slides[i];
+      if (slide && slider) {
+        slider.scrollTo({ left: slide.offsetLeft - 16, behavior: 'smooth' });
+        activeIndex = i;
+        updateSlideIndicator(i);
+      }
+    });
+  });
 
   function openLightbox(index) {
     if (!modal || !modalImg) return;
@@ -587,4 +608,199 @@ function initInteractiveSteps() {
       }
     });
   });
+}
+
+/* ==========================================================================
+   11. UI-LAYOUTS SPOTLIGHT CARDS (CURSOR PROXIMITY ILLUMINATION)
+   Zero CPU/Battery overhead on mobile/touch screens
+   ========================================================================== */
+function initSpotlightCards() {
+  if (!window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
+
+  const cards = document.querySelectorAll('.spotlight-card');
+  if (!cards.length) return;
+
+  cards.forEach(card => {
+    let rect = null;
+    let rafId = null;
+
+    function updateCoords(e) {
+      if (!rect) rect = card.getBoundingClientRect();
+      if (rafId) cancelAnimationFrame(rafId);
+      rafId = requestAnimationFrame(() => {
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        card.style.setProperty('--mouse-x', `${x}px`);
+        card.style.setProperty('--mouse-y', `${y}px`);
+      });
+    }
+
+    card.addEventListener('mouseenter', () => {
+      rect = card.getBoundingClientRect();
+    }, { passive: true });
+
+    card.addEventListener('mousemove', updateCoords, { passive: true });
+
+    card.addEventListener('mouseleave', () => {
+      if (rafId) cancelAnimationFrame(rafId);
+      rect = null;
+      card.style.setProperty('--mouse-x', '-999px');
+      card.style.setProperty('--mouse-y', '-999px');
+    }, { passive: true });
+  });
+}
+
+/* ==========================================================================
+   12. UI-LAYOUTS MAGNETIC BUTTONS (TACTILE MICRO-ATTRACTION)
+   Subtly pulls buttons toward cursor with spring physics on desktop
+   ========================================================================== */
+function initMagneticButtons() {
+  if (!window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
+
+  const buttons = document.querySelectorAll('.magnetic-btn');
+  buttons.forEach(btn => {
+    let rect = null;
+    let rafId = null;
+
+    btn.addEventListener('mouseenter', () => {
+      rect = btn.getBoundingClientRect();
+      btn.style.transition = 'transform 0.15s cubic-bezier(0.16, 1, 0.3, 1)';
+    }, { passive: true });
+
+    btn.addEventListener('mousemove', (e) => {
+      if (!rect) rect = btn.getBoundingClientRect();
+      if (rafId) cancelAnimationFrame(rafId);
+      rafId = requestAnimationFrame(() => {
+        const centerX = rect.left + rect.width / 2;
+        const centerY = rect.top + rect.height / 2;
+        const deltaX = (e.clientX - centerX) * 0.22;
+        const deltaY = (e.clientY - centerY) * 0.22;
+        btn.style.transform = `translate3d(${deltaX}px, ${deltaY}px, 0)`;
+      });
+    }, { passive: true });
+
+    btn.addEventListener('mouseleave', () => {
+      if (rafId) cancelAnimationFrame(rafId);
+      rect = null;
+      btn.style.transition = 'transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1)';
+      btn.style.transform = 'translate3d(0, 0, 0)';
+    }, { passive: true });
+  });
+}
+
+/* ==========================================================================
+   13. UI-LAYOUTS ANIMATED TRACK SWITCHER TABS (SPRING SLIDING PILL)
+   Smooth track filtering between All Tracks, Candidate Flow, and Core Team Flow
+   ========================================================================== */
+function initFlowTrackTabs() {
+  const tabsWrapper = document.querySelector('.flow-track-tabs-wrapper');
+  const slider = document.getElementById('flow-tab-slider');
+  const tabBtns = document.querySelectorAll('.flow-tab-btn');
+  const trackCandidate = document.getElementById('track-candidate');
+  const trackCore = document.getElementById('track-core');
+
+  if (!tabsWrapper || !slider || !tabBtns.length) return;
+
+  function updateSliderPosition(activeBtn) {
+    if (!activeBtn) return;
+    const btnRect = activeBtn.getBoundingClientRect();
+    const wrapperRect = tabsWrapper.getBoundingClientRect();
+    const leftOffset = btnRect.left - wrapperRect.left + tabsWrapper.scrollLeft;
+    slider.style.width = `${btnRect.width}px`;
+    slider.style.transform = `translate3d(${leftOffset}px, 0, 0)`;
+  }
+
+  // Initialize position for the active tab
+  const initialActive = tabsWrapper.querySelector('.flow-tab-btn.active') || tabBtns[0];
+  setTimeout(() => updateSliderPosition(initialActive), 80);
+
+  tabBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      tabBtns.forEach(b => {
+        b.classList.remove('active');
+        b.setAttribute('aria-selected', 'false');
+      });
+      btn.classList.add('active');
+      btn.setAttribute('aria-selected', 'true');
+      updateSliderPosition(btn);
+
+      const flow = btn.dataset.flow;
+      if (flow === 'all') {
+        if (trackCandidate) trackCandidate.classList.remove('is-hidden');
+        if (trackCore) trackCore.classList.remove('is-hidden');
+      } else if (flow === 'candidate') {
+        if (trackCandidate) trackCandidate.classList.remove('is-hidden');
+        if (trackCore) trackCore.classList.add('is-hidden');
+      } else if (flow === 'core') {
+        if (trackCandidate) trackCandidate.classList.add('is-hidden');
+        if (trackCore) trackCore.classList.remove('is-hidden');
+      }
+    });
+  });
+
+  window.addEventListener('resize', () => {
+    const active = tabsWrapper.querySelector('.flow-tab-btn.active');
+    if (active) updateSliderPosition(active);
+  }, { passive: true });
+}
+
+/* ==========================================================================
+   14. UI-LAYOUTS CYBER SCRAMBLE DECODER EFFECT
+   High-tech text decryption on reveal and hover
+   ========================================================================== */
+function initCyberScramble() {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  const scrambleElements = document.querySelectorAll('.scramble-text');
+  const chars = '01XY_/#&%✦!@$*><';
+
+  function scramble(el) {
+    const finalText = el.dataset.text || el.textContent;
+    const length = finalText.length;
+    let iteration = 0;
+    const maxIterations = 14;
+
+    if (el._scrambleInterval) clearInterval(el._scrambleInterval);
+
+    el._scrambleInterval = setInterval(() => {
+      el.textContent = finalText
+        .split('')
+        .map((char, index) => {
+          if (char === ' ') return ' ';
+          if (index < (iteration / maxIterations) * length) {
+            return finalText[index];
+          }
+          return chars[Math.floor(Math.random() * chars.length)];
+        })
+        .join('');
+
+      iteration++;
+      if (iteration > maxIterations) {
+        clearInterval(el._scrambleInterval);
+        el.textContent = finalText;
+        el._scrambleInterval = null;
+      }
+    }, 32);
+  }
+
+  // Trigger on initial viewport reveal
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          scramble(entry.target);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2 });
+
+    scrambleElements.forEach(el => observer.observe(el));
+  }
+
+  // Also trigger on hover for fine pointers
+  if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+    scrambleElements.forEach(el => {
+      el.addEventListener('mouseenter', () => scramble(el), { passive: true });
+    });
+  }
 }

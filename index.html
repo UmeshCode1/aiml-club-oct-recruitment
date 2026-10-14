@@ -76,19 +76,19 @@
       </div>
 
       <div class="sticky-right">
-        <button class="btn btn-sm btn-share" id="sticky-share-btn" title="Share recruitment announcement">
+        <button class="btn btn-sm btn-share magnetic-btn" id="sticky-share-btn" title="Share recruitment announcement">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
           <span class="btn-text">Share</span>
         </button>
-        <button class="btn btn-sm btn-copy" id="sticky-copy-btn" title="Copy registration link to clipboard">
+        <button class="btn btn-sm btn-copy magnetic-btn" id="sticky-copy-btn" title="Copy registration link to clipboard">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
           <span class="btn-text">Copy</span>
         </button>
-        <button class="btn btn-sm btn-reminder" id="sticky-reminder-btn" title="Download Calendar invite (.ics)">
+        <button class="btn btn-sm btn-reminder magnetic-btn" id="sticky-reminder-btn" title="Download Calendar invite (.ics)">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/></svg>
           <span class="btn-text">Remind</span>
         </button>
-        <button class="btn btn-sm btn-icon-only btn-scroll-top" id="sticky-top-btn" title="Scroll back to top" aria-label="Scroll back to top">
+        <button class="btn btn-sm btn-icon-only btn-scroll-top magnetic-btn" id="sticky-top-btn" title="Scroll back to top" aria-label="Scroll back to top">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 15l-6-6-6 6"/></svg>
         </button>
       </div>
@@ -98,11 +98,11 @@
   <div class="announcement-wrapper">
     
     <!-- Top Header Bar with Preserved Official Logo -->
-    <header class="announcement-header reveal-item" id="top-header">
+    <header class="announcement-header reveal-item spotlight-card" id="top-header">
       <div class="header-logo-group">
         <div class="logo-box">
           <img 
-            src="assets/logo.png" 
+            src="assets/aiml-club-oct-logo.png" 
             alt="AI & Machine Learning Club, Oriental College of Technology" 
             class="official-logo site-logo" 
             width="60" 
@@ -116,7 +116,7 @@
       </div>
 
       <div class="header-badges-stack">
-        <div class="header-badge live-notice-badge">
+        <div class="header-badge live-notice-badge shimmer-badge">
           <span class="live-pulse"></span>
           <span>OFFICIAL NOTICE &bull; 2026–27</span>
         </div>
@@ -124,22 +124,37 @@
     </header>
 
     <!-- Main Official Announcement Card -->
-    <main class="notice-card reveal-item">
+    <main class="notice-card reveal-item spotlight-card">
 
       <!-- Badge & Title -->
       <div class="notice-top" id="sec-overview">
-        <div class="announcement-pill">
+        <div class="announcement-pill shimmer-badge">
+          <span class="sparkle-star sparkle-left" aria-hidden="true">✦</span>
           <span class="pill-icon">📢</span>
-          <span>OFFICIAL ANNOUNCEMENT &bull; RECRUITMENT 2026–27</span>
+          <span class="pill-text">OFFICIAL ANNOUNCEMENT &bull; RECRUITMENT 2026–27</span>
+          <span class="sparkle-star sparkle-right" aria-hidden="true">✦</span>
         </div>
         
         <h2 class="announcement-heading">
-          AI &amp; MACHINE LEARNING CLUB <span class="highlight-text">RECRUITMENT 2026–27</span> 🤖🚀
+          AI &amp; MACHINE LEARNING CLUB <span class="highlight-text scramble-text" data-text="RECRUITMENT 2026–27">RECRUITMENT 2026–27</span> 🤖🚀
         </h2>
 
         <p class="college-subtitle">
           Oriental College of Technology, Bhopal &bull; Open to All Engineering Branches
         </p>
+
+        <!-- Primary Hero CTA Group with Clear Registration Destination -->
+        <div class="primary-hero-cta-group">
+          <a href="#sec-portal" class="btn btn-primary btn-hero-cta magnetic-btn shimmer-badge" id="btn-hero-register">
+            <span class="btn-cta-icon">🚀</span>
+            <span class="btn-cta-text">Registration Opens 21 October 2026</span>
+            <span class="btn-cta-pill">00:00 IST</span>
+          </a>
+          <div class="cta-status-indicator">
+            <span class="status-pulse-dot"></span>
+            <span class="status-note">Verified Recruitment Drive &bull; Free Registration &bull; All 1st, 2nd, 3rd Year Students</span>
+          </div>
+        </div>
       </div>
 
       <!-- Lead Narrative & Greeting -->
@@ -154,14 +169,14 @@
 
         <!-- Eligibility & Opportunity Highlights Grid -->
         <div class="highlights-grid">
-          <div class="highlight-card eligibility-card reveal-item">
+          <div class="highlight-card eligibility-card reveal-item spotlight-card">
             <div class="card-icon-box">🎓</div>
             <div class="card-text-box">
               <strong>Open to Students From All Branches!</strong>
               <p>1st, 2nd, and 3rd year engineering students across all OCT departments are eligible to apply.</p>
             </div>
           </div>
-          <div class="highlight-card roles-card reveal-item">
+          <div class="highlight-card roles-card reveal-item spotlight-card">
             <div class="card-icon-box">💡</div>
             <div class="card-text-box">
               <strong>Multi-Disciplinary Domains</strong>
@@ -173,7 +188,7 @@
         <!-- Key Dates Grid with Distinctive Badges -->
         <div class="dates-grid">
           
-          <div class="date-card opening-card reveal-item">
+          <div class="date-card opening-card reveal-item spotlight-card">
             <div class="date-header">
               <span class="date-icon">📅</span>
               <span class="date-badge open-badge">REGISTRATION OPENS</span>
@@ -182,7 +197,7 @@
             <div class="date-sub">Online application portal goes live &bull; 00:00 IST</div>
           </div>
 
-          <div class="date-card closing-card reveal-item">
+          <div class="date-card closing-card reveal-item spotlight-card">
             <div class="date-header">
               <span class="date-icon">⏳</span>
               <span class="date-badge deadline-badge">REGISTRATION CLOSES</span>
@@ -194,7 +209,7 @@
         </div>
 
         <!-- Live Countdown Timer Card -->
-        <div class="countdown-container reveal-item">
+        <div class="countdown-container reveal-item spotlight-card">
           <div class="countdown-title">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
             <div>
@@ -226,7 +241,7 @@
         </div>
 
         <!-- Institutional Mission Banner -->
-        <div class="goal-highlight-card reveal-item">
+        <div class="goal-highlight-card reveal-item spotlight-card">
           <div class="goal-header">
             <span class="goal-tag">🎯 CENTRAL MISSION</span>
             <h3 class="goal-title">Build the Next Generation of AIML Club OCT</h3>
@@ -242,10 +257,30 @@
             <span class="flows-pill">STRUCTURED SELECTION ARCHITECTURE</span>
             <h3 class="flows-title">How the Recruitment Process Works</h3>
             <p class="flows-desc">A transparent, dual-track workflow connecting student candidates with our executive evaluation panel. Tap any step to inspect details.</p>
+
+            <!-- UI-Layouts Animated Track Tabs -->
+            <div class="flow-track-tabs-wrapper" role="tablist" aria-label="Flow Track View Mode">
+              <div class="flow-tab-slider" id="flow-tab-slider" aria-hidden="true"></div>
+              <button class="flow-tab-btn active" data-flow="all" role="tab" id="flow-tab-all" aria-selected="true">
+                <span class="tab-btn-icon">⚡</span>
+                <span class="tab-btn-text">All Tracks</span>
+                <span class="tab-badge-pill">13 Steps</span>
+              </button>
+              <button class="flow-tab-btn" data-flow="candidate" role="tab" id="flow-tab-candidate" aria-selected="false">
+                <span class="tab-btn-icon">👤</span>
+                <span class="tab-btn-text">Candidate Flow</span>
+                <span class="tab-badge-pill">7 Stages</span>
+              </button>
+              <button class="flow-tab-btn" data-flow="core" role="tab" id="flow-tab-core" aria-selected="false">
+                <span class="tab-btn-icon">🛡️</span>
+                <span class="tab-btn-text">Core Team Flow</span>
+                <span class="tab-badge-pill">6 Stages</span>
+              </button>
+            </div>
           </div>
 
           <!-- Flow 1: Candidate Flow -->
-          <div class="flow-track candidate-track reveal-item">
+          <div class="flow-track candidate-track reveal-item spotlight-card" id="track-candidate">
             <div class="track-header-row">
               <div class="track-badge">
                 <span class="track-icon">👤</span>
@@ -327,7 +362,7 @@
           </div>
 
           <!-- Flow 2: Core Team Flow (Updated: 6. In club family) -->
-          <div class="flow-track core-track reveal-item">
+          <div class="flow-track core-track reveal-item spotlight-card" id="track-core">
             <div class="track-header-row">
               <div class="track-badge">
                 <span class="track-icon">🧑‍💼</span>
@@ -399,7 +434,7 @@
           </div>
 
           <!-- Dynamic Interactive Flow Stage Inspector -->
-          <div class="flow-step-inspector reveal-item" id="flow-inspector">
+          <div class="flow-step-inspector reveal-item spotlight-card" id="flow-inspector">
             <div class="inspector-header">
               <span class="inspector-badge" id="insp-badge">CANDIDATE FLOW &bull; STEP 1 OF 7</span>
               <span class="inspector-hint">✨ Tap any step node above to inspect details</span>
@@ -409,7 +444,7 @@
           </div>
 
           <!-- Feature Spotlight: Secure QR & Application PDF in Email -->
-          <div class="security-spotlight-card reveal-item">
+          <div class="security-spotlight-card reveal-item spotlight-card">
             <div class="spotlight-badge">
               <span class="sec-icon">🔐</span>
               <span>SECURE VERIFICATION STANDARD &bull; DIRECTLY IN EMAIL</span>
@@ -429,7 +464,7 @@
         </section>
 
         <!-- Official Campaign Storyboard (The 8 Slides) -->
-        <section class="campaign-section reveal-item" id="sec-slides">
+        <section class="campaign-section reveal-item spotlight-card" id="sec-slides">
           <div class="campaign-header">
             <span class="campaign-pill">OFFICIAL RECRUITMENT STORYBOARD</span>
             <h3 class="campaign-title">Explore the Recruitment System Slides</h3>
@@ -474,9 +509,21 @@
           </div>
 
           <div class="campaign-nav-row">
-            <button id="slide-prev" class="btn btn-outline btn-sm" aria-label="Previous Slide">&larr; Previous</button>
+            <button id="slide-prev" class="btn btn-outline btn-sm magnetic-btn" aria-label="Previous Slide">&larr; Previous</button>
+            <div class="slide-dots-container" id="slide-dots" aria-label="Slide Navigation Dots">
+              <button class="slide-dot active" data-index="0" aria-label="Go to Slide 1"></button>
+              <button class="slide-dot" data-index="1" aria-label="Go to Slide 2"></button>
+              <button class="slide-dot" data-index="2" aria-label="Go to Slide 3"></button>
+              <button class="slide-dot" data-index="3" aria-label="Go to Slide 4"></button>
+              <button class="slide-dot" data-index="4" aria-label="Go to Slide 5"></button>
+              <button class="slide-dot" data-index="5" aria-label="Go to Slide 6"></button>
+              <button class="slide-dot" data-index="6" aria-label="Go to Slide 7"></button>
+              <button class="slide-dot" data-index="7" aria-label="Go to Slide 8"></button>
+            </div>
+            <button id="slide-next" class="btn btn-outline btn-sm magnetic-btn" aria-label="Next Slide">Next &rarr;</button>
+          </div>
+          <div class="slide-counter-wrapper">
             <span class="slide-counter-text" id="slide-indicator">Slide 1 of 8 &bull; Click to open high-res preview</span>
-            <button id="slide-next" class="btn btn-outline btn-sm" aria-label="Next Slide">Next &rarr;</button>
           </div>
         </section>
 
@@ -499,25 +546,25 @@
           </div>
           
           <div class="instructions-grid">
-            <div class="instruction-box">
+            <div class="instruction-box spotlight-card">
               <div class="inst-icon-circle">🌐</div>
               <h5>Visit Official Portal</h5>
               <p>Explore available roles and department details exclusively at <a href="https://info.aimlcluboct.in" class="inline-link">https://info.aimlcluboct.in</a>.</p>
             </div>
 
-            <div class="instruction-box">
+            <div class="instruction-box spotlight-card">
               <div class="inst-icon-circle">📅</div>
               <h5>Registration Schedule</h5>
               <p>The form goes live on <strong>21 October 2026</strong>. Review all guidelines and details on this portal beforehand.</p>
             </div>
 
-            <div class="instruction-box">
+            <div class="instruction-box spotlight-card">
               <div class="inst-icon-circle">⏰</div>
               <h5>Set Your Alarm</h5>
               <p>Positions across technical and non-technical teams are capped. Register as soon as the form opens to secure your slot.</p>
             </div>
 
-            <div class="instruction-box highlight-instruction-box">
+            <div class="instruction-box highlight-instruction-box spotlight-card">
               <div class="inst-icon-circle alert-icon">⏳</div>
               <h5>Strict Deadline</h5>
               <p>Registration closes on <strong>25 October 2026 at 11:59 PM IST</strong>. Please do not wait until the last minute.</p>
@@ -536,7 +583,7 @@
           <div class="share-suite-grid">
             
             <!-- Left Card: Social Handles Sharing -->
-            <div class="suite-card social-share-card">
+            <div class="suite-card social-share-card spotlight-card">
               <div class="suite-card-top">
                 <span class="suite-icon">📲</span>
                 <div>
@@ -546,37 +593,37 @@
               </div>
               <div class="social-btn-group">
                 <!-- Native Device Share (Auto-selected on mobile) -->
-                <button class="social-share-btn btn-device-share" id="btn-device-share" title="Share via phone apps">
+                <button class="social-share-btn btn-device-share magnetic-btn" id="btn-device-share" title="Share via phone apps">
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
                   <span>Share via Phone Apps</span>
                 </button>
 
                 <!-- WhatsApp Direct -->
-                <a href="#" class="social-share-btn btn-whatsapp" id="btn-share-wa" target="_blank" rel="noopener noreferrer" title="Share directly on WhatsApp">
+                <a href="#" class="social-share-btn btn-whatsapp magnetic-btn" id="btn-share-wa" target="_blank" rel="noopener noreferrer" title="Share directly on WhatsApp">
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
                   <span>WhatsApp</span>
                 </a>
 
                 <!-- LinkedIn -->
-                <a href="#" class="social-share-btn btn-linkedin" id="btn-share-li" target="_blank" rel="noopener noreferrer" title="Share on LinkedIn">
+                <a href="#" class="social-share-btn btn-linkedin magnetic-btn" id="btn-share-li" target="_blank" rel="noopener noreferrer" title="Share on LinkedIn">
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.76a1.64 1.64 0 1 0-.01-3.28 1.64 1.64 0 0 0 .01 3.28m1.4 9.74V9.93H5.06v8.57h2.8z"/></svg>
                   <span>LinkedIn</span>
                 </a>
 
                 <!-- Twitter / X -->
-                <a href="#" class="social-share-btn btn-x" id="btn-share-x" target="_blank" rel="noopener noreferrer" title="Post on X">
+                <a href="#" class="social-share-btn btn-x magnetic-btn" id="btn-share-x" target="_blank" rel="noopener noreferrer" title="Post on X">
                   <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
                   <span>Post on X</span>
                 </a>
 
                 <!-- Telegram -->
-                <a href="#" class="social-share-btn btn-telegram" id="btn-share-tg" target="_blank" rel="noopener noreferrer" title="Share on Telegram">
+                <a href="#" class="social-share-btn btn-telegram magnetic-btn" id="btn-share-tg" target="_blank" rel="noopener noreferrer" title="Share on Telegram">
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/></svg>
                   <span>Telegram</span>
                 </a>
 
                 <!-- Copy Formatted Text -->
-                <button class="social-share-btn btn-copy-text" id="btn-copy-broadcast-text" title="Copy text announcement">
+                <button class="social-share-btn btn-copy-text magnetic-btn" id="btn-copy-broadcast-text" title="Copy text announcement">
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
                   <span id="copy-broadcast-label">Copy Notice</span>
                 </button>
@@ -584,7 +631,7 @@
             </div>
 
             <!-- Right Card: Alarm & Calendar Suite -->
-            <div class="suite-card calendar-alarm-card">
+            <div class="suite-card calendar-alarm-card spotlight-card">
               <div class="suite-card-top">
                 <span class="suite-icon">⏰</span>
                 <div>
@@ -594,19 +641,19 @@
               </div>
               <div class="calendar-btn-group">
                 <!-- Google Calendar 1-Click Link -->
-                <a href="#" class="cal-action-btn btn-gcal" id="btn-gcal" target="_blank" rel="noopener noreferrer" title="Add directly to Google Calendar">
+                <a href="#" class="cal-action-btn btn-gcal magnetic-btn" id="btn-gcal" target="_blank" rel="noopener noreferrer" title="Add directly to Google Calendar">
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20a2 2 0 0 0 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z"/></svg>
                   <span>Google Calendar (1-Click)</span>
                 </a>
 
                 <!-- Apple & Outlook Calendar (.ics) -->
-                <button class="cal-action-btn btn-ics" id="btn-download-ics" title="Download Apple / Outlook .ics file">
+                <button class="cal-action-btn btn-ics magnetic-btn" id="btn-download-ics" title="Download Apple / Outlook .ics file">
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
                   <span>Apple / Device Calendar (.ics)</span>
                 </button>
 
                 <!-- Phone Alarm Alert Trigger -->
-                <button class="cal-action-btn btn-alarm-trigger" id="btn-alarm-helper" title="Set phone reminder">
+                <button class="cal-action-btn btn-alarm-trigger magnetic-btn" id="btn-alarm-helper" title="Set phone reminder">
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2 2"/><path d="M5 3L2 6"/><path d="M22 6l-3-3"/><path d="M6.38 18.7L4 21"/><path d="M17.64 18.67L20 21"/></svg>
                   <span id="alarm-helper-label">Set Alarm Alert: 21 Oct (00:00)</span>
                 </button>
@@ -617,18 +664,18 @@
         </section>
 
         <!-- Official Portal & Quick Copy Link -->
-        <div class="link-action-card reveal-item" id="sec-portal">
+        <div class="link-action-card reveal-item spotlight-card" id="sec-portal">
           <div class="link-info">
             <span class="link-label">🌐 OFFICIAL INFORMATION &amp; REGISTRATION PORTAL:</span>
             <a href="https://info.aimlcluboct.in" class="official-url" id="portal-url">https://info.aimlcluboct.in</a>
             <span class="link-sub-note">Registration opens 21 Oct 2026 &bull; Closes 25 Oct 2026 (11:59 PM)</span>
           </div>
           <div class="link-btns">
-            <button class="btn btn-copy" id="btn-copy-link" title="Copy registration link to clipboard">
+            <button class="btn btn-copy magnetic-btn" id="btn-copy-link" title="Copy registration link to clipboard">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
               <span id="copy-btn-text">Copy Link</span>
             </button>
-            <button class="btn btn-reminder" id="btn-set-reminder">
+            <button class="btn btn-reminder magnetic-btn" id="btn-set-reminder">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/></svg>
               <span>Add to Calendar (.ics)</span>
             </button>

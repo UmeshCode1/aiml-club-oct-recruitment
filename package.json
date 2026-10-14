@@ -1,0 +1,17 @@
+{
+  "name": "aiml-club-oct-recruitment",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Executive Council & Core Team Recruitment 2026 Portal for AIML Club, Oriental College of Technology",
+  "scripts": {
+    "start": "npx serve ."
+  },
+  "keywords": [
+    "aiml-club-oct",
+    "recruitment",
+    "oriental-college-of-technology",
+    "bhopal"
+  ],
+  "author": "AIML Club, Oriental College of Technology",
+  "license": "MIT"
+}

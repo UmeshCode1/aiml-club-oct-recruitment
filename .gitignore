@@ -1,0 +1,14 @@
+# Dependencies & Runtimes
+node_modules/
+.pnpm-store/
+.npm/
+
+# Vercel & Deployment
+.vercel/
+
+# OS / Editor Files
+.DS_Store
+Thumbs.db
+*.log
+.vscode/
+.idea/

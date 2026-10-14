@@ -1,6 +1,6 @@
 /* ==========================================================================
    AIML CLUB OCT - EXECUTIVE COUNCIL RECRUITMENT 2026
-   Official Institutional Stylesheet
+   Official Institutional Info Page Stylesheet
    Identity Colors: Black (#080b10), Vibrant Lime/Chartreuse (#cbfb1f), Cyan (#00f0ff)
    ========================================================================== */
 
@@ -138,11 +138,6 @@ a {
   height: 44px;
 }
 
-.receipt-logo {
-  width: 44px;
-  height: 44px;
-}
-
 .hero-center-logo {
   width: 200px;
   height: 200px;
@@ -222,9 +217,9 @@ a {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(8, 11, 16, 0.92);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background: rgba(8, 11, 16, 0.94);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
   border-bottom: 1px solid var(--border-subtle);
   transition: all var(--transition-fast);
 }
@@ -1093,7 +1088,6 @@ a {
   display: flex;
   flex-direction: column;
   gap: 6px;
-  margin-bottom: 20px;
   border-top: 1px solid var(--border-subtle);
   padding-top: 14px;
 }
@@ -1390,13 +1384,9 @@ a {
 }
 
 /* ==========================================================================
-   OFFICIAL APPLICATION FORM PORTAL
+   APPLICATION GUIDELINES & ACTION CALLOUT (INFO PAGE REPLACEMENT)
    ========================================================================== */
-.form-section-container {
-  max-width: 860px;
-}
-
-.form-card-wrapper {
+.info-guide-card {
   background: var(--brand-dark-card);
   border: 1px solid var(--border-medium);
   border-radius: var(--radius-xl);
@@ -1404,86 +1394,13 @@ a {
   box-shadow: var(--shadow-lg);
 }
 
-/* Stepper Bar */
-.form-stepper {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 40px;
+.guide-header {
   border-bottom: 1px solid var(--border-subtle);
   padding-bottom: 24px;
+  margin-bottom: 32px;
 }
 
-.form-step {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  opacity: 0.45;
-  transition: all var(--transition-fast);
-}
-
-.form-step.active {
-  opacity: 1;
-}
-
-.form-step.completed .step-circle {
-  background: var(--brand-lime);
-  color: #080b10;
-  border-color: var(--brand-lime);
-}
-
-.step-circle {
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  border: 2px solid var(--text-muted);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 700;
-  font-size: 0.8125rem;
-  font-family: 'JetBrains Mono', monospace;
-  color: var(--text-muted);
-}
-
-.form-step.active .step-circle {
-  border-color: var(--brand-lime);
-  color: var(--brand-lime);
-  background: var(--brand-lime-muted);
-}
-
-.step-name {
-  font-size: 0.8125rem;
-  font-weight: 600;
-  color: var(--text-secondary);
-}
-
-.form-step.active .step-name {
-  color: var(--text-main);
-}
-
-.step-connector {
-  flex-grow: 1;
-  height: 1px;
-  background: var(--border-subtle);
-  margin: 0 12px;
-}
-
-/* Form Sections */
-.form-section {
-  display: none;
-  border: none;
-}
-
-.form-section.active {
-  display: block;
-}
-
-.form-legend {
-  margin-bottom: 28px;
-}
-
-.legend-badge {
+.guide-badge {
   display: inline-block;
   font-family: 'JetBrains Mono', monospace;
   font-size: 0.6875rem;
@@ -1491,327 +1408,105 @@ a {
   color: var(--brand-lime);
   background: var(--brand-lime-muted);
   border: 1px solid var(--brand-lime-border);
-  padding: 2px 8px;
+  padding: 3px 10px;
   border-radius: var(--radius-sm);
-  margin-bottom: 8px;
+  margin-bottom: 10px;
+  letter-spacing: 0.06em;
 }
 
-.form-legend h3 {
-  font-size: 1.5rem;
-  font-weight: 700;
-  margin-bottom: 6px;
-}
-
-.form-legend p {
-  font-size: 0.875rem;
-  color: var(--text-secondary);
-}
-
-.form-grid {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  gap: 20px;
-}
-
-.col-12 { grid-column: span 12; }
-.col-6 { grid-column: span 6; }
-
-.form-group {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
-.form-label {
-  font-size: 0.8125rem;
-  font-weight: 600;
-  color: var(--text-secondary);
-}
-
-.req {
-  color: #f43f5e;
-}
-
-.label-with-counter {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.char-counter {
-  font-size: 0.6875rem;
-  font-family: 'JetBrains Mono', monospace;
-  color: var(--text-muted);
-}
-
-.form-control {
-  background: rgba(8, 11, 16, 0.7);
-  border: 1px solid var(--border-medium);
-  border-radius: var(--radius-md);
-  padding: 12px 14px;
-  color: var(--text-main);
-  font-family: inherit;
-  font-size: 0.875rem;
-  transition: all var(--transition-fast);
-}
-
-.form-control:focus {
-  outline: none;
-  border-color: var(--brand-lime);
-  box-shadow: 0 0 0 3px rgba(203, 251, 31, 0.15);
-  background: rgba(8, 11, 16, 0.95);
-}
-
-.form-control.is-invalid {
-  border-color: #f43f5e;
-  box-shadow: 0 0 0 3px rgba(244, 63, 94, 0.15);
-}
-
-.form-textarea {
-  resize: vertical;
-  min-height: 110px;
-}
-
-.form-hint {
-  font-size: 0.6875rem;
-  color: var(--text-muted);
-}
-
-.form-error {
-  font-size: 0.75rem;
-  color: #f43f5e;
-  min-height: 16px;
-}
-
-/* Radio Chip Group */
-.radio-chip-group {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.radio-chip {
-  cursor: pointer;
-}
-
-.radio-chip input {
-  display: none;
-}
-
-.radio-chip span {
-  display: inline-block;
-  padding: 8px 16px;
-  background: rgba(8, 11, 16, 0.6);
-  border: 1px solid var(--border-subtle);
-  border-radius: var(--radius-md);
-  font-size: 0.8125rem;
-  font-weight: 500;
-  color: var(--text-secondary);
-  transition: all var(--transition-fast);
-}
-
-.radio-chip:hover span {
-  border-color: var(--border-medium);
-  color: var(--text-main);
-}
-
-.radio-chip input:checked + span {
-  background: var(--brand-lime-muted);
-  border-color: var(--brand-lime);
-  color: var(--brand-lime);
-  font-weight: 700;
-}
-
-/* Form Buttons */
-.form-buttons {
-  display: flex;
-  justify-content: flex-end;
-  gap: 14px;
-  margin-top: 32px;
-  border-top: 1px solid var(--border-subtle);
-  padding-top: 24px;
-}
-
-/* Review Box */
-.review-box {
-  background: rgba(8, 11, 16, 0.8);
-  border: 1px solid var(--border-medium);
-  border-radius: var(--radius-md);
-  padding: 18px 22px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin-bottom: 24px;
-}
-
-.review-row {
-  display: flex;
-  justify-content: space-between;
-  font-size: 0.8125rem;
-  border-bottom: 1px solid var(--border-subtle);
-  padding-bottom: 8px;
-}
-
-.review-row:last-child {
-  border-bottom: none;
-  padding-bottom: 0;
-}
-
-.rev-k {
-  color: var(--text-muted);
-}
-
-.rev-v {
-  color: var(--text-main);
-  text-align: right;
-}
-
-/* Declaration Group */
-.declaration-group {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-  margin-bottom: 24px;
-}
-
-.checkbox-label {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  font-size: 0.8125rem;
-  color: var(--text-secondary);
-  cursor: pointer;
-  line-height: 1.5;
-}
-
-.checkbox-label input {
-  margin-top: 3px;
-  width: 16px;
-  height: 16px;
-  accent-color: var(--brand-lime);
-  cursor: pointer;
-}
-
-/* ==========================================================================
-   SUBMISSION SUCCESS & RECEIPT SLIP
-   ========================================================================== */
-.submission-success-card {
-  text-align: center;
-  padding: 20px 0;
-}
-
-.success-icon {
-  width: 64px;
-  height: 64px;
-  border-radius: 50%;
-  background: var(--brand-lime-muted);
-  border: 2px solid var(--brand-lime);
-  color: var(--brand-lime);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 16px auto;
-}
-
-.success-badge {
-  display: inline-block;
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.6875rem;
-  font-weight: 700;
-  color: var(--brand-lime);
-  letter-spacing: 0.08em;
-  margin-bottom: 8px;
-}
-
-.success-title {
+.guide-title {
   font-size: 1.75rem;
   color: var(--text-main);
   margin-bottom: 8px;
 }
 
-.success-sub {
+.guide-desc {
   font-size: 0.9375rem;
   color: var(--text-secondary);
-  max-width: 540px;
-  margin: 0 auto 32px auto;
+  line-height: 1.6;
 }
 
-/* Receipt Slip */
-.receipt-slip {
-  background: #090d14;
-  border: 1px dashed var(--brand-lime-border);
+.guide-steps-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 36px;
+}
+
+.guide-step-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  background: rgba(8, 11, 16, 0.6);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 20px;
+}
+
+.g-num {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--brand-lime-muted);
+  border: 1px solid var(--brand-lime-border);
+  color: var(--brand-lime);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 700;
+  font-size: 0.875rem;
+  flex-shrink: 0;
+}
+
+.g-content h4 {
+  font-size: 1rem;
+  color: var(--text-main);
+  margin-bottom: 6px;
+}
+
+.g-content p {
+  font-size: 0.8125rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.g-content code {
+  font-family: 'JetBrains Mono', monospace;
+  background: rgba(203, 251, 31, 0.1);
+  color: var(--brand-lime);
+  padding: 1px 5px;
+  border-radius: var(--radius-sm);
+}
+
+.action-callout-box {
+  background: linear-gradient(135deg, rgba(14, 20, 32, 0.95), rgba(20, 28, 44, 0.85));
+  border: 1px solid var(--brand-lime-border);
   border-radius: var(--radius-lg);
-  padding: 24px;
-  max-width: 580px;
-  margin: 0 auto 28px auto;
-  text-align: left;
+  padding: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
-.receipt-header {
+.action-callout-text h4 {
+  font-size: 1.25rem;
+  color: var(--text-main);
+  margin-bottom: 6px;
+}
+
+.action-callout-text p {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+.action-callout-btns {
   display: flex;
   align-items: center;
   gap: 14px;
-  border-bottom: 1px solid var(--border-medium);
-  padding-bottom: 14px;
-  margin-bottom: 18px;
-}
-
-.rb-title {
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 0.875rem;
-  font-weight: 800;
-  color: var(--text-main);
-}
-
-.rb-sub {
-  font-size: 0.6875rem;
-  font-family: 'JetBrains Mono', monospace;
-  color: var(--brand-lime);
-}
-
-.receipt-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 14px;
-}
-
-.r-item {
-  display: flex;
-  flex-direction: column;
-  gap: 3px;
-}
-
-.r-label {
-  font-size: 0.6875rem;
-  font-family: 'JetBrains Mono', monospace;
-  color: var(--text-muted);
-}
-
-.r-value {
-  font-size: 0.8125rem;
-  font-weight: 600;
-  color: var(--text-main);
-}
-
-.receipt-footer {
-  margin-top: 18px;
-  border-top: 1px solid var(--border-subtle);
-  padding-top: 10px;
-  text-align: center;
-}
-
-.receipt-watermark {
-  font-size: 0.625rem;
-  font-family: 'JetBrains Mono', monospace;
-  letter-spacing: 0.1em;
-  color: var(--text-muted);
-  opacity: 0.7;
-}
-
-.success-actions {
-  display: flex;
-  justify-content: center;
-  gap: 16px;
+  flex-wrap: wrap;
 }
 
 /* ==========================================================================
@@ -2019,31 +1714,6 @@ a {
 }
 
 /* ==========================================================================
-   PRINT STYLES FOR OFFICIAL RECEIPT
-   ========================================================================== */
-@media print {
-  body * {
-    visibility: hidden;
-  }
-  .receipt-slip, .receipt-slip * {
-    visibility: visible;
-  }
-  .receipt-slip {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    max-width: 100%;
-    border: 2px solid #000;
-    background: #fff !important;
-    color: #000 !important;
-  }
-  .r-label, .r-value, .rb-title, .rb-sub {
-    color: #000 !important;
-  }
-}
-
-/* ==========================================================================
    RESPONSIVE DESIGN BREAKPOINTS
    ========================================================================== */
 @media (max-width: 1024px) {
@@ -2077,6 +1747,13 @@ a {
   .criteria-wrapper {
     grid-template-columns: 1fr;
   }
+  .guide-steps-grid {
+    grid-template-columns: 1fr;
+  }
+  .action-callout-box {
+    flex-direction: column;
+    text-align: center;
+  }
   .footer-grid {
     grid-template-columns: 1fr 1fr;
   }
@@ -2107,19 +1784,8 @@ a {
   .timeline-stepper {
     grid-template-columns: 1fr;
   }
-  .col-6 {
-    grid-column: span 12;
-  }
-  .form-card-wrapper {
+  .info-guide-card {
     padding: 24px 18px;
-  }
-  .form-stepper {
-    overflow-x: auto;
-    justify-content: flex-start;
-    gap: 16px;
-  }
-  .step-connector {
-    display: none;
   }
   .footer-grid {
     grid-template-columns: 1fr;

@@ -19,9 +19,8 @@
     })();
   </script>
 
-  <!-- Canonical & Alternate URLs -->
+  <!-- Canonical URL -->
   <link rel="canonical" href="https://info.aimlcluboct.in/">
-  <link rel="alternate" href="https://join.aimlcluboct.in/">
   
   <!-- SEO & Social Meta -->
   <meta name="title" content="Build. Learn. Lead. | AIML Club OCT Recruitment 2026–27 | Oriental College of Technology, Bhopal">
@@ -57,7 +56,10 @@
   <!-- Stylesheet -->
   <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body id="top">
+
+  <!-- Top Reading Scroll Progress Indicator Bar -->
+  <div class="scroll-progress-bar" id="scroll-progress-bar" aria-hidden="true"></div>
 
   <!-- Accessible Skip Link -->
   <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -74,7 +76,7 @@
 
   <!-- Translucent Studio Header -->
   <header class="site-header" id="site-header">
-    <div class="studio-container header-inner">
+    <div class="header-container">
       
       <!-- Brand & Official Logo -->
       <a href="#top" class="header-brand" aria-label="AI & Machine Learning Club – OCT Home">
@@ -82,25 +84,22 @@
           src="assets/aiml-club-oct-logo.png" 
           alt="AI & Machine Learning Club, Oriental College of Technology" 
           class="brand-logo-img" 
-          width="44" 
-          height="44" 
+          width="40" 
+          height="40" 
           loading="eager"
         />
-        <div class="brand-titles">
-          <span class="brand-name">AIML CLUB OCT</span>
-          <span class="brand-subtitle">Oriental College of Technology, Bhopal</span>
-        </div>
+        <span class="brand-name">AI &amp; Machine Learning Club &ndash; OCT</span>
       </a>
 
-      <!-- Desktop Navigation Menu (Streamlined, No Viewport Overflow) -->
+      <!-- Desktop Navigation Menu (Streamlined, Frosted Glass Island) -->
       <nav class="header-nav" id="header-nav" aria-label="Main Navigation">
         <a href="#sec-overview" class="header-nav-link active" data-target="sec-overview">Overview</a>
         <a href="#sec-dates" class="header-nav-link" data-target="sec-dates">Timeline</a>
         <a href="#sec-flows" class="header-nav-link" data-target="sec-flows">Tracks</a>
-        <a href="#sec-application" class="header-nav-link" data-target="sec-application">Application Guide</a>
+        <a href="#sec-application" class="header-nav-link" data-target="sec-application">Blueprint</a>
         <a href="#sec-instructions" class="header-nav-link" data-target="sec-instructions">Departments</a>
         <a href="#sec-slides" class="header-nav-link" data-target="sec-slides">Storyboard</a>
-        <a href="#sec-share" class="header-nav-link" data-target="sec-share">Community</a>
+        <a href="#sec-faq" class="header-nav-link" data-target="sec-faq">FAQ</a>
       </nav>
 
       <!-- Header Actions: Theme Segmented Pill + Dynamic CTA -->
@@ -168,6 +167,10 @@
           <span>Community & Calendar Reminders</span>
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
         </a>
+        <a href="#sec-faq" class="mobile-nav-link" data-target="sec-faq">
+          <span>Frequently Asked Questions</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+        </a>
         <a href="https://aimlcluboct.in" target="_blank" rel="noopener noreferrer" class="mobile-nav-link">
           <span>Club Website (aimlcluboct.in) ↗</span>
         </a>
@@ -208,44 +211,16 @@
         <!-- Status Pill Badge -->
         <div class="hero-status-pill">
           <span class="pulse-beacon" aria-hidden="true"></span>
-          <span class="pill-label">✦ RECRUITMENT 2026–27 &bull; EXCLUSIVELY FOR ORIENTAL COLLEGE OF TECHNOLOGY, BHOPAL</span>
+          <span class="pill-label">RECRUITMENT 2026–27 &bull; ORIENTAL COLLEGE OF TECHNOLOGY, BHOPAL</span>
         </div>
 
-        <!-- Hero Headline -->
+        <!-- Hero Headline (BUILD LEARN LEAD Removed) -->
         <h1 class="hero-display-title" id="hero-heading">
-          BUILD. LEARN. LEAD.<br>
           <span class="hero-gradient-text text-shimmer-fast">AI &amp; Machine Learning Club</span>
         </h1>
 
-        <!-- High-Impact Cultural Punchline Quote -->
-        <div class="hero-punchline-quote">
-          <div class="quote-text">"Classroom theory apni jagah hai, par real engineering actual projects aur working code se aati hai."</div>
-          <span class="quote-author">Oriental College of Technology, Bhopal &bull; Innovate &bull; Implement &bull; Inspire</span>
-        </div>
-
-        <!-- Institutional Subtitle -->
-        <p class="hero-institution-subtitle">
-          Oriental College of Technology, Bhopal ka premier student-led tech community. Exclusively open to enrolled 1st, 2nd &amp; 3rd year engineering students across all branches. Applications from outside institutions are not accepted.
-        </p>
-
-        <!-- Institutional Trust Chips -->
-        <div class="hero-badges-row">
-          <span class="hero-feature-chip">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
-            Oriental College of Technology, Bhopal
-          </span>
-          <span class="hero-feature-chip">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            Candidate &amp; Core Leadership Tracks
-          </span>
-          <span class="hero-feature-chip">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            ₹0 Registration Fee (100% Free)
-          </span>
-          <span class="tag-hinglish">
-            ⚡ HINDI &bull; ENGLISH &bull; HINGLISH WELCOME
-          </span>
-        </div>
+        <!-- Clean Concise Lead Subtitle -->
+        <p class="hero-clean-lead"><em>Innovate &bull; Implement &bull; Inspire</em></p>
 
         <!-- Floating Live Countdown HUD Console -->
         <div class="hero-countdown-hud" aria-label="Recruitment Live Countdown HUD">
@@ -277,21 +252,32 @@
           </div>
         </div>
 
-        <!-- Dynamic Recruitment Notice Bar -->
-        <div class="recruitment-notice-bar" id="hero-status-banner" role="status">
-          <div class="notice-icon-box" id="status-banner-icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+        <!-- Visual WhatsApp Updates Bar (Short, Clear & Focused) -->
+        <div class="whatsapp-compact-card" role="region" aria-label="Official WhatsApp Updates">
+          <div class="wa-compact-main">
+            <div class="wa-compact-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="#25D366"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+            </div>
+            <div class="wa-compact-text">
+              <span class="wa-compact-title">Official AIML Club WhatsApp Group</span>
+              <span class="wa-compact-sub">Shortlisting results &amp; interview schedules will be announced here</span>
+            </div>
           </div>
-          <div class="notice-text-content" id="status-banner-text">
-            <strong>Zaroori Jankari:</strong> Registration window <strong>21 October 2026, 12:00 AM IST</strong> par live hogi exclusively for enrolled Oriental College of Technology (OCT), Bhopal students. Form bharne se pehle sabhi 10 steps, eligibility aur 8 departments ka blueprint dekh lo taaki submission ke time koi confusion na ho. External form link tab tak strictly protected hai.
+          <div class="wa-compact-actions">
+            <a href="https://chat.whatsapp.com/ITBTDOgerQVLnw9dq7jxN6" target="_blank" rel="noopener noreferrer" class="btn-wa-compact magnetic-btn">
+              <span>Join WhatsApp Group</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <a href="https://whatsapp.com/channel/0029VbAthv38V0tfulumuV1D" target="_blank" rel="noopener noreferrer" class="wa-compact-channel" title="Follow WhatsApp Channel">
+              <span>Channel ↗</span>
+            </a>
           </div>
         </div>
 
-        <!-- Hero Actions Row -->
+        <!-- Clean Hero Actions -->
         <div class="hero-cta-group">
           <a href="#sec-application" class="btn btn-lg btn-primary magnetic-btn" id="btn-hero-register">
             <span id="btn-hero-register-text">Registration Opens 21 October</span>
-            <span class="badge" id="btn-hero-register-badge" style="background: rgba(0,0,0,0.2); padding: 2px 8px; border-radius: 99px; font-size: 0.75rem;">Opens 21 Oct</span>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
 
@@ -300,12 +286,7 @@
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
           </a>
 
-          <a href="#sec-dates" class="btn btn-lg btn-outline magnetic-btn">
-            <span>Timeline Milestones</span>
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/></svg>
-          </a>
-
-          <button class="theme-toggle-btn magnetic-btn" id="btn-hero-share" title="Share circular" aria-label="Share circular">
+          <button class="theme-toggle-btn magnetic-btn" id="btn-hero-share" title="Share recruitment portal" aria-label="Share recruitment portal">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
           </button>
         </div>
@@ -329,66 +310,6 @@
       </div>
     </div>
 
-    <!-- INNOVATION & RESEARCH SHOWCASE (MAESTROCLASS EDITORIAL FEATURE) -->
-    <section class="studio-section studio-innovation-section reveal-on-scroll" id="sec-lab" aria-labelledby="lab-heading">
-      <div class="studio-container">
-        
-        <div class="innovation-showcase-card">
-          <div class="innovation-media-frame">
-            <img 
-              src="assets/aiml-innovation-lab.jpg" 
-              alt="AI and Machine Learning Club OCT Innovation Laboratory" 
-              class="innovation-media-img" 
-              loading="lazy" 
-              width="1280" 
-              height="720"
-            />
-            <div class="innovation-media-overlay"></div>
-            <div class="innovation-badge-pill">
-              <span class="pulse-beacon" aria-hidden="true"></span>
-              <span>OCT INNOVATION &amp; RESEARCH SQUAD</span>
-            </div>
-          </div>
-
-          <div class="innovation-content-panel">
-            <span class="section-eyebrow">HAMARA TECH ECOSYSTEM</span>
-            <h2 class="innovation-panel-title" id="lab-heading">
-              Sirf Presentations Nahi, <span class="text-shimmer">Working Code Aur Real Models</span> Deploy Hote Hain
-            </h2>
-            <p class="innovation-panel-desc">
-              AIML Club OCT mein hum passive theory par time waste nahi karte. Yahan 1st year se 3rd year tak ke students computer vision pipelines train karte hain, deep learning architectures banate hain, national hackathons crack karte hain, aur live software ship karte hain. Chahe tum coding mein naye ho ya advanced developer — yahan seekhne aur build karne ki bhookh sabse zyada matter karti hai.
-            </p>
-
-            <div class="innovation-metrics-row">
-              <div class="metric-block">
-                <div class="metric-num">100%</div>
-                <div class="metric-label">Practical Projects</div>
-              </div>
-              <div class="metric-block">
-                <div class="metric-num">8 Wings</div>
-                <div class="metric-label">Tech, Design &amp; Ops</div>
-              </div>
-              <div class="metric-block">
-                <div class="metric-num">₹0 Fee</div>
-                <div class="metric-label">Free For OCT Students</div>
-              </div>
-            </div>
-
-            <div class="innovation-cta-row">
-              <a href="#sec-application" class="btn btn-primary magnetic-btn">
-                <span>View 10-Step Application Blueprint</span>
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-              </a>
-              <a href="#sec-flows" class="btn btn-outline magnetic-btn">
-                <span>Explore Selection Tracks</span>
-              </a>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
     <!-- SECTION 1: KEY DATES & TIMELINE (BENTO GRID) -->
     <section class="studio-section reveal-on-scroll" id="sec-dates" aria-labelledby="dates-heading">
       <div class="studio-container">
@@ -403,10 +324,10 @@
           </p>
         </div>
 
-        <div class="dates-bento-grid">
+        <div class="dates-bento-grid stacking-cards-container">
           
           <!-- Milestone 1 -->
-          <div class="bento-date-card" id="card-date-open">
+          <div class="bento-date-card stacking-card" id="card-date-open" style="--card-index: 0;">
             <div class="bento-card-top">
               <span class="bento-stage-tag" id="badge-date-open">STAGE 1 &bull; FORM OPENS</span>
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--brand-lime)" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 14 14"/></svg>
@@ -421,7 +342,7 @@
           </div>
 
           <!-- Milestone 2 -->
-          <div class="bento-date-card" id="card-date-close">
+          <div class="bento-date-card stacking-card" id="card-date-close" style="--card-index: 1;">
             <div class="bento-card-top">
               <span class="bento-stage-tag" id="badge-date-close">DEADLINE &bull; FORM CLOSES</span>
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
@@ -436,22 +357,25 @@
           </div>
 
           <!-- Milestone 3 -->
-          <div class="bento-date-card">
+          <div class="bento-date-card stacking-card" style="--card-index: 2;">
             <div class="bento-card-top">
               <span class="bento-stage-tag">STAGE 2 &bull; EVALUATION</span>
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--brand-cyan)" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+              <span class="milestone-wa-pill">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="#25D366"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+                <span>WhatsApp Updates</span>
+              </span>
             </div>
             <div>
               <div class="bento-date-numeral">26–28</div>
               <div class="bento-date-title">October 2026</div>
               <p class="bento-date-desc">
-                Manual dossier &amp; repo review. Shortlisted applicants ko unke selected domain ka ek practical mini-challenge assign kiya jayega.
+                Dossier review &amp; task round. Shortlisted applicants aur interview schedules <strong>directly official WhatsApp group &amp; channel</strong> par inform kiye jayenge.
               </p>
             </div>
           </div>
 
           <!-- Milestone 4 -->
-          <div class="bento-date-card">
+          <div class="bento-date-card stacking-card" style="--card-index: 3;">
             <div class="bento-card-top">
               <span class="bento-stage-tag">STAGE 3 &bull; INDUCTION</span>
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--brand-lime)" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
@@ -670,7 +594,7 @@
 
             <button class="step-nav-pill-btn" data-step="10" role="tab">
               <span class="step-pill-index">10</span>
-              <span class="step-pill-text">Instant PDF Record &amp; Screening QR Code</span>
+              <span class="step-pill-text">Confirmation &amp; WhatsApp Group Join</span>
             </button>
 
           </div>
@@ -762,6 +686,17 @@
 
             </div>
 
+          </div>
+
+          <!-- UI-Layouts Inspired: Smooth Horizontal Scroll Filmstrip -->
+          <div class="storyboard-horizontal-scroll-container" aria-label="Storyboard Slides Horizontal Filmstrip">
+            <div class="horizontal-scroll-header">
+              <span class="h-scroll-tag">HORIZONTAL SCROLL &bull; 8 CAMPAIGN SLIDES</span>
+              <span class="h-scroll-hint">Swipe or scroll horizontally &bull; Click any slide to view</span>
+            </div>
+            <div class="horizontal-scroll-track" id="storyboard-track" tabindex="0" role="region" aria-label="Horizontal slide strip">
+              <!-- Dynamically populated interactive slide cards -->
+            </div>
           </div>
         </div>
 
@@ -1063,7 +998,120 @@
       </div>
     </section>
 
-    <!-- SECTION 8: APPLICATION PORTAL STATUS VAULT -->
+    <!-- SECTION 8: FREQUENTLY ASKED QUESTIONS (FAQ ACCORDION) -->
+    <section class="studio-section reveal-on-scroll" id="sec-faq" aria-labelledby="faq-heading">
+      <div class="studio-container">
+        
+        <div class="section-header-studio">
+          <span class="section-eyebrow">COMMON QUERIES</span>
+          <h2 class="section-title-studio" id="faq-heading">
+            Frequently Asked <span class="text-gradient">Questions</span>
+          </h2>
+          <p class="section-subtitle-studio">
+            Eligibility, selection tracks, interview prep aur technical stack se related clear aur direct answers:
+          </p>
+        </div>
+
+        <div class="faq-accordion-grid">
+          
+          <!-- FAQ 1 -->
+          <details class="faq-item" open>
+            <summary class="faq-summary">
+              <span>1. Who is eligible to apply for AIML Club OCT recruitment?</span>
+              <svg class="faq-icon-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="faq-body">
+              Recruitment is strictly and exclusively open to enrolled <strong>1st, 2nd, and 3rd year engineering students of Oriental College of Technology (OCT), Bhopal</strong> across all branches (CSE, AIML, IT, DS, EC, EX, ME, CE). Submissions from outside institutions or non-enrolled students are rejected during automated verification.
+            </div>
+          </details>
+
+          <!-- FAQ 2 -->
+          <details class="faq-item">
+            <summary class="faq-summary">
+              <span>2. Kya recruitment ya club membership ke liye koi registration fee hai?</span>
+              <svg class="faq-icon-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="faq-body">
+              <strong>Bilkul ₹0 (100% Free)</strong>. AIML Club OCT ek student-led technical community hai. Recruitment process, registration form, workshops, aur membership ke kisi bhi step par koi fee charge nahi hoti.
+            </div>
+          </details>
+
+          <!-- FAQ 3 -->
+          <details class="faq-item">
+            <summary class="faq-summary">
+              <span>3. Main 1st year student hoon aur AI/ML pehle se nahi aati. Kya main apply kar sakta hoon?</span>
+              <svg class="faq-icon-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="faq-body">
+              Haan, bilkul! Hamara <strong>Track A (Explorer Track)</strong> specifically 1st aur early 2nd year students ke liye design kiya gaya hai. Hum aapka past technical portfolio nahi, balki aapka <em>curiosity, consistency, aur problem-solving intent</em> test karte hain. Club mein regular hands-on workshops aur senior mentor pairing ke through scratch se train kiya jata hai.
+            </div>
+          </details>
+
+          <!-- FAQ 4 -->
+          <details class="faq-item">
+            <summary class="faq-summary">
+              <span>4. Track A (Explorer) aur Track B (Core Team) mein kya difference hai?</span>
+              <svg class="faq-icon-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="faq-body">
+              <strong>Track A (Explorer Track):</strong> Focused on skill acquisition, interactive bootcamps, and cohort projects under senior mentorship.<br><br>
+              <strong>Track B (Core Team Track):</strong> For students with existing proof-of-work (deployed GitHub projects, live websites, Kaggle notebooks, Figma design systems, or event management experience) who want to architect production systems and lead club initiatives.
+            </div>
+          </details>
+
+          <!-- FAQ 5 -->
+          <details class="faq-item">
+            <summary class="faq-summary">
+              <span>5. Kya personal laptop hona mandatory hai?</span>
+              <svg class="faq-icon-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="faq-body">
+              Technical aur Graphics/Media tracks ke active coding aur design assignments ke liye laptop recommend kiya jata hai. Agar aapke paas personal laptop nahi hai, tab bhi aap college computer labs aur library resources utilize karke participate kar sakte hain.
+            </div>
+          </details>
+
+          <!-- FAQ 6 -->
+          <details class="faq-item">
+            <summary class="faq-summary">
+              <span>6. Can I apply for more than one department?</span>
+              <svg class="faq-icon-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="faq-body">
+              Haan! 10-step application form mein aapko primary department choose karne ke sath-sath ek secondary wing select karne ka option bhi milta hai. Stage 3 interview mein panel aapke strengths aur passion ke according best domain align karta hai.
+            </div>
+          </details>
+
+          <!-- FAQ 7 -->
+          <details class="faq-item">
+            <summary class="faq-summary">
+              <span>7. Form submit karne ke baad candidate verification kaise hoga?</span>
+              <svg class="faq-icon-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="faq-body">
+              Form submit hote hi hamara automated screening system aapke registered email par ek <strong>Official Application Record PDF</strong> aur ek encrypted <strong>Screening QR Code</strong> dispatch karega. Yeh QR code Stage 2 domain challenge aur on-campus round entry ke liye scan kiya jayega.
+            </div>
+          </details>
+
+          <!-- FAQ 8 -->
+          <details class="faq-item">
+            <summary class="faq-summary">
+              <span>8. Important timeline aur deadlines kya hain?</span>
+              <svg class="faq-icon-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="faq-body">
+              &bull; <strong>Applications Open:</strong> Wednesday, 21 October 2026 at 12:00 AM IST (Midnight)<br>
+              &bull; <strong>Applications Close:</strong> Sunday, 25 October 2026 at 11:59 PM IST (Strict 5-day window)<br>
+              &bull; <strong>Stage 2 Screening:</strong> 26–28 October 2026 (Shortlisted candidates notified)<br>
+              &bull; <strong>Stage 3 Interviews &amp; Inductions:</strong> 29–31 October 2026
+            </div>
+          </details>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 9: APPLICATION PORTAL STATUS VAULT -->
     <section class="studio-section reveal-on-scroll" id="sec-portal" aria-labelledby="portal-heading">
       <div class="studio-container">
         
@@ -1095,36 +1143,95 @@
   <footer class="studio-footer">
     <div class="studio-container">
       
-      <div class="footer-top-row">
-        <div class="footer-brand-box">
-          <img 
-            src="assets/logo.png" 
-            alt="AI & Machine Learning Club, Oriental College of Technology" 
-            class="brand-logo-img" 
-            width="50" 
-            height="50" 
-            loading="lazy"
-          />
-          <div>
-            <div style="font-family: var(--font-display); font-weight: 700; font-size: 1.25rem; color: #fff;">
-              AI &amp; Machine Learning Club – OCT
+      <div class="footer-grid-layout">
+        <!-- Col 1: Brand & Institution -->
+        <div class="footer-brand-col">
+          <div class="footer-brand-box">
+            <img 
+              src="assets/logo.png" 
+              alt="AI & Machine Learning Club, Oriental College of Technology" 
+              class="brand-logo-img" 
+              width="48" 
+              height="48" 
+              loading="lazy"
+            />
+            <div>
+              <div style="font-family: var(--font-display); font-weight: 700; font-size: 1.15rem; color: var(--text-highlight);">
+                AI &amp; Machine Learning Club
+              </div>
+              <div style="font-size: 0.8125rem; color: var(--text-secondary); margin-top: 2px;">
+                Oriental College of Technology, Bhopal
+              </div>
+              <div class="footer-tagline">Innovate &bull; Implement &bull; Inspire.</div>
             </div>
-            <div style="font-size: 0.8125rem; color: var(--text-secondary);">
-              Oriental College of Technology, Bhopal, Madhya Pradesh
-            </div>
-            <div class="footer-tagline">Innovate &bull; Implement &bull; Inspire.</div>
+          </div>
+          <p class="footer-col-desc" style="margin-top: 16px;">
+            The central student-led technical community driving AI, Machine Learning, Web3, Systems, and Research engineering excellence at OCT Bhopal.
+          </p>
+          <div style="margin-top: 14px;">
+            <a href="mailto:contact@aimlcluboct.in" class="footer-link-item">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              contact@aimlcluboct.in
+            </a>
           </div>
         </div>
 
-        <div class="footer-links-cluster">
-          <a href="https://aimlcluboct.in" target="_blank" rel="noopener noreferrer" class="footer-link-item">aimlcluboct.in</a>
-          <a href="https://social.aimlcluboct.in" target="_blank" rel="noopener noreferrer" class="footer-link-item">social.aimlcluboct.in</a>
-          <a href="https://info.aimlcluboct.in" class="footer-link-item">info.aimlcluboct.in</a>
-          <a href="https://join.aimlcluboct.in" class="footer-link-item">join.aimlcluboct.in</a>
-          <a href="https://github.com/AIMLCLUBOCT" target="_blank" rel="noopener noreferrer" class="footer-link-item">GitHub</a>
-          <a href="https://linkedin.com/company/aimlcluboct" target="_blank" rel="noopener noreferrer" class="footer-link-item">LinkedIn</a>
-          <a href="https://instagram.com/aimlcluboct" target="_blank" rel="noopener noreferrer" class="footer-link-item">Instagram</a>
-          <a href="mailto:contact@aimlcluboct.in" class="footer-link-item">contact@aimlcluboct.in</a>
+        <!-- Col 2: Navigation Blueprint -->
+        <div>
+          <div class="footer-col-title">Navigation</div>
+          <div class="footer-col-links">
+            <a href="#sec-overview" class="footer-link-item">Overview &amp; HUD</a>
+            <a href="#sec-dates" class="footer-link-item">Recruitment Timeline</a>
+            <a href="#sec-flows" class="footer-link-item">Dual Selection Tracks</a>
+            <a href="#sec-application" class="footer-link-item">10-Step Blueprint</a>
+            <a href="#sec-instructions" class="footer-link-item">8 Tech Departments</a>
+            <a href="#sec-slides" class="footer-link-item">Campaign Storyboard</a>
+            <a href="#sec-organization" class="footer-link-item">Executive Council</a>
+            <a href="#sec-faq" class="footer-link-item">Frequently Asked Questions</a>
+          </div>
+        </div>
+
+        <!-- Col 3: Verified Platforms -->
+        <div>
+          <div class="footer-col-title">Official Channels</div>
+          <div class="footer-col-links">
+            <a href="https://chat.whatsapp.com/ITBTDOgerQVLnw9dq7jxN6" target="_blank" rel="noopener noreferrer" class="footer-link-item" style="color: #25D366; font-weight: 600;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+              <span>WhatsApp Community</span>
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+            </a>
+            <a href="https://whatsapp.com/channel/0029VbAthv38V0tfulumuV1D" target="_blank" rel="noopener noreferrer" class="footer-link-item" style="color: #25D366; font-weight: 600;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+              <span>WhatsApp Channel</span>
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+            </a>
+            <a href="https://aimlcluboct.in" target="_blank" rel="noopener noreferrer" class="footer-link-item">
+              <span>aimlcluboct.in</span>
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+            </a>
+            <a href="https://social.aimlcluboct.in" target="_blank" rel="noopener noreferrer" class="footer-link-item">
+              <span>social.aimlcluboct.in</span>
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+            </a>
+            <a href="https://info.aimlcluboct.in" class="footer-link-item">
+              <span>info.aimlcluboct.in</span>
+              <span style="font-size:0.65rem; padding: 2px 6px; border-radius: 4px; background: rgba(203, 251, 31, 0.15); color: var(--brand-lime); font-weight:700;">PORTAL</span>
+            </a>
+            <a href="https://github.com/AIMLCLUBOCT" target="_blank" rel="noopener noreferrer" class="footer-link-item">GitHub Organization</a>
+            <a href="https://linkedin.com/company/aimlcluboct" target="_blank" rel="noopener noreferrer" class="footer-link-item">LinkedIn Network</a>
+            <a href="https://instagram.com/aimlcluboct" target="_blank" rel="noopener noreferrer" class="footer-link-item">Instagram Community</a>
+          </div>
+        </div>
+
+        <!-- Col 4: Institutional Candidate Notice -->
+        <div>
+          <div class="footer-col-title">Candidate Notice</div>
+          <div class="footer-col-desc" style="margin-bottom: 14px;">
+            Registration is strictly <strong>₹0 (100% Free)</strong>. Applications open strictly on <strong>21 October 2026 at 12:00 AM IST</strong> and close on <strong>25 October 2026 at 11:59 PM IST</strong>.
+          </div>
+          <div class="footer-col-desc" style="font-size: 0.8125rem; color: var(--text-muted);">
+            Open exclusively for enrolled 1st, 2nd, and 3rd year students of Oriental College of Technology (OCT), Bhopal. Outside submissions will be rejected automatically.
+          </div>
         </div>
       </div>
 
@@ -1132,8 +1239,8 @@
         <div>
           &copy; 2026 AI &amp; Machine Learning Club, Oriental College of Technology, Bhopal. All rights reserved.
         </div>
-        <div>
-          Exclusively for enrolled OCT Bhopal students &bull; Zero Registration Fee
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <span>📍 Bhopal, India &bull; Indian Standard Time (IST)</span>
         </div>
       </div>
 

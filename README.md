@@ -10,7 +10,7 @@ Official announcement, informational circular, and campaign ecosystem for the 20
 
 | Portal / Resource | Destination | Role & Purpose |
 | :--- | :--- | :--- |
-| **Recruitment Announcement (Current Site)** | [https://join.aimlcluboct.in](https://join.aimlcluboct.in) <br> *(also accessible at [https://info.aimlcluboct.in](https://info.aimlcluboct.in))* | Candidate guidelines, 10-step application preview, dual-track selection process, 8-slide campaign storyboard, organization hierarchy, calendar reminders, and live countdown. |
+| **Recruitment Announcement (Current Site)** | [https://info.aimlcluboct.in](https://info.aimlcluboct.in) | Candidate guidelines, 10-step application preview, dual-track selection process, 8-slide campaign storyboard, organization hierarchy, calendar reminders, and live countdown. |
 | **Official Application Form (Confidential)** | *Released strictly on 21 Oct 2026 at 12:00 AM IST* | 10-step recruitment submission portal. Collects applications and automatically dispatches the Application Record PDF and unique screening QR code. |
 | **Official Club Website** | [https://aimlcluboct.in](https://aimlcluboct.in) | Primary organization homepage detailing past hackathons, flagship projects, executive council, research, and workshop archives. |
 | **Verified Social Directory Hub** | [https://social.aimlcluboct.in](https://social.aimlcluboct.in) | Centralized directory linking verified WhatsApp community groups, LinkedIn, Discord, Telegram, Instagram, GitHub, and YouTube. |

@@ -1,85 +1,126 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en" class="scroll-smooth" data-theme="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Official Announcement: AI & ML Club Recruitment 2026–27 | Oriental College of Technology, Bhopal</title>
+  <title>Build. Learn. Lead. | AIML Club OCT Recruitment 2026–27 | Oriental College of Technology, Bhopal</title>
+  
+  <!-- Anti-FOUC Theme Initialization Script -->
+  <script>
+    (function() {
+      try {
+        const savedTheme = localStorage.getItem('aiml-oct-theme');
+        const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const theme = savedTheme || (systemPrefersDark ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+      } catch (e) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    })();
+  </script>
+
+  <!-- Canonical & Alternate URLs -->
+  <link rel="canonical" href="https://info.aimlcluboct.in/">
+  <link rel="alternate" href="https://join.aimlcluboct.in/">
   
   <!-- SEO & Social Meta -->
-  <meta name="title" content="Official Announcement: AI & ML Club Recruitment 2026–27 | Oriental College of Technology, Bhopal">
-  <meta name="description" content="Official recruitment announcement for AI & Machine Learning Club, Oriental College of Technology, Bhopal. Explore Candidate Flow, Core Team Flow, verified QR screening, and timeline. Opens 21 Oct 2026.">
-  <meta name="keywords" content="AIML Club OCT, Oriental College of Technology Bhopal, Recruitment Flow 2026-27, Candidate Flow, Core Team Flow, AI ML Club, Unique QR Email">
-  <meta name="author" content="AIML Club, Oriental College of Technology">
-  <meta name="theme-color" content="#070a0f">
+  <meta name="title" content="Build. Learn. Lead. | AIML Club OCT Recruitment 2026–27 | Oriental College of Technology, Bhopal">
+  <meta name="description" content="Official recruitment information page for AI & Machine Learning Club, Oriental College of Technology, Bhopal. Explore eligibility, the 10-step application journey, selection stages, 8 campaign slides, and club structure. Registration opens 21 October 2026.">
+  <meta name="keywords" content="AIML Club OCT, Oriental College of Technology Bhopal, Recruitment 2026-27, Candidate Flow, Core Team Flow, AI ML Club Bhopal, Engineering Student Council">
+  <meta name="author" content="AI & Machine Learning Club, Oriental College of Technology, Bhopal">
+  <meta name="theme-color" content="#06080d">
 
-  <!-- Open Graph -->
+  <!-- Open Graph / Social Media -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="AIML Club OCT Recruitment 2026–27 — Official Announcement & Flow">
-  <meta property="og:description" content="Candidate Flow & Core Team Flow. Unique QR in email + PDF screening. Open to students from all branches at Oriental College of Technology, Bhopal.">
-  <meta property="og:url" content="https://info.aimlcluboct.in">
-  <meta property="og:image" content="assets/logo.png">
+  <meta property="og:title" content="Build. Learn. Lead. — AIML Club OCT Recruitment 2026–27">
+  <meta property="og:description" content="Official recruitment information for AI & Machine Learning Club at Oriental College of Technology, Bhopal. Opens 21 Oct 2026. Exclusively for 1st, 2nd, and 3rd year engineering students.">
+  <meta property="og:url" content="https://info.aimlcluboct.in/">
+  <meta property="og:image" content="https://info.aimlcluboct.in/assets/campaign/01-HOOK.png">
+  <meta property="og:site_name" content="AIML Club OCT">
 
-  <!-- Favicons generated directly from official logo -->
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AIML Club OCT Recruitment 2026–27 | Oriental College of Technology, Bhopal">
+  <meta name="twitter:description" content="Official recruitment information page for AI & Machine Learning Club at Oriental College of Technology, Bhopal. Opens 21 October 2026.">
+  <meta name="twitter:image" content="https://info.aimlcluboct.in/assets/campaign/01-HOOK.png">
+
+  <!-- Favicons -->
   <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="64x64" href="assets/favicon-64x64.png">
   <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
 
-  <!-- Google Fonts: Plus Jakarta Sans, Inter, JetBrains Mono -->
+  <!-- Google Fonts Preconnect -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800;900&display=swap" rel="stylesheet">
 
+  <!-- Stylesheet -->
   <link rel="stylesheet" href="styles.css">
 </head>
-<body id="top">
+<body>
 
-  <!-- Scroll Progress Indicator Bar -->
-  <div class="scroll-progress-bar" id="scroll-progress" aria-hidden="true"></div>
+  <!-- Accessible Skip Link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
 
-  <!-- Ambient Glowing Tech Background -->
-  <div class="ambient-glow glow-top" aria-hidden="true"></div>
-  <div class="ambient-glow glow-bottom" aria-hidden="true"></div>
-  <div class="bg-grid-overlay" aria-hidden="true"></div>
+  <!-- Ambient Dynamic Studio Atmosphere -->
+  <div class="studio-ambient-bg" aria-hidden="true">
+    <div class="ambient-orb orb-1"></div>
+    <div class="ambient-orb orb-2"></div>
+    <div class="ambient-grid"></div>
+  </div>
 
-  <!-- Primary Site Header & Unified Navigation (Sticky & Device-Calibrated) -->
+  <!-- A11y Live Announcer -->
+  <div id="a11y-announcements" class="sr-only" aria-live="polite" aria-atomic="true"></div>
+
+  <!-- Translucent Studio Header -->
   <header class="site-header" id="site-header">
-    <div class="site-header-inner">
+    <div class="studio-container header-inner">
       
       <!-- Brand & Official Logo -->
-      <a href="#top" class="header-brand" aria-label="AI & Machine Learning Club - OCT Home">
+      <a href="#top" class="header-brand" aria-label="AI & Machine Learning Club – OCT Home">
         <img 
           src="assets/aiml-club-oct-logo.png" 
           alt="AI & Machine Learning Club, Oriental College of Technology" 
-          class="official-logo site-header-logo" 
-          width="40" 
-          height="40"
+          class="brand-logo-img" 
+          width="44" 
+          height="44" 
           loading="eager"
         />
-        <div class="header-brand-text">
-          <span class="header-title">AI &amp; Machine Learning Club - OCT</span>
-          <span class="header-badge-mini">Recruitment 2026–27</span>
+        <div class="brand-titles">
+          <span class="brand-name">AIML CLUB OCT</span>
+          <span class="brand-subtitle">Oriental College of Technology, Bhopal</span>
         </div>
       </a>
 
-      <!-- Desktop Navigation Menu -->
+      <!-- Desktop Navigation Menu (Streamlined, No Viewport Overflow) -->
       <nav class="header-nav" id="header-nav" aria-label="Main Navigation">
         <a href="#sec-overview" class="header-nav-link active" data-target="sec-overview">Overview</a>
-        <a href="#sec-dates" class="header-nav-link" data-target="sec-dates">Dates</a>
-        <a href="#sec-flows" class="header-nav-link" data-target="sec-flows">Selection Flows</a>
+        <a href="#sec-dates" class="header-nav-link" data-target="sec-dates">Timeline</a>
+        <a href="#sec-flows" class="header-nav-link" data-target="sec-flows">Tracks</a>
+        <a href="#sec-application" class="header-nav-link" data-target="sec-application">Application Guide</a>
+        <a href="#sec-instructions" class="header-nav-link" data-target="sec-instructions">Departments</a>
         <a href="#sec-slides" class="header-nav-link" data-target="sec-slides">Storyboard</a>
-        <a href="#sec-instructions" class="header-nav-link" data-target="sec-instructions">Guidelines</a>
-        <a href="#sec-share" class="header-nav-link" data-target="sec-share">Share</a>
+        <a href="#sec-share" class="header-nav-link" data-target="sec-share">Community</a>
       </nav>
 
-      <!-- Header Actions -->
+      <!-- Header Actions: Theme Segmented Pill + Dynamic CTA -->
       <div class="header-actions">
-        <button class="btn btn-sm btn-outline header-share-btn magnetic-btn" id="header-share-btn" title="Share recruitment announcement">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
-          <span>Share</span>
-        </button>
-        <a href="#sec-portal" class="btn btn-sm btn-primary header-cta-btn magnetic-btn" id="header-cta-btn">
-          <span>Apply Now</span>
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        <!-- Segmented Theme Switcher (Dark / Light) -->
+        <div class="theme-segmented-pill" id="theme-segmented-pill" role="group" aria-label="Theme mode switcher">
+          <button type="button" class="theme-pill-btn active" id="btn-theme-dark" data-theme-val="dark" aria-label="Dark mode">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+            <span>Dark</span>
+          </button>
+          <button type="button" class="theme-pill-btn" id="btn-theme-light" data-theme-val="light" aria-label="Light mode">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+            <span>Light</span>
+          </button>
+        </div>
+
+        <!-- Dynamic Header CTA Button -->
+        <a href="#sec-application" class="btn btn-sm btn-primary header-cta-btn magnetic-btn" id="header-cta-btn">
+          <span id="header-cta-label">Opens 21 Oct</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
 
         <!-- Mobile Menu Toggle Button -->
@@ -94,767 +135,1040 @@
 
     <!-- Mobile Slide-Down Drawer Navigation -->
     <div class="mobile-nav-drawer" id="mobile-nav-drawer" aria-hidden="true">
-      <div class="mobile-drawer-inner">
-        <div class="mobile-nav-links">
-          <a href="#sec-overview" class="mobile-nav-link active" data-target="sec-overview">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-            <span>Overview &amp; Countdown</span>
-          </a>
-          <a href="#sec-dates" class="mobile-nav-link" data-target="sec-dates">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-            <span>Key Recruitment Dates</span>
-          </a>
-          <a href="#sec-flows" class="mobile-nav-link" data-target="sec-flows">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-            <span>Selection Flows (Candidate &amp; Core)</span>
-          </a>
-          <a href="#sec-slides" class="mobile-nav-link" data-target="sec-slides">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"/><line x1="7" y1="2" x2="7" y2="22"/><line x1="17" y1="2" x2="17" y2="22"/><line x1="2" y1="12" x2="22" y2="12"/></svg>
-            <span>Recruitment Storyboard (8 Slides)</span>
-          </a>
-          <a href="#sec-instructions" class="mobile-nav-link" data-target="sec-instructions">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
-            <span>Applicant Guidelines</span>
-          </a>
-          <a href="#sec-share" class="mobile-nav-link" data-target="sec-share">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
-            <span>Share &amp; Set Calendar Alarm</span>
-          </a>
-        </div>
-        <div class="mobile-drawer-cta">
-          <a href="#sec-portal" class="btn btn-primary btn-block mobile-apply-btn">
-            <span>Apply on Official Portal</span>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </a>
-        </div>
+      <div class="mobile-nav-links">
+        <a href="#sec-overview" class="mobile-nav-link active" data-target="sec-overview">
+          <span>Overview & Countdown</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+        </a>
+        <a href="#sec-dates" class="mobile-nav-link" data-target="sec-dates">
+          <span>Recruitment Timeline</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+        </a>
+        <a href="#sec-flows" class="mobile-nav-link" data-target="sec-flows">
+          <span>Selection Tracks (Candidate & Core)</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+        </a>
+        <a href="#sec-application" class="mobile-nav-link" data-target="sec-application">
+          <span>Inside the Application (10 Steps)</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+        </a>
+        <a href="#sec-slides" class="mobile-nav-link" data-target="sec-slides">
+          <span>Recruitment Storyboard (8 Slides)</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+        </a>
+        <a href="#sec-instructions" class="mobile-nav-link" data-target="sec-instructions">
+          <span>Departments & Guidelines</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+        </a>
+        <a href="#sec-organization" class="mobile-nav-link" data-target="sec-organization">
+          <span>Executive Council Hierarchy</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+        </a>
+        <a href="#sec-share" class="mobile-nav-link" data-target="sec-share">
+          <span>Community & Calendar Reminders</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+        </a>
+        <a href="https://aimlcluboct.in" target="_blank" rel="noopener noreferrer" class="mobile-nav-link">
+          <span>Club Website (aimlcluboct.in) ↗</span>
+        </a>
+        <a href="https://social.aimlcluboct.in" target="_blank" rel="noopener noreferrer" class="mobile-nav-link">
+          <span>Social Directory (social.aimlcluboct.in) ↗</span>
+        </a>
+      </div>
+      <div style="margin-top: 24px;">
+        <a href="#sec-application" class="btn btn-primary btn-block" id="mobile-cta-btn" style="width: 100%;">
+          <span id="mobile-cta-label">Registration Opens 21 Oct</span>
+        </a>
       </div>
     </div>
   </header>
 
-  <div class="announcement-wrapper">
+  <!-- Full-Bleed Edge-to-Edge Main Experience -->
+  <main class="site-main" id="main-content">
 
-    <!-- Main Official Announcement Card -->
-    <main class="notice-card reveal-item spotlight-card">
+    <!-- HERO SECTION WITH CINEMATIC CAMPUS BACKGROUND -->
+    <section class="hero-studio" id="sec-overview" aria-labelledby="hero-heading">
+      
+      <!-- Cinematic Animated Campus Background Anchor -->
+      <div class="hero-bg-container" aria-hidden="true">
+        <img 
+          src="assets/oriental-college-campus.png" 
+          alt="Oriental College of Technology Bhopal Campus Building" 
+          class="hero-bg-image" 
+          loading="eager" 
+          fetchpriority="high"
+        />
+        <div class="hero-bg-overlay"></div>
+        <div class="hero-bg-gradient-top"></div>
+        <div class="hero-bg-gradient-bottom"></div>
+      </div>
 
-      <!-- Hero Announcement Section with LIVE COUNTDOWN TIMER -->
-      <div class="notice-top hero-announcement" id="sec-overview">
+      <div class="studio-container hero-center-content">
         
-        <div class="announcement-pill">
-          <span class="pulse-indicator-dot" aria-hidden="true"></span>
-          <span class="pill-text">OFFICIAL RECRUITMENT CIRCULAR &bull; SESSION 2026–27</span>
+        <!-- Status Pill Badge -->
+        <div class="hero-status-pill">
+          <span class="pulse-beacon" aria-hidden="true"></span>
+          <span class="pill-label">✦ RECRUITMENT 2026–27 &bull; EXCLUSIVELY FOR ORIENTAL COLLEGE OF TECHNOLOGY, BHOPAL</span>
         </div>
-        
-        <h1 class="announcement-heading">
-          AI &amp; Machine Learning Club <span class="highlight-text">Recruitment 2026–27</span>
+
+        <!-- Hero Headline -->
+        <h1 class="hero-display-title" id="hero-heading">
+          BUILD. LEARN. LEAD.<br>
+          <span class="hero-gradient-text text-shimmer-fast">AI &amp; Machine Learning Club</span>
         </h1>
 
-        <p class="college-subtitle">
-          Oriental College of Technology, Bhopal &bull; Department of AI &amp; ML &bull; Open to 1st, 2nd &amp; 3rd Year Students (All Branches)
+        <!-- High-Impact Cultural Punchline Quote -->
+        <div class="hero-punchline-quote">
+          <div class="quote-text">"Classroom theory apni jagah hai, par real engineering actual projects aur working code se aati hai."</div>
+          <span class="quote-author">Oriental College of Technology, Bhopal &bull; Innovate &bull; Implement &bull; Inspire</span>
+        </div>
+
+        <!-- Institutional Subtitle -->
+        <p class="hero-institution-subtitle">
+          Oriental College of Technology, Bhopal ka premier student-led tech community. Exclusively open to enrolled 1st, 2nd &amp; 3rd year engineering students across all branches. Applications from outside institutions are not accepted.
         </p>
 
-        <!-- LIVE HERO COUNTDOWN TIMER -->
-        <div class="hero-live-timer-card spotlight-card">
-          <div class="hero-timer-header">
-            <div class="hero-timer-status">
-              <span class="timer-live-beacon"></span>
-              <span class="timer-headline-label">Official Registration Portal Opens In:</span>
+        <!-- Institutional Trust Chips -->
+        <div class="hero-badges-row">
+          <span class="hero-feature-chip">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+            Oriental College of Technology, Bhopal
+          </span>
+          <span class="hero-feature-chip">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            Candidate &amp; Core Leadership Tracks
+          </span>
+          <span class="hero-feature-chip">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            ₹0 Registration Fee (100% Free)
+          </span>
+          <span class="tag-hinglish">
+            ⚡ HINDI &bull; ENGLISH &bull; HINGLISH WELCOME
+          </span>
+        </div>
+
+        <!-- Floating Live Countdown HUD Console -->
+        <div class="hero-countdown-hud" aria-label="Recruitment Live Countdown HUD">
+          <div class="hud-top-bar">
+            <div class="hud-status-indicator">
+              <span class="pulse-beacon" aria-hidden="true"></span>
+              <span id="timer-status-text">Official Registration Form Opens In:</span>
             </div>
-            <span class="timer-target-tag">21 Oct 2026 &bull; 00:00 IST</span>
+            <span class="hud-target-date" id="timer-target-tag">21 Oct 2026 &bull; 12:00 AM IST</span>
           </div>
 
-          <div class="hero-countdown-grid" id="countdown-timer" data-target="2026-10-21T00:00:00+05:30">
-            <div class="hero-time-unit">
-              <span class="time-digit" id="cd-days">06</span>
-              <span class="time-label">DAYS</span>
+          <div class="hud-digits-grid" id="countdown-timer" data-target="2026-10-21T00:00:00+05:30" data-close="2026-10-25T23:59:59+05:30">
+            <div class="hud-unit-box">
+              <div class="hud-digit" id="cd-days">00</div>
+              <div class="hud-label">Days</div>
             </div>
-            <span class="time-divider" aria-hidden="true">:</span>
-            <div class="hero-time-unit">
-              <span class="time-digit" id="cd-hours">12</span>
-              <span class="time-label">HOURS</span>
+            <div class="hud-unit-box">
+              <div class="hud-digit" id="cd-hours">00</div>
+              <div class="hud-label">Hours</div>
             </div>
-            <span class="time-divider" aria-hidden="true">:</span>
-            <div class="hero-time-unit">
-              <span class="time-digit" id="cd-mins">40</span>
-              <span class="time-label">MINUTES</span>
+            <div class="hud-unit-box">
+              <div class="hud-digit" id="cd-mins">00</div>
+              <div class="hud-label">Minutes</div>
             </div>
-            <span class="time-divider" aria-hidden="true">:</span>
-            <div class="hero-time-unit">
-              <span class="time-digit highlight-digit" id="cd-secs">25</span>
-              <span class="time-label">SECONDS</span>
+            <div class="hud-unit-box">
+              <div class="hud-digit" id="cd-secs">00</div>
+              <div class="hud-label">Seconds</div>
             </div>
           </div>
+        </div>
 
-          <!-- Hero Action Row -->
-          <div class="hero-actions-row">
-            <a href="#sec-portal" class="btn btn-primary hero-primary-btn magnetic-btn" id="btn-hero-register">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-              <span>Apply on Registration Portal</span>
-              <span class="btn-micro-badge">Opens 21 Oct</span>
-            </a>
-            <button class="btn btn-outline hero-sec-btn magnetic-btn" id="btn-hero-calendar" title="Add 21 Oct registration to your calendar">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-              <span>Add to Calendar</span>
-            </button>
-            <button class="btn btn-outline hero-sec-btn magnetic-btn" id="btn-hero-share" title="Share official announcement">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
-              <span>Share Notice</span>
-            </button>
+        <!-- Dynamic Recruitment Notice Bar -->
+        <div class="recruitment-notice-bar" id="hero-status-banner" role="status">
+          <div class="notice-icon-box" id="status-banner-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
           </div>
-
-          <!-- Trust & Verification Bar -->
-          <div class="hero-trust-bar">
-            <span class="trust-item">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--brand-lime)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-              Verified Campus Drive
-            </span>
-            <span class="trust-sep">&bull;</span>
-            <span class="trust-item">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--brand-lime)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-              Zero Registration Fee
-            </span>
-            <span class="trust-sep">&bull;</span>
-            <span class="trust-item">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--brand-lime)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-              Candidate &amp; Core Team Tracks
-            </span>
+          <div class="notice-text-content" id="status-banner-text">
+            <strong>Zaroori Jankari:</strong> Registration window <strong>21 October 2026, 12:00 AM IST</strong> par live hogi exclusively for enrolled Oriental College of Technology (OCT), Bhopal students. Form bharne se pehle sabhi 10 steps, eligibility aur 8 departments ka blueprint dekh lo taaki submission ke time koi confusion na ho. External form link tab tak strictly protected hai.
           </div>
+        </div>
 
+        <!-- Hero Actions Row -->
+        <div class="hero-cta-group">
+          <a href="#sec-application" class="btn btn-lg btn-primary magnetic-btn" id="btn-hero-register">
+            <span id="btn-hero-register-text">Registration Opens 21 October</span>
+            <span class="badge" id="btn-hero-register-badge" style="background: rgba(0,0,0,0.2); padding: 2px 8px; border-radius: 99px; font-size: 0.75rem;">Opens 21 Oct</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+
+          <a href="#sec-flows" class="btn btn-lg btn-outline magnetic-btn">
+            <span>Explore Selection Tracks</span>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+
+          <a href="#sec-dates" class="btn btn-lg btn-outline magnetic-btn">
+            <span>Timeline Milestones</span>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/></svg>
+          </a>
+
+          <button class="theme-toggle-btn magnetic-btn" id="btn-hero-share" title="Share circular" aria-label="Share circular">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+          </button>
         </div>
 
       </div>
+    </section>
 
-      <!-- Lead Narrative -->
-      <div class="notice-body">
+    <!-- INFINITE MARQUEE TICKER RIBBON -->
+    <div class="marquee-ribbon" aria-hidden="true">
+      <div class="marquee-track">
+        <div class="marquee-item"><span class="marquee-star">✦</span> INNOVATE &bull; IMPLEMENT &bull; INSPIRE</div>
+        <div class="marquee-item"><span class="marquee-star">✦</span> AI &amp; MACHINE LEARNING CLUB &bull; OCT BHOPAL</div>
+        <div class="marquee-item"><span class="marquee-star">✦</span> RECRUITMENT 2026–27</div>
+        <div class="marquee-item"><span class="marquee-star">✦</span> ₹0 REGISTRATION FEE &bull; 100% FREE FOR OCT STUDENTS</div>
+        <div class="marquee-item"><span class="marquee-star">✦</span> REAL CODE &bull; WORKING AI MODELS &bull; HACKATHONS</div>
+        <div class="marquee-item"><span class="marquee-star">✦</span> 1ST, 2ND &amp; 3RD YEAR STUDENTS ONLY</div>
+        <div class="marquee-item"><span class="marquee-star">✦</span> HINDI, ENGLISH YA HINGLISH MEIN LIKHO</div>
+        <div class="marquee-item"><span class="marquee-star">✦</span> CANDIDATE &amp; CORE LEADERSHIP TRACKS</div>
+        <div class="marquee-item"><span class="marquee-star">✦</span> NO AI COPIED ANSWERS &bull; BE ORIGINAL</div>
+        <div class="marquee-item"><span class="marquee-star">✦</span> INNOVATE &bull; IMPLEMENT &bull; INSPIRE</div>
+      </div>
+    </div>
+
+    <!-- INNOVATION & RESEARCH SHOWCASE (MAESTROCLASS EDITORIAL FEATURE) -->
+    <section class="studio-section studio-innovation-section reveal-on-scroll" id="sec-lab" aria-labelledby="lab-heading">
+      <div class="studio-container">
         
-        <p class="greeting-line">
-          <strong>To All Students &amp; Aspirants,</strong>
-        </p>
-
-        <p class="announcement-lead">
-          We are pleased to announce that the <strong>AI &amp; Machine Learning Club Recruitment Process for 2026–27</strong> will officially commence on <strong>21 October 2026</strong>. Prepare to showcase your technical competencies, leadership potential, and commitment to engineering high-impact projects.
-        </p>
-
-        <!-- Eligibility & Opportunity Highlights Grid -->
-        <div class="highlights-grid">
-          <div class="highlight-card eligibility-card reveal-item spotlight-card">
-            <div class="card-icon-box">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
-            </div>
-            <div class="card-text-box">
-              <strong>Open to Students Across All Branches</strong>
-              <p>1st, 2nd, and 3rd year engineering students from any department at Oriental College of Technology are eligible to apply.</p>
+        <div class="innovation-showcase-card">
+          <div class="innovation-media-frame">
+            <img 
+              src="assets/aiml-innovation-lab.jpg" 
+              alt="AI and Machine Learning Club OCT Innovation Laboratory" 
+              class="innovation-media-img" 
+              loading="lazy" 
+              width="1280" 
+              height="720"
+            />
+            <div class="innovation-media-overlay"></div>
+            <div class="innovation-badge-pill">
+              <span class="pulse-beacon" aria-hidden="true"></span>
+              <span>OCT INNOVATION &amp; RESEARCH SQUAD</span>
             </div>
           </div>
-          <div class="highlight-card roles-card reveal-item spotlight-card">
-            <div class="card-icon-box">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+
+          <div class="innovation-content-panel">
+            <span class="section-eyebrow">HAMARA TECH ECOSYSTEM</span>
+            <h2 class="innovation-panel-title" id="lab-heading">
+              Sirf Presentations Nahi, <span class="text-shimmer">Working Code Aur Real Models</span> Deploy Hote Hain
+            </h2>
+            <p class="innovation-panel-desc">
+              AIML Club OCT mein hum passive theory par time waste nahi karte. Yahan 1st year se 3rd year tak ke students computer vision pipelines train karte hain, deep learning architectures banate hain, national hackathons crack karte hain, aur live software ship karte hain. Chahe tum coding mein naye ho ya advanced developer — yahan seekhne aur build karne ki bhookh sabse zyada matter karti hai.
+            </p>
+
+            <div class="innovation-metrics-row">
+              <div class="metric-block">
+                <div class="metric-num">100%</div>
+                <div class="metric-label">Practical Projects</div>
+              </div>
+              <div class="metric-block">
+                <div class="metric-num">8 Wings</div>
+                <div class="metric-label">Tech, Design &amp; Ops</div>
+              </div>
+              <div class="metric-block">
+                <div class="metric-num">₹0 Fee</div>
+                <div class="metric-label">Free For OCT Students</div>
+              </div>
             </div>
-            <div class="card-text-box">
-              <strong>Multi-Disciplinary Domains</strong>
-              <p>Technical (AI, ML, Web, Dev), Creative (UI/UX, Media), Operations, Event Management &amp; Public Relations.</p>
+
+            <div class="innovation-cta-row">
+              <a href="#sec-application" class="btn btn-primary magnetic-btn">
+                <span>View 10-Step Application Blueprint</span>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+              <a href="#sec-flows" class="btn btn-outline magnetic-btn">
+                <span>Explore Selection Tracks</span>
+              </a>
             </div>
           </div>
         </div>
 
-        <!-- Key Dates Grid with Distinctive Badges -->
-        <div class="dates-grid" id="sec-dates">
-          
-          <div class="date-card opening-card reveal-item spotlight-card">
-            <div class="date-header">
-              <span class="date-icon">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-              </span>
-              <span class="date-badge open-badge">REGISTRATION OPENS</span>
-            </div>
-            <div class="date-main">21 October 2026</div>
-            <div class="date-sub">Online application portal goes live &bull; 00:00 IST</div>
-          </div>
+      </div>
+    </section>
 
-          <div class="date-card closing-card reveal-item spotlight-card">
-            <div class="date-header">
-              <span class="date-icon">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-              </span>
-              <span class="date-badge deadline-badge">REGISTRATION CLOSES</span>
-            </div>
-            <div class="date-main">25 October 2026</div>
-            <div class="date-sub">Strict deadline: 11:59 PM IST &bull; 5-Day Application Window</div>
-          </div>
-
-        </div>
-
-        <!-- Institutional Mission Banner -->
-        <div class="goal-highlight-card reveal-item spotlight-card">
-          <div class="goal-header">
-            <span class="goal-tag">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
-              CENTRAL MISSION
-            </span>
-            <h3 class="goal-title">Build the Next Generation of AIML Club OCT</h3>
-          </div>
-          <p class="goal-desc">
-            Our goal is to give <strong>genuine opportunities to capable juniors &amp; sub-juniors</strong>. We didn’t just open recruitment—we engineered the system behind it. Recruitment shouldn’t be <em>“Fill a form. Wait. Hope.”</em> We built a fair, transparent, and merit-focused architecture.
+    <!-- SECTION 1: KEY DATES & TIMELINE (BENTO GRID) -->
+    <section class="studio-section reveal-on-scroll" id="sec-dates" aria-labelledby="dates-heading">
+      <div class="studio-container">
+        
+        <div class="section-header-studio">
+          <span class="section-eyebrow">TRANSPARENT RECRUITMENT SCHEDULE</span>
+          <h2 class="section-title-studio" id="dates-heading">
+            Key Dates &amp; <span class="text-gradient">Selection Milestones</span>
+          </h2>
+          <p class="section-subtitle-studio">
+            Bina kisi hidden rounds ke ek crystal-clear aur unbiased 4-stage recruitment timeline. Apne calendar mein save kar lo taaki koi deadline miss na ho:
           </p>
         </div>
 
-        <!-- System Architecture: Candidate Flow vs Core Team Flow -->
-        <section class="recruitment-flows-section" id="sec-flows">
-          <div class="flows-header reveal-item">
-            <span class="flows-pill">STRUCTURED SELECTION ARCHITECTURE</span>
-            <h3 class="flows-title">How the Recruitment Process Works</h3>
-            <p class="flows-desc">A transparent, dual-track workflow connecting student candidates with our executive evaluation panel. Tap any step to inspect details.</p>
-
-            <!-- UI-Layouts Animated Track Tabs -->
-            <div class="flow-track-tabs-wrapper" role="tablist" aria-label="Flow Track View Mode">
-              <div class="flow-tab-slider" id="flow-tab-slider" aria-hidden="true"></div>
-              <button class="flow-tab-btn active" data-flow="all" role="tab" id="flow-tab-all" aria-selected="true">
-                <span class="tab-btn-icon">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-                </span>
-                <span class="tab-btn-text">All Tracks</span>
-                <span class="tab-badge-pill">13 Steps</span>
-              </button>
-              <button class="flow-tab-btn" data-flow="candidate" role="tab" id="flow-tab-candidate" aria-selected="false">
-                <span class="tab-btn-icon">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-                </span>
-                <span class="tab-btn-text">Candidate Flow</span>
-                <span class="tab-badge-pill">7 Stages</span>
-              </button>
-              <button class="flow-tab-btn" data-flow="core" role="tab" id="flow-tab-core" aria-selected="false">
-                <span class="tab-btn-icon">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                </span>
-                <span class="tab-btn-text">Core Team Flow</span>
-                <span class="tab-badge-pill">6 Stages</span>
-              </button>
-            </div>
-          </div>
-
-          <!-- Flow 1: Candidate Flow -->
-          <div class="flow-track candidate-track reveal-item spotlight-card" id="track-candidate">
-            <div class="track-header-row">
-              <div class="track-badge">
-                <span class="track-icon">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-                </span>
-                <h4>Candidate Flow</h4>
-              </div>
-              <span class="track-hint">7 Continuous Stages</span>
-            </div>
-            <div class="track-steps-sequence" role="list">
-              <div class="step-node active-step" role="listitem" tabindex="0"
-                data-track="Candidate Flow"
-                data-step="1 of 7"
-                data-name="Application"
-                data-desc="Candidates submit a multi-dimensional profile covering their engineering branch, technical skills, design/coding portfolio, and domain aspirations with zero registration fee.">
-                <span class="node-num">1</span>
-                <span class="node-name">Application</span>
-                <span class="node-detail">Multi-dimensional profile</span>
-              </div>
-              <div class="node-arrow">&rarr;</div>
-              <div class="step-node" role="listitem" tabindex="0"
-                data-track="Candidate Flow"
-                data-step="2 of 7"
-                data-name="Application Record"
-                data-desc="The recruitment system instantly organizes all candidate responses into a tamper-proof structured profile record with verified timestamping.">
-                <span class="node-num">2</span>
-                <span class="node-name">Application Record</span>
-                <span class="node-detail">Structured profile data</span>
-              </div>
-              <div class="node-arrow">&rarr;</div>
-              <div class="step-node" role="listitem" tabindex="0"
-                data-track="Candidate Flow"
-                data-step="3 of 7"
-                data-name="Confirmation on Email + Unique QR"
-                data-desc="Every applicant receives an instant official confirmation email containing their verified Application Record, downloadable PDF, and their personalized encrypted screening QR code.">
-                <span class="node-num">3</span>
-                <span class="node-name">Confirmation on Email</span>
-                <span class="node-detail">Instant PDF + Unique QR</span>
-              </div>
-              <div class="node-arrow">&rarr;</div>
-              <div class="step-node" role="listitem" tabindex="0"
-                data-track="Candidate Flow"
-                data-step="4 of 7"
-                data-name="Review"
-                data-desc="Core team evaluators conduct a holistic dossier review across technical aptitude, past projects, enthusiasm, and track alignment.">
-                <span class="node-num">4</span>
-                <span class="node-name">Review</span>
-                <span class="node-detail">Dossier evaluation</span>
-              </div>
-              <div class="node-arrow">&rarr;</div>
-              <div class="step-node" role="listitem" tabindex="0"
-                data-track="Candidate Flow"
-                data-step="5 of 7"
-                data-name="Screening"
-                data-desc="Candidate attends a live domain interaction. The evaluator scans the candidate's unique QR code directly from their email or PDF for 1-second record access.">
-                <span class="node-num">5</span>
-                <span class="node-name">Screening</span>
-                <span class="node-detail">Domain interview</span>
-              </div>
-              <div class="node-arrow">&rarr;</div>
-              <div class="step-node" role="listitem" tabindex="0"
-                data-track="Candidate Flow"
-                data-step="6 of 7"
-                data-name="Selection"
-                data-desc="Multi-evaluator consensus scoring ensures fair, transparent merit appointments without bias or arbitrary decisions.">
-                <span class="node-num">6</span>
-                <span class="node-name">Selection</span>
-                <span class="node-detail">Merit appointment</span>
-              </div>
-              <div class="node-arrow">&rarr;</div>
-              <div class="step-node highlight-node" role="listitem" tabindex="0"
-                data-track="Candidate Flow"
-                data-step="7 of 7"
-                data-name="Onboarding"
-                data-desc="Selected candidates receive official council badges, team assignments, mentorship pairing, and immediate induction into active AI/ML projects.">
-                <span class="node-num">7</span>
-                <span class="node-name">Onboarding</span>
-                <span class="node-detail">Council badge conferral</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Flow 2: Core Team Flow (Updated: 6. In club family) -->
-          <div class="flow-track core-track reveal-item spotlight-card" id="track-core">
-            <div class="track-header-row">
-              <div class="track-badge">
-                <span class="track-icon">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-                </span>
-                <h4>Core Team Flow</h4>
-              </div>
-              <span class="track-hint">6 Strategic Stages</span>
-            </div>
-            <div class="track-steps-sequence" role="list">
-              <div class="step-node" role="listitem" tabindex="0"
-                data-track="Core Team Flow"
-                data-step="1 of 6"
-                data-name="Review"
-                data-desc="Core Team accesses a centralized evaluation console to review submitted candidate dossiers in real time.">
-                <span class="node-num">1</span>
-                <span class="node-name">Review</span>
-                <span class="node-detail">Centralized workspace</span>
-              </div>
-              <div class="node-arrow">&rarr;</div>
-              <div class="step-node" role="listitem" tabindex="0"
-                data-track="Core Team Flow"
-                data-step="2 of 6"
-                data-name="Shortlist"
-                data-desc="Systematic grouping into domain tracks: AI/ML Research, Full-Stack Web/App, UI/UX Design, Event Operations, and PR Outreach.">
-                <span class="node-num">2</span>
-                <span class="node-name">Shortlist</span>
-                <span class="node-detail">Domain track grouping</span>
-              </div>
-              <div class="node-arrow">&rarr;</div>
-              <div class="step-node" role="listitem" tabindex="0"
-                data-track="Core Team Flow"
-                data-step="3 of 6"
-                data-name="Coordinate"
-                data-desc="Interview batches and screening slots are coordinated smoothly with candidates with zero scheduling collisions.">
-                <span class="node-num">3</span>
-                <span class="node-name">Coordinate</span>
-                <span class="node-detail">Interview dispatch</span>
-              </div>
-              <div class="node-arrow">&rarr;</div>
-              <div class="step-node" role="listitem" tabindex="0"
-                data-track="Core Team Flow"
-                data-step="4 of 6"
-                data-name="Screen"
-                data-desc="Core Team scans candidate QR code from their email or PDF for instant profile lookup and conducts hands-on technical/domain assessment.">
-                <span class="node-num">4</span>
-                <span class="node-name">Screen</span>
-                <span class="node-detail">Live technical assessment</span>
-              </div>
-              <div class="node-arrow">&rarr;</div>
-              <div class="step-node" role="listitem" tabindex="0"
-                data-track="Core Team Flow"
-                data-step="5 of 6"
-                data-name="Select"
-                data-desc="Executive council reaches panel consensus to appoint capable, passionate juniors and sub-juniors.">
-                <span class="node-num">5</span>
-                <span class="node-name">Select</span>
-                <span class="node-detail">Panel consensus</span>
-              </div>
-              <div class="node-arrow">&rarr;</div>
-              <div class="step-node highlight-node" role="listitem" tabindex="0"
-                data-track="Core Team Flow"
-                data-step="6 of 6"
-                data-name="In Club Family"
-                data-desc="Welcoming new members into the AIML Club family! Fostering deep peer collaboration, senior-junior mentorship, and building real-world AI projects together.">
-                <span class="node-num">6</span>
-                <span class="node-name">In Club Family</span>
-                <span class="node-detail">Welcome to club family</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Dynamic Interactive Flow Stage Inspector -->
-          <div class="flow-step-inspector reveal-item spotlight-card" id="flow-inspector">
-            <div class="inspector-header">
-              <span class="inspector-badge" id="insp-badge">CANDIDATE FLOW &bull; STEP 1 OF 7</span>
-              <span class="inspector-hint">
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
-                Select any step above to inspect procedural details
-              </span>
-            </div>
-            <h4 class="inspector-title" id="insp-title">1. Application: Multi-Dimensional Profile</h4>
-            <p class="inspector-desc" id="insp-desc">Candidates submit their technical domains, past projects, skill proficiencies, and aspirations. The portal ensures immediate receipt logging with zero friction.</p>
-          </div>
-
-          <!-- Feature Spotlight: Secure QR & Application PDF in Email -->
-          <div class="security-spotlight-card reveal-item spotlight-card">
-            <div class="spotlight-badge">
-              <span class="sec-icon">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-              </span>
-              <span>SECURE VERIFICATION STANDARD &bull; DIRECTLY IN EMAIL</span>
-            </div>
-            <h4 class="spotlight-title">Instant PDF Application Record + Unique QR in Email</h4>
-            <p class="spotlight-desc">
-              Every applicant receives an official confirmation email containing a detailed <strong>Application Record PDF</strong> and their unique encrypted <strong>Screening QR Code</strong>. During in-person interactions, evaluators simply scan this QR code for instant, zero-friction verification.
-            </p>
-            <div class="spotlight-chips">
-              <span class="chip">&bull; Unique QR in confirmation email</span>
-              <span class="chip">&bull; 1-second record lookup</span>
-              <span class="chip">&bull; Downloadable PDF docket</span>
-              <span class="chip">&bull; Anti-tamper verification</span>
-              <span class="chip">&bull; Zero paper waste</span>
-            </div>
-          </div>
-
-        </section>
-
-        <!-- Visual Recruitment Storyboard -->
-        <section class="campaign-section reveal-item" id="sec-slides">
-          <div class="campaign-header">
-            <div class="campaign-badge">OFFICIAL RECRUITMENT STORYBOARD</div>
-            <h3 class="campaign-title">Explore the 8-Part Recruitment Journey</h3>
-            <p class="campaign-subtitle">Click any visual slide to inspect in high resolution with complete architectural details.</p>
-          </div>
-
-          <div class="campaign-slider-wrapper">
-            <div class="campaign-slider" id="campaign-slider" role="region" aria-label="Recruitment Storyboard Slides">
-              <div class="slide-item" data-index="0" data-src="assets/campaign/01-HOOK.png">
-                <img src="assets/campaign/01-HOOK.png" alt="01 / The System Behind It" loading="lazy">
-                <div class="slide-overlay"><span>01 / The System Behind It</span></div>
-              </div>
-              <div class="slide-item" data-index="1" data-src="assets/campaign/02-PROBLEM-SOLUTION.png">
-                <img src="assets/campaign/02-PROBLEM-SOLUTION.png" alt="02 / Fair &amp; Transparent Flow" loading="lazy">
-                <div class="slide-overlay"><span>02 / Fair &amp; Transparent Flow</span></div>
-              </div>
-              <div class="slide-item" data-index="2" data-src="assets/campaign/03-CANDIDATE-FLOW.png">
-                <img src="assets/campaign/03-CANDIDATE-FLOW.png" alt="03 / Multi-Dimension Form" loading="lazy">
-                <div class="slide-overlay"><span>03 / Multi-Dimension Form</span></div>
-              </div>
-              <div class="slide-item" data-index="3" data-src="assets/campaign/04-APPLICATION-RECORD.png">
-                <img src="assets/campaign/04-APPLICATION-RECORD.png" alt="04 / Application Record PDF" loading="lazy">
-                <div class="slide-overlay"><span>04 / Application Record PDF</span></div>
-              </div>
-              <div class="slide-item" data-index="4" data-src="assets/campaign/05-CONFIRMATION.png">
-                <img src="assets/campaign/05-CONFIRMATION.png" alt="05 / Immediate Email Confirmation" loading="lazy">
-                <div class="slide-overlay"><span>05 / Email Confirmation + QR</span></div>
-              </div>
-              <div class="slide-item" data-index="5" data-src="assets/campaign/06-CORE-TEAM-REVIEW.png">
-                <img src="assets/campaign/06-CORE-TEAM-REVIEW.png" alt="06 / Dedicated Core Team Workspace" loading="lazy">
-                <div class="slide-overlay"><span>06 / Core Team Workspace</span></div>
-              </div>
-              <div class="slide-item" data-index="6" data-src="assets/campaign/07-SECURE-QR.png">
-                <img src="assets/campaign/07-SECURE-QR.png" alt="07 / One Scan Complete Application" loading="lazy">
-                <div class="slide-overlay"><span>07 / Secure QR Screening</span></div>
-              </div>
-              <div class="slide-item" data-index="7" data-src="assets/campaign/08-CTA.png">
-                <img src="assets/campaign/08-CTA.png" alt="08 / Ready to Build With Us" loading="lazy">
-                <div class="slide-overlay"><span>08 / Ready to Build</span></div>
-              </div>
-            </div>
-          </div>
-
-          <div class="campaign-nav-row">
-            <button id="slide-prev" class="btn btn-outline btn-sm magnetic-btn" aria-label="Previous Slide">&larr; Previous</button>
-            <div class="slide-dots-container" id="slide-dots" aria-label="Slide Navigation Dots">
-              <button class="slide-dot active" data-index="0" aria-label="Go to Slide 1"></button>
-              <button class="slide-dot" data-index="1" aria-label="Go to Slide 2"></button>
-              <button class="slide-dot" data-index="2" aria-label="Go to Slide 3"></button>
-              <button class="slide-dot" data-index="3" aria-label="Go to Slide 4"></button>
-              <button class="slide-dot" data-index="4" aria-label="Go to Slide 5"></button>
-              <button class="slide-dot" data-index="5" aria-label="Go to Slide 6"></button>
-              <button class="slide-dot" data-index="6" aria-label="Go to Slide 7"></button>
-              <button class="slide-dot" data-index="7" aria-label="Go to Slide 8"></button>
-            </div>
-            <button id="slide-next" class="btn btn-outline btn-sm magnetic-btn" aria-label="Next Slide">Next &rarr;</button>
-          </div>
-          <div class="slide-counter-wrapper">
-            <span class="slide-counter-text" id="slide-indicator">Slide 1 of 8 &bull; Click to open high-res preview</span>
-          </div>
-        </section>
-
-        <!-- Modern Important Instructions Grid -->
-        <div class="instructions-section reveal-item" id="sec-instructions">
-          <div class="instructions-header">
-            <span class="instructions-pill">ESSENTIAL APPLICANT GUIDELINES</span>
-            <h3 class="instructions-title">Official Recruitment Guidelines &amp; Instructions</h3>
-            <p class="instructions-subtitle">Please read these points carefully before preparing your application.</p>
-          </div>
+        <div class="dates-bento-grid">
           
-          <div class="instructions-grid">
-            <div class="instruction-box reveal-item spotlight-card">
-              <div class="inst-icon-circle">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-              </div>
-              <h5>Visit Official Portal</h5>
-              <p>Explore available roles and department details exclusively at <a href="https://info.aimlcluboct.in" class="inline-link">https://info.aimlcluboct.in</a>.</p>
+          <!-- Milestone 1 -->
+          <div class="bento-date-card" id="card-date-open">
+            <div class="bento-card-top">
+              <span class="bento-stage-tag" id="badge-date-open">STAGE 1 &bull; FORM OPENS</span>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--brand-lime)" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 14 14"/></svg>
             </div>
+            <div>
+              <div class="bento-date-numeral">21</div>
+              <div class="bento-date-title">October 2026 &bull; 12:00 AM IST</div>
+              <p class="bento-date-desc">
+                Official online form live ho jayega. 10-step submission portal access karke apne real projects, skills aur thoughts share karo.
+              </p>
+            </div>
+          </div>
 
-            <div class="instruction-box reveal-item spotlight-card">
-              <div class="inst-icon-circle">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-              </div>
-              <h5>Registration Schedule</h5>
-              <p>The form goes live on <strong>21 October 2026</strong>. Review all guidelines and details on this portal beforehand.</p>
+          <!-- Milestone 2 -->
+          <div class="bento-date-card" id="card-date-close">
+            <div class="bento-card-top">
+              <span class="bento-stage-tag" id="badge-date-close">DEADLINE &bull; FORM CLOSES</span>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
             </div>
+            <div>
+              <div class="bento-date-numeral">25</div>
+              <div class="bento-date-title">October 2026 &bull; 11:59 PM IST</div>
+              <p class="bento-date-desc">
+                Strict submission deadline. Portal sharp 11:59 PM par lock ho jayega. Koi late form ya extension nahi milega, isliye last ghante ka wait mat karna.
+              </p>
+            </div>
+          </div>
 
-            <div class="instruction-box reveal-item spotlight-card">
-              <div class="inst-icon-circle">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2 2"/><path d="M5 3L2 6"/><path d="M22 6l-3-3"/></svg>
-              </div>
-              <h5>Set Your Calendar Alarm</h5>
-              <p>Positions across technical and non-technical teams are capped. Register as soon as the form opens to secure your evaluation slot.</p>
+          <!-- Milestone 3 -->
+          <div class="bento-date-card">
+            <div class="bento-card-top">
+              <span class="bento-stage-tag">STAGE 2 &bull; EVALUATION</span>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--brand-cyan)" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
             </div>
+            <div>
+              <div class="bento-date-numeral">26–28</div>
+              <div class="bento-date-title">October 2026</div>
+              <p class="bento-date-desc">
+                Manual dossier &amp; repo review. Shortlisted applicants ko unke selected domain ka ek practical mini-challenge assign kiya jayega.
+              </p>
+            </div>
+          </div>
 
-            <div class="instruction-box highlight-instruction-box reveal-item spotlight-card">
-              <div class="inst-icon-circle alert-icon">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-              </div>
-              <h5>Strict Deadline</h5>
-              <p>Registration closes on <strong>25 October 2026 at 11:59 PM IST</strong>. Please do not wait until the last minute.</p>
+          <!-- Milestone 4 -->
+          <div class="bento-date-card">
+            <div class="bento-card-top">
+              <span class="bento-stage-tag">STAGE 3 &bull; INDUCTION</span>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--brand-lime)" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
             </div>
+            <div>
+              <div class="bento-date-numeral">29–31</div>
+              <div class="bento-date-title">October 2026</div>
+              <p class="bento-date-desc">
+                Friendly 1-on-1 conversations, core team council defense, orientation meet aur club family mein official welcome.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 2: DUAL-TRACK SELECTION PROCESS -->
+    <section class="studio-section reveal-on-scroll" id="sec-flows" aria-labelledby="flows-heading">
+      <div class="studio-container">
+        
+        <div class="section-header-studio">
+          <span class="section-eyebrow">EVALUATION ARCHITECTURE</span>
+          <h2 class="section-title-studio" id="flows-heading">
+            Choose Your Track: <span class="text-gradient">Candidate vs Core Team</span>
+          </h2>
+          <p class="section-subtitle-studio">
+            Apni strengths ke hisaab se journey choose karo: Domain Specialist ban kar hands-on projects build karo, ya Core Team mein aakar department lead karo.
+          </p>
+        </div>
+
+        <!-- Track Switcher Bar -->
+        <div class="track-switcher-wrap">
+          <div class="track-tabs-bar" role="tablist">
+            <button class="track-tab-btn active" role="tab" aria-selected="true" data-track="candidate" id="tab-candidate">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v8M8 12h8"/></svg>
+              <span>Candidate Track (Members &amp; Domain Specialists)</span>
+            </button>
+            <button class="track-tab-btn" role="tab" aria-selected="false" data-track="core" id="tab-core">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <span>Core Team Track (Department Leads &amp; Council)</span>
+            </button>
           </div>
         </div>
 
-        <!-- Official Social Handles Share & Alarm / Calendar Suite -->
-        <section class="share-suite-section reveal-item" id="sec-share">
-          <div class="share-suite-header">
-            <span class="share-suite-pill">BROADCAST &amp; REMINDER HUB</span>
-            <h3 class="share-suite-title">Announcement Distribution &amp; Reminder Hub</h3>
-            <p class="share-suite-desc">Help your classmates stay informed across official channels and set a calendar alarm so nobody misses registration day.</p>
-          </div>
-
-          <div class="share-suite-grid">
+        <!-- Candidate Track Steps -->
+        <div class="track-flow-pane active" id="pane-candidate" role="tabpanel" aria-labelledby="tab-candidate">
+          <div class="flow-steps-grid">
             
-            <!-- Left Card: Social Handles Sharing -->
-            <div class="suite-card social-share-card reveal-item spotlight-card">
-              <div class="suite-card-top">
-                <span class="suite-icon">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
-                </span>
-                <div>
-                  <h4>Share Over Social Handles</h4>
-                  <p>1-tap share recruitment notice across platforms:</p>
-                </div>
-              </div>
-              <div class="social-btn-group">
-                <!-- Native Device Share -->
-                <button class="social-share-btn btn-device-share magnetic-btn" id="btn-device-share" title="Share via phone apps">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
-                  <span>Share via Phone Apps</span>
-                </button>
-
-                <!-- WhatsApp Direct -->
-                <a href="#" class="social-share-btn btn-whatsapp magnetic-btn" id="btn-share-wa" target="_blank" rel="noopener noreferrer" title="Share directly on WhatsApp">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
-                  <span>WhatsApp</span>
-                </a>
-
-                <!-- LinkedIn -->
-                <a href="#" class="social-share-btn btn-linkedin magnetic-btn" id="btn-share-li" target="_blank" rel="noopener noreferrer" title="Share on LinkedIn">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.76a1.64 1.64 0 1 0-.01-3.28 1.64 1.64 0 0 0 .01 3.28m1.4 9.74V9.93H5.06v8.57h2.8z"/></svg>
-                  <span>LinkedIn</span>
-                </a>
-
-                <!-- Twitter / X -->
-                <a href="#" class="social-share-btn btn-x magnetic-btn" id="btn-share-x" target="_blank" rel="noopener noreferrer" title="Post on X">
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-                  <span>Post on X</span>
-                </a>
-
-                <!-- Telegram -->
-                <a href="#" class="social-share-btn btn-telegram magnetic-btn" id="btn-share-tg" target="_blank" rel="noopener noreferrer" title="Share on Telegram">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/></svg>
-                  <span>Telegram</span>
-                </a>
-
-                <!-- Copy Formatted Text -->
-                <button class="social-share-btn btn-copy-text magnetic-btn" id="btn-copy-broadcast-text" title="Copy text announcement">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
-                  <span id="copy-broadcast-label">Copy Notice</span>
-                </button>
-              </div>
+            <div class="flow-step-node selected" data-step-idx="1" data-track-type="candidate" data-title="Step 1: Application Submission" data-body="10-step online form bhariye: Apne real projects, git repos, aur portfolio share karo. Hindi, English ya Hinglish — jisme comfortable ho likho.">
+              <div class="step-node-number">01</div>
+              <div class="step-node-title">Application Form Submission</div>
+              <p class="step-node-desc">10-step comprehensive form: projects, skills &amp; motivation.</p>
             </div>
 
-            <!-- Right Card: Alarm & Calendar Suite -->
-            <div class="suite-card calendar-alarm-card reveal-item spotlight-card">
-              <div class="suite-card-top">
-                <span class="suite-icon">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2 2"/><path d="M5 3L2 6"/><path d="M22 6l-3-3"/></svg>
-                </span>
-                <div>
-                  <h4>Set Alarm &amp; Calendar Reminder</h4>
-                  <p>Never miss the 21 October registration opening:</p>
-                </div>
-              </div>
-              <div class="calendar-btn-group">
-                <!-- Google Calendar 1-Click Link -->
-                <a href="#" class="cal-action-btn btn-gcal magnetic-btn" id="btn-gcal" target="_blank" rel="noopener noreferrer" title="Add directly to Google Calendar">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20a2 2 0 0 0 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z"/></svg>
-                  <span>Google Calendar (1-Click)</span>
-                </a>
-
-                <!-- Apple & Outlook Calendar (.ics) -->
-                <button class="cal-action-btn btn-ics magnetic-btn" id="btn-download-ics" title="Download Apple / Outlook .ics file">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-                  <span>Apple / Device Calendar (.ics)</span>
-                </button>
-
-                <!-- Phone Alarm Alert Trigger -->
-                <button class="cal-action-btn btn-alarm-trigger magnetic-btn" id="btn-alarm-helper" title="Set phone reminder">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2 2"/><path d="M5 3L2 6"/><path d="M22 6l-3-3"/><path d="M6.38 18.7L4 21"/><path d="M17.64 18.67L20 21"/></svg>
-                  <span id="alarm-helper-label">Set Alarm Alert: 21 Oct (00:00)</span>
-                </button>
-              </div>
+            <div class="flow-step-node" data-step-idx="2" data-track-type="candidate" data-title="Step 2: Profile Screening & Dossier Verification" data-body="Domain leads aapke repos, past projects, aur declared skills ko zero-bias ke sath manually review karenge.">
+              <div class="step-node-number">02</div>
+              <div class="step-node-title">Profile &amp; Code Screening</div>
+              <p class="step-node-desc">Unbiased evaluation of your GitHub, portfolio &amp; background.</p>
             </div>
 
-          </div>
-        </section>
+            <div class="flow-step-node" data-step-idx="3" data-track-type="candidate" data-title="Step 3: Domain Challenge Assignment" data-body="Ek chhota 48-hour hands-on challenge taaki tumhara problem breakdown aur execution style dekha ja sake.">
+              <div class="step-node-number">03</div>
+              <div class="step-node-title">Practical Domain Task</div>
+              <p class="step-node-desc">Hands-on challenge testing your real-world problem breakdown.</p>
+            </div>
 
-        <!-- Official Portal & Quick Copy Link -->
-        <div class="link-action-card reveal-item spotlight-card" id="sec-portal">
-          <div class="link-info">
-            <span class="link-label">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-              OFFICIAL INFORMATION &amp; REGISTRATION PORTAL:
-            </span>
-            <a href="https://info.aimlcluboct.in" class="official-url" id="portal-url">https://info.aimlcluboct.in</a>
-            <span class="link-sub-note">Registration opens 21 Oct 2026 &bull; Closes 25 Oct 2026 (11:59 PM IST)</span>
-          </div>
-          <div class="link-btns">
-            <button class="btn btn-copy magnetic-btn" id="btn-copy-link" title="Copy registration link to clipboard">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
-              <span id="copy-btn-text">Copy Link</span>
-            </button>
-            <button class="btn btn-reminder magnetic-btn" id="btn-set-reminder">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/></svg>
-              <span>Add to Calendar (.ics)</span>
-            </button>
+            <div class="flow-step-node" data-step-idx="4" data-track-type="candidate" data-title="Step 4: Interactive Peer Interview" data-body="1-on-1 casual interaction: Dekhte hain tumhara tech passion kaisa hai aur squad mein kaise collaborate karoge.">
+              <div class="step-node-number">04</div>
+              <div class="step-node-title">Peer &amp; Tech Chat</div>
+              <p class="step-node-desc">Friendly technical conversation with current domain leads.</p>
+            </div>
+
+            <div class="flow-step-node" data-step-idx="5" data-track-type="candidate" data-title="Step 5: Official Induction & Onboarding" data-body="Welcome to AIML Club OCT! GitHub organization invite, private WhatsApp/Discord access, aur mentor assigned.">
+              <div class="step-node-number">05</div>
+              <div class="step-node-title">Official Induction &amp; Squad</div>
+              <p class="step-node-desc">Welcome to the family with repo access and assigned mentors.</p>
+            </div>
+
           </div>
         </div>
 
-        <!-- Motivational Closing -->
-        <div class="closing-motivational reveal-item">
-          <p class="stay-tuned">Stay prepared. This is your opportunity to lead, innovate, and contribute directly to high-impact technical initiatives.</p>
-          <div class="punchline">
-            Your journey in artificial intelligence, collaborative engineering, and leadership begins here.
+        <!-- Core Team Track Steps -->
+        <div class="track-flow-pane" id="pane-core" role="tabpanel" aria-labelledby="tab-core">
+          <div class="flow-steps-grid">
+            
+            <div class="flow-step-node" data-step-idx="1" data-track-type="core" data-title="Core Step 1: Leadership Application" data-body="Roadmap proposal: Poore academic session 2026–27 ke liye tumhara department vision aur event plans kya hain.">
+              <div class="step-node-number">01</div>
+              <div class="step-node-title">Executive Application</div>
+              <p class="step-node-desc">Departmental roadmap proposal &amp; full session strategy.</p>
+            </div>
+
+            <div class="flow-step-node" data-step-idx="2" data-track-type="core" data-title="Core Step 2: Leadership Portfolio Review" data-body="Past leadership aur management experience ka review: Pehle kya lead kiya hai aur pressure kaise handle karte ho.">
+              <div class="step-node-number">02</div>
+              <div class="step-node-title">Execution Track Record</div>
+              <p class="step-node-desc">Audit of past initiatives, team handling &amp; operational drive.</p>
+            </div>
+
+            <div class="flow-step-node" data-step-idx="3" data-track-type="core" data-title="Core Step 3: Department Strategy Task" data-body="Live scenario: Ek 300+ students ka hackathon plan karna ho toh timeline, budget aur logistics kaise manage karoge.">
+              <div class="step-node-number">03</div>
+              <div class="step-node-title">Operational Simulation</div>
+              <p class="step-node-desc">Real scenario resolving logistics, budget &amp; event challenges.</p>
+            </div>
+
+            <div class="flow-step-node" data-step-idx="4" data-track-type="core" data-title="Core Step 4: Executive Panel Defense" data-body="President, VP aur Faculty Advisors ke samne apna operational blueprint present aur defend karo.">
+              <div class="step-node-number">04</div>
+              <div class="step-node-title">Council Panel Defense</div>
+              <p class="step-node-desc">Live presentation and defense before executive leadership.</p>
+            </div>
+
+            <div class="flow-step-node" data-step-idx="5" data-track-type="core" data-title="Core Step 5: Executive Council Induction" data-body="Executive council appointment with department leadership badge, administrative credentials, aur full voting rights.">
+              <div class="step-node-number">05</div>
+              <div class="step-node-title">Executive Council Induction</div>
+              <p class="step-node-desc">Appointment as Department Lead with council voting power.</p>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Dynamic Step Inspector Box -->
+        <div class="flow-inspector-box" id="flow-inspector">
+          <div class="inspector-main">
+            <span class="inspector-step-tag" id="inspector-tag">CLICK ANY STEP NODE TO INSPECT</span>
+            <div class="inspector-title" id="inspector-title">Step 1: Application Submission</div>
+            <p class="inspector-body" id="inspector-body">
+              10-step online form bhariye: Apne real projects, git repos, aur portfolio share karo. Hindi, English ya Hinglish — jisme comfortable ho likho.
+            </p>
+          </div>
+          <a href="#sec-application" class="btn btn-sm btn-outline">
+            <span>View Form Blueprint</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 3: INSIDE THE APPLICATION (10-STEP ROADMAP) -->
+    <section class="studio-section reveal-on-scroll" id="sec-application" aria-labelledby="app-heading">
+      <div class="studio-container">
+        
+        <div class="section-header-studio">
+          <span class="section-eyebrow">10-STEP APPLICATION BLUEPRINT</span>
+          <h2 class="section-title-studio" id="app-heading">
+            Inside The <span class="text-gradient">Application Form</span>
+          </h2>
+          <p class="section-subtitle-studio">
+            Form live hone se pehle saare 10 steps ka preview dekh lo taaki apne project links, repos aur thoughts bina kisi rush ke pehle se ready rakh sako.
+          </p>
+        </div>
+
+        <!-- Authentic Form Submission Guidance Callout -->
+        <div class="guidance-callout-card">
+          <div class="guidance-callout-header">
+            <span class="pulse-beacon" aria-hidden="true"></span>
+            <span class="guidance-pill-tag">OFFICIAL FORM ADVISORY &bull; BEFORE YOU APPLY</span>
+          </div>
+          <p class="guidance-callout-highlight">
+            <strong>Don't use AI to write your answers.</strong> Answer in <strong>Hindi, English or Hinglish</strong> — whatever feels natural to you. Be original. We're looking for real thinking and the mindset of future leaders, not perfect or synthetic language.
+          </p>
+          <div class="guidance-callout-sub">
+            Submitting an application does not guarantee selection. Applicants may be contacted for profile screening, an interview, or a practical challenge task.
+          </div>
+        </div>
+
+        <div class="application-roadmap-split">
+          
+          <!-- Left: Step Pills List (1 to 10) -->
+          <div class="step-nav-pills-list" role="tablist">
+            
+            <button class="step-nav-pill-btn active" data-step="1" role="tab">
+              <span class="step-pill-index">01</span>
+              <span class="step-pill-text">Personal Details &amp; OCT Enrollment</span>
+            </button>
+
+            <button class="step-nav-pill-btn" data-step="2" role="tab">
+              <span class="step-pill-index">02</span>
+              <span class="step-pill-text">Interests &amp; Department Choice (8 Wings)</span>
+            </button>
+
+            <button class="step-nav-pill-btn" data-step="3" role="tab">
+              <span class="step-pill-index">03</span>
+              <span class="step-pill-text">Skills, Tools &amp; Self-Rating (1 se 5 Scale)</span>
+            </button>
+
+            <button class="step-nav-pill-btn" data-step="4" role="tab">
+              <span class="step-pill-index">04</span>
+              <span class="step-pill-text">Projects, Repositories &amp; Real Work</span>
+            </button>
+
+            <button class="step-nav-pill-btn" data-step="5" role="tab">
+              <span class="step-pill-index">05</span>
+              <span class="step-pill-text">Practical Domain Assessment Task</span>
+            </button>
+
+            <button class="step-nav-pill-btn" data-step="6" role="tab">
+              <span class="step-pill-index">06</span>
+              <span class="step-pill-text">Motivation &amp; Mindset (No AI Answers)</span>
+            </button>
+
+            <button class="step-nav-pill-btn" data-step="7" role="tab">
+              <span class="step-pill-index">07</span>
+              <span class="step-pill-text">Weekly Time Commitment (4–8 Hours)</span>
+            </button>
+
+            <button class="step-nav-pill-btn" data-step="8" role="tab">
+              <span class="step-pill-index">08</span>
+              <span class="step-pill-text">Club Decorum, Ethics &amp; Integrity</span>
+            </button>
+
+            <button class="step-nav-pill-btn" data-step="9" role="tab">
+              <span class="step-pill-index">09</span>
+              <span class="step-pill-text">Final Review &amp; Details Verification</span>
+            </button>
+
+            <button class="step-nav-pill-btn" data-step="10" role="tab">
+              <span class="step-pill-index">10</span>
+              <span class="step-pill-text">Instant PDF Record &amp; Screening QR Code</span>
+            </button>
+
+          </div>
+
+          <!-- Right: Interactive Preview Card -->
+          <div class="step-preview-showcase" id="step-preview-box">
+            <div class="preview-badge-row">
+              <span class="preview-step-badge" id="preview-badge">STEP 01 OF 10</span>
+              <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted);">ALL FIELDS VALIDATED</span>
+            </div>
+
+            <h3 class="preview-step-heading" id="preview-heading">Personal Information &amp; OCT Eligibility</h3>
+            <p class="preview-step-summary" id="preview-summary">
+              Oriental College of Technology, Bhopal mein aapka enrollment verify karta hai. Apni college details, contact number aur WhatsApp details accurately enter karein.
+            </p>
+
+            <div class="preview-checklist-box">
+              <span class="checklist-title">Fields &amp; Prerequisites Required:</span>
+              <div class="checklist-item" id="chk-1">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>Full Name (college record ke mutabiq) &amp; Enrollment Number (0126AL24XXXX)</span>
+              </div>
+              <div class="checklist-item" id="chk-2">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>College Email (agar available ho), Personal Email &amp; WhatsApp Contact</span>
+              </div>
+              <div class="checklist-item" id="chk-3">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>Branch (CSE, AIML, IT, EC, EX etc.), Current Semester &amp; Year (1st, 2nd, 3rd Year)</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 4: RECRUITMENT STORYBOARD (8-SLIDE CAROUSEL) -->
+    <section class="studio-section reveal-on-scroll" id="sec-slides" aria-labelledby="slides-heading">
+      <div class="studio-container">
+        
+        <div class="section-header-studio">
+          <span class="section-eyebrow">CAMPUS CAMPAIGN STORYBOARD</span>
+          <h2 class="section-title-studio" id="slides-heading">
+            Official Recruitment <span class="text-gradient">Storyboard</span>
+          </h2>
+          <p class="section-subtitle-studio">
+            Campus campaign ke 8 high-resolution slides — vision, fair screening aur member journey ko detail mein samjho:
+          </p>
+        </div>
+
+        <!-- Studio Carousel Component -->
+        <div class="storyboard-carousel-wrapper">
+          <div class="carousel-stage">
+            
+            <div class="carousel-figure" id="carousel-figure-btn" title="Click to view full-resolution slide">
+              <img 
+                src="assets/campaign/01-HOOK.png" 
+                alt="AIML Club OCT Recruitment Slide 01" 
+                class="carousel-img" 
+                id="carousel-main-img" 
+                width="380" 
+                height="475"
+              />
+            </div>
+
+            <div class="carousel-content-meta">
+              <span class="carousel-counter-tag" id="slide-counter-tag">SLIDE 01 / 08</span>
+              <h3 class="carousel-slide-title" id="slide-title-tag">The System Behind It &bull; Official Announcement</h3>
+              <p class="carousel-slide-desc" id="slide-desc-tag">
+                Introducing the recruitment vision for session 2026–27 at Oriental College of Technology, Bhopal. A platform built by students, for students, to foster high-impact AI innovation.
+              </p>
+
+              <div class="carousel-controls-row">
+                <div class="carousel-indicators-bar" id="carousel-dots-bar">
+                  <!-- Dynamically rendered indicator dots -->
+                </div>
+
+                <div class="carousel-nav-btns">
+                  <button class="carousel-btn magnetic-btn" id="carousel-prev-btn" aria-label="Previous Slide">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+                  </button>
+                  <button class="carousel-btn magnetic-btn" id="carousel-next-btn" aria-label="Next Slide">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+                  </button>
+                </div>
+              </div>
+
+            </div>
+
           </div>
         </div>
 
       </div>
-    </main>
+    </section>
 
-    <!-- Institutional Footer with Preserved Official Logo -->
-    <footer class="announcement-footer reveal-item">
-      <div class="footer-inner">
-        <div class="footer-logo-box">
+    <!-- SECTION 5: DEPARTMENTS & GUIDELINES -->
+    <section class="studio-section reveal-on-scroll" id="sec-instructions" aria-labelledby="dept-heading">
+      <div class="studio-container">
+        
+        <div class="section-header-studio">
+          <span class="section-eyebrow">8 SPECIALIZED DOMAINS</span>
+          <h2 class="section-title-studio" id="dept-heading">
+            Club Departments &amp; <span class="text-gradient">Operational Wings</span>
+          </h2>
+          <p class="section-subtitle-studio">
+            AIML Club OCT ko drive karne wale 8 active departments. Dekho tumhara passion aur interest kahan fit hota hai:
+          </p>
+        </div>
+
+        <div class="departments-bento-grid">
+          
+          <!-- Dept 1 -->
+          <div class="dept-card">
+            <div class="dept-icon-box">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+            </div>
+            <h3 class="dept-title">Technical Team</h3>
+            <p class="dept-desc">
+              AI/ML models train karna, Deep Learning &amp; LLMs explore karna, production web/app apps (React/Next.js) banana, aur open-source software maintain karna.
+            </p>
+            <div class="dept-tags-row">
+              <span class="dept-mini-tag">Python</span>
+              <span class="dept-mini-tag">PyTorch</span>
+              <span class="dept-mini-tag">React / Next.js</span>
+              <span class="dept-mini-tag">GenAI</span>
+              <span class="dept-mini-tag">DevOps</span>
+            </div>
+          </div>
+
+          <!-- Dept 2 -->
+          <div class="dept-card">
+            <div class="dept-icon-box">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            </div>
+            <h3 class="dept-title">Event &amp; Operations</h3>
+            <p class="dept-desc">
+              College hackathons, technical bootcamps, workshops aur live speaker sessions ko conceptualize aur on-ground seamlessly execute karna.
+            </p>
+            <div class="dept-tags-row">
+              <span class="dept-mini-tag">Hackathons</span>
+              <span class="dept-mini-tag">Logistics</span>
+              <span class="dept-mini-tag">Event Planning</span>
+              <span class="dept-mini-tag">Ops</span>
+            </div>
+          </div>
+
+          <!-- Dept 3 -->
+          <div class="dept-card">
+            <div class="dept-icon-box">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
+            </div>
+            <h3 class="dept-title">Media &amp; Content</h3>
+            <p class="dept-desc">
+              High-energy reels, cinematic video editing (Premiere/After Effects), event after-movies, technical writing aur multi-platform storytelling.
+            </p>
+            <div class="dept-tags-row">
+              <span class="dept-mini-tag">Premiere Pro</span>
+              <span class="dept-mini-tag">After Effects</span>
+              <span class="dept-mini-tag">Reels &amp; Shorts</span>
+              <span class="dept-mini-tag">Scriptwriting</span>
+            </div>
+          </div>
+
+          <!-- Dept 4 -->
+          <div class="dept-card">
+            <div class="dept-icon-box">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+            </div>
+            <h3 class="dept-title">Graphics &amp; Design</h3>
+            <p class="dept-desc">
+              Figma UI/UX designs, brand identity systems, event stage banners, hackathon collaterals aur eye-catching social creatives.
+            </p>
+            <div class="dept-tags-row">
+              <span class="dept-mini-tag">Figma</span>
+              <span class="dept-mini-tag">UI/UX</span>
+              <span class="dept-mini-tag">Photoshop</span>
+              <span class="dept-mini-tag">Brand Identity</span>
+            </div>
+          </div>
+
+          <!-- Dept 5 -->
+          <div class="dept-card">
+            <div class="dept-icon-box">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <h3 class="dept-title">Public Relations</h3>
+            <p class="dept-desc">
+              Industry sponsorships lana, campus tech creators se tie-ups, inter-college partnerships aur official announcements handle karna.
+            </p>
+            <div class="dept-tags-row">
+              <span class="dept-mini-tag">Sponsorships</span>
+              <span class="dept-mini-tag">Corporate Outreach</span>
+              <span class="dept-mini-tag">Networking</span>
+              <span class="dept-mini-tag">PR</span>
+            </div>
+          </div>
+
+          <!-- Dept 6 -->
+          <div class="dept-card">
+            <div class="dept-icon-box">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
+            </div>
+            <h3 class="dept-title">Anchors &amp; Stage</h3>
+            <p class="dept-desc">
+              Stage par mic sambhalna, crowd ko energize karna, ceremonies host karna aur guest speakers ke sath interactive sessions run karna.
+            </p>
+            <div class="dept-tags-row">
+              <span class="dept-mini-tag">Stage Hosting</span>
+              <span class="dept-mini-tag">Public Speaking</span>
+              <span class="dept-mini-tag">Emcee</span>
+              <span class="dept-mini-tag">Crowd Energy</span>
+            </div>
+          </div>
+
+          <!-- Dept 7 -->
+          <div class="dept-card">
+            <div class="dept-icon-box">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <h3 class="dept-title">Discipline &amp; Coordination</h3>
+            <p class="dept-desc">
+              Events ke dauran strict decorum maintain karna, check-in logistics, crowd flow aur institutional protocol compliance ensure karna.
+            </p>
+            <div class="dept-tags-row">
+              <span class="dept-mini-tag">Decorum</span>
+              <span class="dept-mini-tag">Protocols</span>
+              <span class="dept-mini-tag">Logistics Flow</span>
+              <span class="dept-mini-tag">Coordination</span>
+            </div>
+          </div>
+
+          <!-- Dept 8 -->
+          <div class="dept-card">
+            <div class="dept-icon-box">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+            </div>
+            <h3 class="dept-title">Community &amp; Outreach</h3>
+            <p class="dept-desc">
+              OCT ke sabhi branches aur years ke students ko tech ecosystem se jodna, peer-to-peer coding circles chalana aur daily engagement build karna.
+            </p>
+            <div class="dept-tags-row">
+              <span class="dept-mini-tag">Student Community</span>
+              <span class="dept-mini-tag">Peer Circles</span>
+              <span class="dept-mini-tag">Campus Ambassadors</span>
+              <span class="dept-mini-tag">Growth</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 6: ORGANIZATIONAL HIERARCHY -->
+    <section class="studio-section reveal-on-scroll" id="sec-organization" aria-labelledby="org-heading">
+      <div class="studio-container">
+        
+        <div class="section-header-studio">
+          <span class="section-eyebrow">STUDENT GOVERNANCE</span>
+          <h2 class="section-title-studio" id="org-heading">
+            Executive Council <span class="text-gradient">Structure</span>
+          </h2>
+          <p class="section-subtitle-studio">
+            Oriental College of Technology ke sabhi engineering branches ka ek united, student-led council jo club ke daily operations aur vision ko guide karta hai.
+          </p>
+        </div>
+
+        <div class="org-hierarchy-tree">
+          
+          <div class="org-node-card">
+            <div class="org-node-role">President</div>
+            <div class="org-node-sub">Executive Chief &bull; Strategic Vision &bull; AIML Club OCT</div>
+          </div>
+
+          <div class="org-connector-line"></div>
+
+          <div class="org-node-card">
+            <div class="org-node-role">Vice President</div>
+            <div class="org-node-sub">Operations &bull; Council Coordination &bull; Inter-Department Sync</div>
+          </div>
+
+          <div class="org-connector-line"></div>
+
+          <div class="org-wings-grid">
+            
+            <div class="org-wing-box">
+              <div class="org-wing-title">Operational &amp; Technical Wings</div>
+              <div class="org-wing-list">
+                <div>&bull; Technical &amp; AI/ML Research Leads</div>
+                <div>&bull; Web &amp; Mobile Systems Engineering</div>
+                <div>&bull; Events &amp; Logistical Operations</div>
+                <div>&bull; Public Relations &amp; Institutional Outreach</div>
+                <div>&bull; Discipline, Security &amp; Protocol Enforcement</div>
+              </div>
+            </div>
+
+            <div class="org-wing-box">
+              <div class="org-wing-title">Media &amp; Creative Affairs</div>
+              <div class="org-wing-list">
+                <div>&bull; Director of Media &amp; Creative Affairs</div>
+                <div>&bull; Graphics &amp; Brand Identity Design</div>
+                <div>&bull; Content Writing &amp; Documentation</div>
+                <div>&bull; Social Media Management (social.aimlcluboct.in)</div>
+                <div>&bull; Cinematography, Photography &amp; Video Editing</div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 7: SOCIAL COMMUNITY & CALENDAR SUITE -->
+    <section class="studio-section reveal-on-scroll" id="sec-share" aria-labelledby="share-heading">
+      <div class="studio-container">
+        
+        <div class="section-header-studio">
+          <span class="section-eyebrow">NEVER MISS OUT</span>
+          <h2 class="section-title-studio" id="share-heading">
+            Community &amp; <span class="text-gradient">Calendar Suite</span>
+          </h2>
+          <p class="section-subtitle-studio">
+            Opening date ka 1-click calendar reminder set kar lo, circular apne batchmates aur WhatsApp groups mein share karo, aur verified channels join karo:
+          </p>
+        </div>
+
+        <div class="social-calendar-grid">
+          
+          <!-- Calendar Card -->
+          <div class="studio-suite-card">
+            <h3 class="suite-card-title">1-Click Calendar Reminders</h3>
+            <p style="color: var(--text-secondary); font-size: 0.9375rem;">
+              Registration window ka direct alert paane ke liye apne phone ya laptop calendar ke sath sync kar lo.
+            </p>
+
+            <div style="display: flex; flex-direction: column; gap: 12px;">
+              <a href="#" class="btn btn-primary" id="btn-gcal" target="_blank" rel="noopener noreferrer">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                <span>Add to Google Calendar</span>
+              </a>
+
+              <button class="btn btn-outline" id="btn-download-ics">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                <span>Download .ICS (Apple &amp; Outlook)</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Share & Social Hub Card -->
+          <div class="studio-suite-card">
+            <h3 class="suite-card-title">Broadcast &amp; Verified Hubs</h3>
+            <p style="color: var(--text-secondary); font-size: 0.9375rem;">
+              Oriental College of Technology ke verified AIML Club platforms aur community channels se judo:
+            </p>
+
+            <div class="social-platforms-grid">
+              <a href="https://social.aimlcluboct.in" target="_blank" rel="noopener noreferrer" class="soc-platform-btn">
+                <span>Social Hub (All Links)</span>
+                <span>↗</span>
+              </a>
+
+              <a href="https://aimlcluboct.in" target="_blank" rel="noopener noreferrer" class="soc-platform-btn">
+                <span>aimlcluboct.in</span>
+                <span>↗</span>
+              </a>
+
+              <a href="#" class="soc-platform-btn" id="btn-share-wa" target="_blank" rel="noopener noreferrer">
+                <span>WhatsApp Share</span>
+                <span>↗</span>
+              </a>
+
+              <a href="#" class="soc-platform-btn" id="btn-share-li" target="_blank" rel="noopener noreferrer">
+                <span>LinkedIn Share</span>
+                <span>↗</span>
+              </a>
+            </div>
+
+            <button class="btn btn-outline btn-sm" id="btn-copy-url" style="margin-top: 8px;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              <span>Copy Official Announcement URL</span>
+            </button>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 8: APPLICATION PORTAL STATUS VAULT -->
+    <section class="studio-section reveal-on-scroll" id="sec-portal" aria-labelledby="portal-heading">
+      <div class="studio-container">
+        
+        <div class="portal-vault-card" id="portal-vault-card">
+          <span class="vault-status-badge" id="dest-portal-badge">🔒 LOCKED &bull; OPENS 21 OCT 2026 &bull; 12:00 AM IST</span>
+          
+          <h2 class="vault-title" id="portal-heading">
+            Official Recruitment Application Portal
+          </h2>
+
+          <p class="vault-desc" id="portal-vault-desc">
+            External 10-step submission portal <strong>Wednesday, 21 October 2026 ko sharp 12:00 AM IST</strong> par open hoga exclusively for enrolled Oriental College of Technology (OCT), Bhopal students. Tab tak upar diye gaye 10 steps aur preparation guide se apne projects aur answers ready rakh lo.
+          </p>
+
+          <div style="margin-top: 10px;">
+            <a href="#sec-application" class="btn btn-lg btn-primary magnetic-btn" id="btn-visit-portal">
+              <span>Preview 10-Step Application Blueprint</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Full-Bleed Studio Footer -->
+  <footer class="studio-footer">
+    <div class="studio-container">
+      
+      <div class="footer-top-row">
+        <div class="footer-brand-box">
           <img 
             src="assets/logo.png" 
             alt="AI & Machine Learning Club, Oriental College of Technology" 
-            class="official-logo footer-logo" 
-            width="44" 
-            height="44"
+            class="brand-logo-img" 
+            width="50" 
+            height="50" 
             loading="lazy"
           />
-          <div class="footer-brand">
-            <strong>AIML CLUB OCT</strong>
-            <span>Oriental College of Technology, Bhopal &bull; Department of Artificial Intelligence &amp; Machine Learning</span>
+          <div>
+            <div style="font-family: var(--font-display); font-weight: 700; font-size: 1.25rem; color: #fff;">
+              AI &amp; Machine Learning Club – OCT
+            </div>
+            <div style="font-size: 0.8125rem; color: var(--text-secondary);">
+              Oriental College of Technology, Bhopal, Madhya Pradesh
+            </div>
+            <div class="footer-tagline">Innovate &bull; Implement &bull; Inspire.</div>
           </div>
         </div>
 
-        <div class="footer-links-group">
-          <a href="https://github.com/AIMLCLUBOCT" target="_blank" rel="noopener noreferrer" class="footer-soc-link" aria-label="Official GitHub">GitHub</a>
-          <span class="sep">&bull;</span>
-          <a href="https://linkedin.com/company/aimlcluboct" target="_blank" rel="noopener noreferrer" class="footer-soc-link" aria-label="LinkedIn">LinkedIn</a>
-          <span class="sep">&bull;</span>
-          <a href="https://instagram.com/aimlcluboct" target="_blank" rel="noopener noreferrer" class="footer-soc-link" aria-label="Instagram">Instagram</a>
-          <span class="sep">&bull;</span>
-          <a href="mailto:contact@aimlcluboct.in" class="footer-soc-link">contact@aimlcluboct.in</a>
-        </div>
-      </div>
-      <div class="footer-copy">
-        &copy; 2026 AI &amp; Machine Learning Club, Oriental College of Technology, Bhopal. All rights reserved.
-      </div>
-    </footer>
-
-  </div>
-
-  <!-- Floating Scroll-to-Top Button with Circular Reading Progress -->
-  <button class="scroll-top-float magnetic-btn" id="scroll-top-float" aria-label="Scroll back to top" title="Back to Top">
-    <svg class="progress-ring" width="44" height="44" viewBox="0 0 44 44">
-      <circle class="progress-ring-bg" cx="22" cy="22" r="18" fill="none" stroke-width="2.5" />
-      <circle class="progress-ring-circle" id="progress-ring-circle" cx="22" cy="22" r="18" fill="none" stroke-width="2.5" />
-    </svg>
-    <svg class="arrow-up-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-      <polyline points="18 15 12 9 6 15" />
-    </svg>
-  </button>
-
-  <!-- High-Fidelity Interactive Lightbox Modal -->
-  <div id="lightbox-modal" class="lightbox-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Recruitment Storyboard Preview">
-    <div class="lightbox-backdrop" id="lightbox-backdrop"></div>
-    
-    <div class="lightbox-container">
-      
-      <!-- Top Bar inside modal -->
-      <div class="lightbox-topbar">
-        <div class="lightbox-meta">
-          <span class="lightbox-badge" id="lightbox-counter">Slide 1 of 8</span>
-          <h4 class="lightbox-title" id="lightbox-title">The System Behind It</h4>
-        </div>
-        <div class="lightbox-top-actions">
-          <a id="lightbox-download-btn" href="assets/campaign/01-HOOK.png" download class="lightbox-action-btn" title="Download High-Res Slide" aria-label="Download Slide">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-          </a>
-          <button id="lightbox-close" class="lightbox-close-btn" aria-label="Close Image Preview">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-          </button>
+        <div class="footer-links-cluster">
+          <a href="https://aimlcluboct.in" target="_blank" rel="noopener noreferrer" class="footer-link-item">aimlcluboct.in</a>
+          <a href="https://social.aimlcluboct.in" target="_blank" rel="noopener noreferrer" class="footer-link-item">social.aimlcluboct.in</a>
+          <a href="https://info.aimlcluboct.in" class="footer-link-item">info.aimlcluboct.in</a>
+          <a href="https://join.aimlcluboct.in" class="footer-link-item">join.aimlcluboct.in</a>
+          <a href="https://github.com/AIMLCLUBOCT" target="_blank" rel="noopener noreferrer" class="footer-link-item">GitHub</a>
+          <a href="https://linkedin.com/company/aimlcluboct" target="_blank" rel="noopener noreferrer" class="footer-link-item">LinkedIn</a>
+          <a href="https://instagram.com/aimlcluboct" target="_blank" rel="noopener noreferrer" class="footer-link-item">Instagram</a>
+          <a href="mailto:contact@aimlcluboct.in" class="footer-link-item">contact@aimlcluboct.in</a>
         </div>
       </div>
 
-      <!-- Main Visual Stage with Left & Right Nav Arrows -->
-      <div class="lightbox-stage">
-        <button class="lightbox-nav-btn lightbox-prev-btn" id="lightbox-btn-prev" aria-label="Previous Slide">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
-        </button>
-
-        <div class="lightbox-media-wrapper">
-          <img id="lightbox-img" src="assets/campaign/01-HOOK.png" alt="Recruitment Storyboard Slide" class="lightbox-img" />
+      <div class="footer-bottom-bar">
+        <div>
+          &copy; 2026 AI &amp; Machine Learning Club, Oriental College of Technology, Bhopal. All rights reserved.
         </div>
-
-        <button class="lightbox-nav-btn lightbox-next-btn" id="lightbox-btn-next" aria-label="Next Slide">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
-        </button>
-      </div>
-
-      <!-- Bottom Caption & Quick Slide Switcher Dots -->
-      <div class="lightbox-bottombar">
-        <p id="lightbox-caption" class="lightbox-caption">Recruitment shouldn’t be "Fill a form. Wait. Hope." We engineered a transparent, merit-driven evaluation framework from the ground up.</p>
-        <div class="lightbox-dots" id="lightbox-dots"></div>
-        <div class="lightbox-keyboard-hint">
-          <span>Use <kbd>&larr;</kbd> <kbd>&rarr;</kbd> to navigate &bull; <kbd>Esc</kbd> to close &bull; Swipe on mobile</span>
+        <div>
+          Exclusively for enrolled OCT Bhopal students &bull; Zero Registration Fee
         </div>
       </div>
 
     </div>
+  </footer>
+
+  <!-- Floating Scroll-to-Top with Reading Progress Ring -->
+  <button class="scroll-top-float magnetic-btn" id="scroll-top-float" aria-label="Scroll back to top" title="Back to Top">
+    <svg class="progress-ring" width="50" height="50" viewBox="0 0 50 50" aria-hidden="true">
+      <circle class="progress-ring-bg" cx="25" cy="25" r="18" fill="none" stroke-width="2.5" />
+      <circle class="progress-ring-circle" id="progress-ring-circle" cx="25" cy="25" r="18" fill="none" stroke-width="2.5" />
+    </svg>
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+      <polyline points="18 15 12 9 6 15" />
+    </svg>
+  </button>
+
+  <!-- High-Fidelity Lightbox Modal -->
+  <div id="lightbox-modal" class="lightbox-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Recruitment Storyboard Preview">
+    <div class="lightbox-backdrop" id="lightbox-backdrop"></div>
+    <div class="lightbox-content-box">
+      <img src="" alt="Fullscreen Campaign Slide" id="lightbox-img" class="lightbox-img" />
+      <button class="lightbox-close-btn" id="lightbox-close-btn" aria-label="Close modal">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
   </div>
 
-  <script src="app.js"></script>
+  <!-- Toast Notification Container -->
+  <div id="toast-container" class="toast-container" aria-live="polite"></div>
+
+  <!-- Lenis Smooth Scroll Engine (Framer / Luxury Inertial Scroll) -->
+  <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+
+  <!-- Main Client Engine -->
+  <script src="app.js" defer></script>
 </body>
 </html>

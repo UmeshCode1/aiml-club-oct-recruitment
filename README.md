@@ -1,88 +1,139 @@
-# Executive Council & Core Team Recruitment 2026
+# AIML Club OCT Recruitment 2026–27 | Official Announcement Portal
 ### AI & Machine Learning Club, Oriental College of Technology (OCT), Bhopal
+**Tagline:** *Innovate • Implement • Inspire.*
 
-Official institutional recruitment web portal for the Artificial Intelligence & Machine Learning Club at Oriental College of Technology, Bhopal.
-
-![Official Logo](assets/logo.png)
-
-## 📌 Overview
-
-The **AIML Club OCT Executive Council Recruitment 2026** portal is a production-grade, responsive announcement and multi-step application system. It introduces candidates to the 8 core divisions of the student council, communicates institutional eligibility rules, showcases the official campaign slides, and processes verified student applications with client-side OCT enrollment validation.
+Official announcement, informational circular, and campaign ecosystem for the 2026–27 recruitment drive of the AI & Machine Learning Club at Oriental College of Technology, Bhopal, Madhya Pradesh.
 
 ---
 
-## 🏛️ Institutional Identity & Official Branding
+## 🌐 Official Ecosystem Destinations
 
-- **Institution:** Oriental College of Technology, Bhopal (Department of AI & ML)
-- **Official Logo:** Preserved bit-for-bit from the authentic uploaded high-resolution vector/PNG asset.
-- **Brand Palette:**
-  - Deep Institutional Space: `#080b10`
-  - Technical Dark Surface: `#0e1420`
-  - Neon Chartreuse / Lime Accent: `#cbfb1f` (matched to logo typography and silhouette)
-  - Cyber Cyan Rim Accent: `#00f0ff` (matched to circular perimeter rim)
-- **Official Alternative Text:** `"AI & Machine Learning Club, Oriental College of Technology"`
-- **Campus Visuals:** Authentic Oriental College of Technology main building photograph embedded in the institutional banner.
+| Portal / Resource | Destination | Role & Purpose |
+| :--- | :--- | :--- |
+| **Recruitment Announcement (Current Site)** | [https://join.aimlcluboct.in](https://join.aimlcluboct.in) <br> *(also accessible at [https://info.aimlcluboct.in](https://info.aimlcluboct.in))* | Candidate guidelines, 10-step application preview, dual-track selection process, 8-slide campaign storyboard, organization hierarchy, calendar reminders, and live countdown. |
+| **Official Application Form (Confidential)** | *Released strictly on 21 Oct 2026 at 12:00 AM IST* | 10-step recruitment submission portal. Collects applications and automatically dispatches the Application Record PDF and unique screening QR code. |
+| **Official Club Website** | [https://aimlcluboct.in](https://aimlcluboct.in) | Primary organization homepage detailing past hackathons, flagship projects, executive council, research, and workshop archives. |
+| **Verified Social Directory Hub** | [https://social.aimlcluboct.in](https://social.aimlcluboct.in) | Centralized directory linking verified WhatsApp community groups, LinkedIn, Discord, Telegram, Instagram, GitHub, and YouTube. |
 
 ---
 
-## 🚀 Key Features
+## 🏛️ Institutional Eligibility
 
-1. **Strict Logo Preservation:**
-   - Zero filters, glow effects, color distortion, or proportion changes.
-   - Prominently positioned in the sticky header (52px), footer (44px), and printable confirmation docket.
-   - High-fidelity favicons (`favicon.ico`, `favicon-32x32.png`, `apple-touch-icon.png`) generated directly using Lanczos resampling.
-
-2. **8 Specialized Council Divisions:**
-   - Technical (AI/ML Models & Full-Stack Development)
-   - Event Management & Venue Logistics
-   - Media • Public Relations & Outreach
-   - Media • Graphic Design & Visual Identity
-   - Media • Video Production & Editing
-   - Anchoring & Stage Presentation
-   - Discipline & Crowd Coordination
-   - Research & Paper Publications
-
-3. **Multi-Step Application Engine:**
-   - **Step 1:** Verified Student ID (`0126...` OCT enrollment pattern enforcement, college email, WhatsApp, department, semester).
-   - **Step 2:** Track selection (Primary division + optional secondary choice).
-   - **Step 3:** Statement of Purpose (Live 50-character minimum counter, GitHub, LinkedIn/portfolio).
-   - **Step 4:** Institutional declaration & code of conduct affirmation.
-   - **Application Docket:** Generates an official tracking slip (`OCT-AIML-2026-XXXX`) with timestamp, printable format, and local persistence.
-
-4. **Live Countdown Timer:**
-   - Real-time countdown to the application deadline.
-
-5. **Official Campaign Slider:**
-   - Interactive viewer showcasing the official 8-part social media campaign series (`01-HOOK` to `08-CTA`) with full-screen lightbox modal.
+- **Exclusivity:** Strictly and exclusively open to enrolled **1st, 2nd, and 3rd year engineering students of Oriental College of Technology (OCT), Bhopal**.
+- **Branches:** Open across all engineering departments (CSE, AIML, IT, DS, EC, EX, ME, CE).
+- **External Candidates:** Submissions from outside institutions or non-enrolled individuals will not be processed. Student credentials and enrollment records are verified during profile screening.
+- **Registration Fee:** **Zero (₹0)** — Free for all eligible OCT students.
 
 ---
 
-## 💻 Local Development
+## ⏱️ Key Dates & Recruitment Lifecycle
 
-You can run this project with any local HTTP server:
+- **Registration Opens:** Wednesday, 21 October 2026 at 12:00 AM IST (Midnight)
+- **Registration Closes:** Sunday, 25 October 2026 at 11:59 PM IST (Strict 5-day window)
+- **Stage 2 (Screening & Challenges):** 26–28 October 2026 (Shortlisted candidates notified via email/WhatsApp)
+- **Stage 3 (Interviews & Inductions):** 29–31 October 2026
 
+### Automated Lifecycle Engine (`app.js`)
+The client application dynamically switches state based on real-time Indian Standard Time (IST = UTC +05:30):
+1. **Pre-Registration (Before 21 Oct 2026, 12:00 AM IST):**
+   - Displays real-time countdown to opening.
+   - Action buttons guide students to the 10-step preparation preview (`#sec-application`).
+   - Notice banner explains the informational nature of the page.
+   - External application destination remains strictly locked and confidential.
+2. **Active Registration Window (21–25 Oct 2026, 11:59 PM IST):**
+   - Automatically switches timer to "Applications Close In".
+   - Primary hero, sticky header, mobile drawer, and portal cards update to high-visibility "Apply Now" buttons.
+   - Top banner updates with active live green indicator.
+3. **Post-Closing (After 25 Oct 2026, 11:59 PM IST):**
+   - Freezes countdown at `00:00:00:00` with "Registration Period Has Concluded".
+   - Updates all CTAs to "Registrations Closed" linking to the Stage 2 evaluation timeline.
+   - Marks opening and closing milestones as "Completed ✓" and highlights Stage 2 as in progress.
+
+### Developer & QA Testing Hooks
+You can preview any recruitment lifecycle state instantly in the browser console:
+```javascript
+// Test pre-registration state
+window.__setTestDate("upcoming");
+
+// Test active registration window (live apply buttons)
+window.__setTestDate("live");
+
+// Test post-closing state
+window.__setTestDate("closed");
+
+// Test a custom ISO timestamp
+window.__setTestDate("2026-10-22T10:00:00+05:30");
+
+// Restore real-time clock
+window.__resetTestDate();
+```
+Or append URL query parameters directly:
+- `?phase=upcoming`
+- `?phase=live`
+- `?phase=closed`
+- `?redirect=apply` (triggers direct navigation to portal if live)
+
+---
+
+## 🎨 Design & Accessibility Standards
+
+- **Brand Colors:** Exact color mapping from the authentic AIML Club OCT logo:
+  - Deep Space Canvas: `#070a0f`
+  - Neon Chartreuse / Lime: `#cbfb1f`
+  - High-Voltage Cyan: `#00f0ff`
+- **Dual Theme Support:** Dark and Light themes with WCAG 2.1 AAA accessible contrast tokens.
+- **Logo Preservation:** The official high-resolution logo (`assets/logo.png`) is preserved bit-for-bit without distortion, color overlays, or CSS filters.
+- **Campus Anchor:** Authentic high-resolution Oriental College of Technology campus photograph embedded in the hero banner.
+- **Accessibility:** Semantic HTML5 hierarchy (`<h1>` through `<h4>`), ARIA live regions for dynamic announcements (`#a11y-announcements`), skip links, keyboard navigation traps for modals and drawers, and `@media (prefers-reduced-motion)` fallbacks.
+
+---
+
+## 📁 Campaign Storyboard Assets
+
+Verified 8-part social media and campus campaign series (`1080×1350` high-resolution):
+1. `assets/campaign/01-HOOK.png` — *The System Behind It*
+2. `assets/campaign/02-PROBLEM.png` — *Fair & Transparent Flow*
+3. `assets/campaign/03-APPLICATION.png` — *Multi-Dimension Form*
+4. `assets/campaign/04-APPLICATION-RECORD.png` — *Application Record PDF*
+5. `assets/campaign/05-CONFIRMATION.png` — *Email Confirmation + Unique QR*
+6. `assets/campaign/06-CORE-TEAM-REVIEW.png` — *Dedicated Core Team Workspace*
+7. `assets/campaign/07-SECURE-QR.png` — *Secure QR Screening*
+8. `assets/campaign/08-CTA.png` — *Ready to Build With Us*
+
+---
+
+## 🏛️ Executive Council & Organizational Hierarchy
+
+```
+                                  [President]
+                                       |
+                              [Vice President]
+                                       |
+        +------------------------------+------------------------------+
+        |                                                             |
+[Operational Departments]                             [Director of Media & Creative Affairs]
+  • Technical & AI/ML                                                 |
+  • Events & Operations                       +-----------------------+-----------------------+
+  • Public Relations & Outreach               |           |           |           |           |
+  • Discipline & Protocol                  Graphics    Content    Social Media  Cinematography Videography
+                                            Design     Writing    Management    & Photography  & Editing
+```
+
+---
+
+## 💻 Local Testing & Preview
+
+Run using any standard local server:
 ```bash
-# Using Python
+# Python 3
 python -m http.server 3000
 
-# Using Node.js
+# Node.js
 npx serve .
 ```
 
-Visit `http://localhost:3000` in your browser.
+Open `http://localhost:3000` in your browser.
 
 ---
-
-## 🚢 Live Deployments
-
-- **Official Custom Domain:** [https://info.aimlcluboct.in](https://info.aimlcluboct.in)
-- **Vercel Production:** [https://aiml-club-oct-recruitment.vercel.app](https://aiml-club-oct-recruitment.vercel.app)
-- **GitHub Pages:** [https://umeshcode1.github.io/aiml-club-oct-recruitment/](https://umeshcode1.github.io/aiml-club-oct-recruitment/)
-
----
-
-## 📜 Compliance & Accreditation
-
-Sanctioned under the Department of Artificial Intelligence & Machine Learning, Oriental College of Technology, Thakral Nagar, Opp Patel Nagar, Raisen Road, Bhopal, MP 462021. AICTE & RGPV compliant.
 
 &copy; 2026 AI & Machine Learning Club, Oriental College of Technology, Bhopal. All rights reserved.

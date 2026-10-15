@@ -1022,7 +1022,11 @@ function initProgressRingAndScrollTop() {
   }, { passive: true });
 
   btn.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    if (lenisInstance) {
+      lenisInstance.scrollTo(0, { duration: 1.2 });
+    } else {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
   });
 }
 
@@ -1041,7 +1045,14 @@ function checkAutoRedirect() {
       if (shouldRedirect) {
         showToast('Applications strictly open on 21 October 2026 at 12:00 AM IST. Early access is disabled.', 'warning');
         const sec = document.getElementById('sec-application');
-        if (sec) sec.scrollIntoView({ behavior: 'smooth' });
+        if (sec) {
+          if (lenisInstance) {
+            const headerHeight = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--header-height')) || 70;
+            lenisInstance.scrollTo(sec, { offset: -(headerHeight + 14), duration: 1.1 });
+          } else {
+            sec.scrollIntoView({ behavior: 'smooth' });
+          }
+        }
       }
       return;
     }
